@@ -120,7 +120,10 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <img src={LOGO_WHITE} alt="Ascente CFO" className="h-20 mx-auto mb-8 object-contain" />
+          <div className="flex flex-col items-center">
+            <img src={LOGO_WHITE} alt="Ascente CFO" className="h-28 mx-auto mb-4 object-contain" />
+            <p className="text-3xl sm:text-4xl font-bold text-white mb-8" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>Ascente CFO</p>
+          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Diagnóstico de<br />
             <span className="text-[#7B8CFF]">Claridad Financiera</span>®
