@@ -31,7 +31,6 @@ import {
 
 // CDN URLs
 const LOGO_WHITE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/ascente_logo_white_bcd9e595.png";
-const LOGO_HERO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/ascente_logo_hero_exact_blue-8ctiYDygi5YNpd32sthVB3.png";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/hero_bg-hCmBTqbzuN6tTGJpJsBUWU.webp";
 const ANALYSIS_VISUAL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/analysis_visual-j2t5e5SjLANxscfmmRgggu.webp";
 const PROCESS_VISUAL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/process_visual-D5SBNVriRFz7PheorVEk5j.webp";
@@ -121,7 +120,7 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <img src={LOGO_HERO} alt="Ascente CFO" className="h-32 mx-auto mb-8 object-contain" />
+          <img src={LOGO_WHITE} alt="Ascente CFO" className="h-12 mx-auto mb-8 object-contain" />
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Diagnóstico de<br />
             <span className="text-[#7B8CFF]">Claridad Financiera</span>®
@@ -671,9 +670,8 @@ function PricingSection() {
               Plan Semestral
             </h3>
             <p className="text-sm text-gray-500 mb-6">2 diagnósticos al año</p>
-            <p className="text-xs text-gray-400 mb-4">Semestral</p>
             <div className="mb-6">
-              <span className="text-4xl font-bold text-[#1C00A8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>697,52 €</span>
+              <span className="text-4xl font-bold text-[#1C00A8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>2 × 348 €</span>
               <span className="text-sm text-gray-500 ml-1">+ IVA</span>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
@@ -714,7 +712,7 @@ function PricingSection() {
             </h3>
             <p className="text-sm text-white/70 mb-6">4 diagnósticos al año</p>
             <div className="mb-2">
-              <span className="text-4xl font-bold text-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>1.046,84 €</span>
+              <span className="text-4xl font-bold text-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>997 €</span>
               <span className="text-sm text-white/70 ml-1">+ IVA / año</span>
             </div>
             <p className="text-sm text-[#7B8CFF] mb-6">249,25 € por trimestre</p>
