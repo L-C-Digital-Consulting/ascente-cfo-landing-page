@@ -755,7 +755,7 @@ function PricingSection() {
         <motion.div variants={fadeUp} className="mt-6 bg-[#eeedff] p-6">
           <p className="text-gray-700 text-sm leading-relaxed">
             Una auditoría financiera básica para pyme cuesta entre <strong className="text-[#1C00A8]">3.000 € y 6.000 €</strong>.
-            Este diagnóstico cubre 37 ratios, 8 KPIs, análisis sectorial y videollamada con el CFO en solo <strong className="text-[#1C00A8]">48 horas</strong>.
+            Este diagnóstico cubre 43 ratios, 8 KPIs, análisis sectorial y videollamada con el CFO en solo <strong className="text-[#1C00A8]">48 horas</strong>.
           </p>
         </motion.div>
       </AnimatedSection>
