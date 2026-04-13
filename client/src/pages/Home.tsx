@@ -39,6 +39,7 @@ const CTA_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8
 
 const TALLY_LINK = "https://tally.so/r/xXyWaJ";
 const WHATSAPP_LINK = "https://wa.me/34635580883?text=Hola%2C%20estoy%20viendo%20la%20demo%20de%20Ascente%20CFO%C2%AE%20y%20tengo%20una%20consulta.";
+const WHATSAPP_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/whatsapp_logo_09eed037.png";
 
 // Animation variants
 const fadeUp = {
@@ -96,10 +97,10 @@ function Navbar() {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] hover:bg-[#1fa855] text-white transition-colors"
+            className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
             title="Contactar por WhatsApp"
           >
-            <MessageCircle className="w-5 h-5" />
+            <img src={WHATSAPP_LOGO} alt="WhatsApp" className="h-8 object-contain" />
           </a>
           <a
             href={TALLY_LINK}
@@ -823,10 +824,10 @@ function Footer() {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] hover:bg-[#1fa855] text-white transition-colors"
+            className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
             title="Contactar por WhatsApp"
           >
-            <MessageCircle className="w-5 h-5" />
+            <img src={WHATSAPP_LOGO} alt="WhatsApp" className="h-8 object-contain" />
           </a>
           <p className="text-white/50 text-sm">
             © {new Date().getFullYear()} Ascente CFO® — Todos los derechos reservados
