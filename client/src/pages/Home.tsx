@@ -717,13 +717,13 @@ function PricingSection() {
             </a>
           </motion.div>
 
-          {/* Plan Anual Trimestral — DESTACADO */}
+          {/* Plan Trimestral — DESTACADO */}
           <motion.div variants={fadeUp} className="relative bg-[#1C00A8] text-white p-8 flex flex-col">
             <div className="absolute top-0 right-0 bg-[#2800ff] text-white text-xs font-bold px-4 py-1.5 uppercase tracking-wider">
               Recomendado
             </div>
             <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Plan Anual Trimestral
+              Plan Trimestral
             </h3>
             <p className="text-sm text-white/70 mb-6">4 diagnósticos al año</p>
             <div className="mb-2">
@@ -755,7 +755,7 @@ function PricingSection() {
               rel="noopener noreferrer"
               className="block text-center bg-[#2800ff] hover:bg-[#2000d6] text-white font-semibold py-3 transition-colors"
             >
-              Solicitar Plan Anual
+              Solicitar Plan Trimestral
             </a>
           </motion.div>
         </div>
