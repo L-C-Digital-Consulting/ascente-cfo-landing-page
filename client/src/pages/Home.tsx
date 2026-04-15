@@ -140,7 +140,7 @@ function HeroSection() {
             <span className="text-[#7B8CFF]">Claridad Financiera</span>®
           </h1>
           <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Análisis financiero profesional para pymes. Conoce el estado real de tu empresa con 43 ratios, 8 KPIs y una sesión estratégica con un CFO — en solo 48 horas.
+            Análisis financiero profesional para pymes. Conoce el estado real de tu empresa con 43 ratios, 8 KPIs y una sesión estratégica con un Director Financiero — en solo 48 horas.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
@@ -368,19 +368,18 @@ const deliverables = [
     title: "PDF Diagnóstico Financiero",
     items: [
       "Lo que este diagnóstico hace por tu negocio",
-      "Contexto sectorial detallado",
+      "Contexto sectorial",
       "Fortalezas y áreas de mejora",
       "Soluciones recomendadas de Ascente CFO®",
     ],
   },
   {
     icon: Video,
-    title: "Sesión con el CFO",
+    title: "Sesión con un Director Financiero Senior",
     items: [
       "Revisión personalizada de 30 min",
       "Contexto estratégico y resolución de dudas",
       "Priorización de acciones inmediatas",
-      "Hoja de ruta personalizada",
     ],
   },
 ];
@@ -446,7 +445,7 @@ const steps = [
   },
   {
     num: "03",
-    title: "Sesión con el CFO",
+    title: "Sesión con un Director Financiero Senior",
     desc: "30 minutos de trabajo estratégico: revisión del informe, resolución de dudas y priorización de acciones inmediatas.",
     icon: Users,
   },
@@ -661,7 +660,7 @@ function PricingSection() {
               </li>
               <li className="flex items-start gap-2 text-sm text-gray-700">
                 <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
-                Videollamada de 30 min con CFO
+                Videollamada de 30 min con un Director Financiero Senior
               </li>
               <li className="flex items-start gap-2 text-sm text-gray-700">
                 <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
@@ -700,7 +699,7 @@ function PricingSection() {
               </li>
               <li className="flex items-start gap-2 text-sm text-gray-700">
                 <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
-                2 videollamadas de 30 min con CFO
+                2 videollamadas de 30 min con un Director Financiero Senior
               </li>
               <li className="flex items-start gap-2 text-sm text-gray-700">
                 <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
@@ -742,7 +741,7 @@ function PricingSection() {
               </li>
               <li className="flex items-start gap-2 text-sm text-white/90">
                 <CheckCircle2 className="w-4 h-4 text-[#7B8CFF] mt-0.5 flex-shrink-0" />
-                4 videollamadas de 30 min con CFO
+                4 videollamadas de 30 min con un Director Financiero Senior
               </li>
               <li className="flex items-start gap-2 text-sm text-white/90">
                 <CheckCircle2 className="w-4 h-4 text-[#7B8CFF] mt-0.5 flex-shrink-0" />
