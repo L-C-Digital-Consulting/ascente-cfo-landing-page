@@ -647,7 +647,7 @@ function PricingSection() {
             </h3>
             <p className="text-sm text-gray-500 mb-6">Análisis puntual completo</p>
             <div className="mb-6">
-              <span className="text-4xl font-bold text-[#1C00A8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>448,76 €</span>
+              <span className="text-4xl font-bold text-[#1C00A8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>447 €</span>
               <span className="text-sm text-gray-500 ml-1">+ IVA</span>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
@@ -685,7 +685,7 @@ function PricingSection() {
             </h3>
             <p className="text-sm text-gray-500 mb-6">2 diagnósticos al año</p>
             <div className="mb-2">
-              <span className="text-4xl font-bold text-[#1C00A8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>348,76 €</span>
+              <span className="text-4xl font-bold text-[#1C00A8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>347 €</span>
               <span className="text-sm text-gray-500 ml-1">+ IVA</span>
             </div>
             <p className="text-sm text-gray-500 mb-6">por diagnóstico</p>
@@ -727,7 +727,7 @@ function PricingSection() {
             </h3>
             <p className="text-sm text-white/70 mb-6">4 diagnósticos al año</p>
             <div className="mb-2">
-              <span className="text-4xl font-bold text-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>261,71 €</span>
+              <span className="text-4xl font-bold text-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>267 €</span>
               <span className="text-sm text-white/70 ml-1">+ IVA</span>
             </div>
             <p className="text-sm text-[#7B8CFF] mb-6">por diagnóstico</p>
