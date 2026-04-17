@@ -568,6 +568,56 @@ function AnalysisSection() {
   );
 }
 
+// ─── WHAT THIS DIAGNOSIS DOES ───
+const whatDoesDiagnosis = [
+  {
+    title: "Qué cubre",
+    icon: Shield,
+    desc: "Expone la posición real de la empresa: rentabilidad, riesgo, capacidad de financiación y eficiencia operativa, medido con los mismos indicadores que usa la banca y los inversores.",
+  },
+  {
+    title: "Qué riesgo reduce",
+    icon: AlertTriangle,
+    desc: "Cuando los costes fijos son elevados, cualquier caída de ventas golpea el beneficio de forma desproporcionada. El diagnóstico lo cuantifica con tus datos y permite tomar medidas antes de que sea demasiado tarde. Riesgo operativo identificado y cuantificado.",
+  },
+  {
+    title: "Qué mejora",
+    icon: TrendingUp,
+    desc: "Mejora lo que más importa: tus decisiones, tu margen y el dinero que ves en tu cuenta. Te da claridad y visibilidad real de tu negocio.",
+  },
+];
+
+function WhatDiagnosisDoes() {
+  return (
+    <section className="bg-[#f8f7ff] py-20 lg:py-28">
+      <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-16">
+          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Impacto</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            Lo que este diagnóstico hace por tu negocio
+          </h2>
+        </motion.div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {whatDoesDiagnosis.map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <motion.div key={i} variants={fadeUp} className="bg-white border-l-4 border-[#2800ff] p-8 hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <Icon className="w-6 h-6 text-[#2800ff] flex-shrink-0" />
+                  <h3 className="text-lg font-bold text-[#1C00A8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
 // ─── BENEFITS ───
 const enables = [
   "Negociar financiación bancaria con los ratios de riesgo que usa la banca.",
@@ -850,6 +900,7 @@ export default function Home() {
       <DeliverablesSection />
       <ProcessSection />
       <AnalysisSection />
+      <WhatDiagnosisDoes />
       <BenefitsSection />
       <PricingSection />
       <CTASection />
