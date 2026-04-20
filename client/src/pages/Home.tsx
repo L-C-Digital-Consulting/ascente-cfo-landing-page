@@ -343,19 +343,8 @@ function ProblemsSection() {
 // ─── DELIVERABLES ───
 const deliverables = [
   {
-    icon: Monitor,
-    title: "Informe Interactivo",
-    items: [
-      "Punto de Partida — Las 6 áreas del análisis y cómo interpretar los resultados",
-      "Diagnóstico — el estado real del negocio: resumen ejecutivo, contexto sectorial, semáforos y hallazgos",
-      "Plan de Acción — qué hacer, en qué orden y qué se consigue. Derivado directamente de los semáforos",
-      "Dashboard — los indicadores principales en números, comparados con el ejercicio anterior",
-      "Tabla de 43 ratios con alertas y análisis completo",
-    ],
-  },
-  {
-    icon: FileText,
-    title: "PDF Diagnóstico Completo",
+    icon: FileBarChart,
+    title: "Diagnóstico Completo (PDF e Informe Interactivo)",
     items: [
       "Punto de Partida — Las 6 áreas del análisis y cómo interpretar los resultados",
       "Diagnóstico — el estado real del negocio: resumen ejecutivo, contexto sectorial, semáforos y hallazgos",
@@ -387,7 +376,7 @@ function DeliverablesSection() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Lo que Recibe con el Diagnóstico
           </h2>
-          <p className="text-lg text-white/70">Tres entregables clave en 48 horas.</p>
+          <p className="text-lg text-white/70">Dos entregables clave en 48 horas.</p>
         </motion.div>
         <div className="grid md:grid-cols-2 gap-6">
           {deliverables.map((d, i) => (
