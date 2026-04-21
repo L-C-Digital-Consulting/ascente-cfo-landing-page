@@ -474,7 +474,7 @@ function ProcessSection() {
   );
 }
 
-// ─── 5 ANALYSIS BLOCKS ───
+// ─── 6 ANALYSIS BLOCKS ───
 const analysisBlocks = [
   {
     num: 1,
@@ -484,27 +484,33 @@ const analysisBlocks = [
   },
   {
     num: 2,
-    title: "Solvencia y Liquidez",
-    desc: "Capacidad real de pago a corto plazo. Incluye solvencia corriente, fondo de maniobra, acid test y disponibilidad.",
+    title: "Solvencia",
+    desc: "Capacidad de pago a largo plazo. Incluye ratios de endeudamiento, cobertura de intereses y sostenibilidad de deuda.",
     color: "#1C00A8",
   },
   {
     num: 3,
-    title: "Rentabilidad",
-    desc: "Márgenes reales y retorno sobre activos y fondos propios. Incluye EBITDA, EBIT, ROA, ROCE y apalancamiento.",
+    title: "Liquidez",
+    desc: "Capacidad real de pago a corto plazo. Incluye solvencia corriente, fondo de maniobra, acid test y disponibilidad.",
     color: "#2800ff",
   },
   {
     num: 4,
-    title: "Ciclo de Maduración",
+    title: "Ciclo de Caja",
     desc: "Tiempo necesario para convertir la operativa en caja. Incluye PMM de clientes, existencias y proveedores.",
     color: "#1C00A8",
   },
   {
     num: 5,
+    title: "Rentabilidad",
+    desc: "Márgenes reales y retorno sobre activos y fondos propios. Incluye EBITDA, EBIT, ROA, ROCE y apalancamiento.",
+    color: "#2800ff",
+  },
+  {
+    num: 6,
     title: "Estructura de Costes",
     desc: "Fragilidad ante caídas de ventas y punto de equilibrio real. Incluye margen de seguridad y GAO.",
-    color: "#2800ff",
+    color: "#1C00A8",
   },
 ];
 
@@ -515,13 +521,13 @@ function AnalysisSection() {
         <motion.div variants={fadeUp} className="text-center mb-16">
           <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Metodología</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            Los 5 Bloques del Análisis
+            Los 6 Bloques del Análisis
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Cada bloque recibe un semáforo con análisis calibrado al contexto del sector. 43 ratios en total.
           </p>
         </motion.div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-4">
           {analysisBlocks.map((b) => (
             <motion.div
               key={b.num}
