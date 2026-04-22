@@ -479,37 +479,37 @@ const analysisBlocks = [
   {
     num: 1,
     title: "Solidez Patrimonial",
-    desc: "Estructura del balance, endeudamiento y capacidad de absorber pérdidas. Incluye equilibrio patrimonial y calidad de deuda.",
+    desc: "Mide si tu empresa está bien capitalizada o depende en exceso de deuda. Analiza el nivel de endeudamiento y si el inmovilizado está financiado con recursos a largo plazo — la condición de equilibrio patrimonial.",
     color: "#2800ff",
   },
   {
     num: 2,
     title: "Solvencia",
-    desc: "Capacidad de pago a largo plazo. Incluye ratios de endeudamiento, cobertura de intereses y sostenibilidad de deuda.",
+    desc: "Mide si el total de activos supera al total de pasivos. Tu empresa es solvente cuando lo que tiene vale más que lo que debe, en el largo plazo. No mide si tienes caja ahora — mide si podrías hacer frente a todas tus deudas con lo que posees.",
     color: "#1C00A8",
   },
   {
     num: 3,
     title: "Liquidez",
-    desc: "Capacidad real de pago a corto plazo. Incluye solvencia corriente, fondo de maniobra, acid test y disponibilidad.",
+    desc: "Mide si tu empresa tiene capacidad de pagar sus compromisos a corto plazo. Tres niveles: liquidez general, prueba ácida y disponibilidad inmediata. Un negocio puede ser rentable y quedarse sin liquidez.",
     color: "#2800ff",
   },
   {
     num: 4,
     title: "Ciclo de Caja",
-    desc: "Tiempo necesario para convertir la operativa en caja. Incluye PMM de clientes, existencias y proveedores.",
+    desc: "Mide cuántos días tarda el dinero en volver a tu empresa tras invertirlo en operaciones. Combina cobro de clientes + rotación de existencias − pago a proveedores. El ciclo negativo (proveedores financian más) es la posición favorable.",
     color: "#1C00A8",
   },
   {
     num: 5,
     title: "Rentabilidad",
-    desc: "Márgenes reales y retorno sobre activos y fondos propios. Incluye EBITDA, EBIT, ROA, ROCE y apalancamiento.",
+    desc: "Mide cuánto gana tu empresa en relación a lo que factura y a lo que tiene invertido. Cuatro márgenes (Bruto → EBITDA → EBIT → Neto), cada uno señalando un problema distinto si cae. Más rentabilidad de activos (ROA) y del accionista (ROE).",
     color: "#2800ff",
   },
   {
     num: 6,
     title: "Estructura de Costes",
-    desc: "Fragilidad ante caídas de ventas y punto de equilibrio real. Incluye margen de seguridad y GAO.",
+    desc: "Mide el peso y la composición de tus costes, y la sensibilidad del negocio ante una caída de ventas. El GAO cuantifica ese riesgo: si es 3 veces, una caída del 10% en ventas destruye el 30% del beneficio operativo.",
     color: "#1C00A8",
   },
 ];
