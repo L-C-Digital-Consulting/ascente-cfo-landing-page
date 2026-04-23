@@ -40,6 +40,7 @@ const CTA_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8
 const TALLY_LINK = "https://tally.so/r/xXyWaJ";
 const WHATSAPP_LINK = "https://wa.me/34635580883?text=Hola%2C%20estoy%20viendo%20la%20demo%20de%20Ascente%20CFO%C2%AE%20y%20tengo%20una%20consulta.";
 const WHATSAPP_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/whatsapp_logo_09eed037.png";
+const LINKEDIN_URL = "https://www.linkedin.com/in/miguel-ángel-lópez-sainz-0bb25341";
 
 // Animation variants
 const fadeUp = {
@@ -243,17 +244,14 @@ function RootProblemSection() {
             <p className="text-lg text-gray-700 leading-relaxed">
               En este contexto, el Diagnóstico de Claridad Financiera se convierte en la herramienta clave para detectar a tiempo si tu empresa está en esa zona de "crecer sin ganar dinero", identificar dónde se le va el margen y la caja, y trazar una hoja de ruta concreta para evitar acabar en pérdidas o en concurso.
             </p>
-            <p className="text-xl font-bold text-[#2800ff] leading-snug mt-4">
-              Este diagnóstico, los mide con tus propios datos en tan solo 48 horas.
-            </p>
           </div>
-          <div className="lg:col-span-2">
+          <motion.div variants={fadeUp} className="lg:col-span-2">
             <img
               src={ANALYSIS_VISUAL}
               alt="Dashboard financiero"
               className="w-full object-contain"
             />
-          </div>
+          </motion.div>
         </motion.div>
       </AnimatedSection>
     </section>
@@ -403,6 +401,19 @@ function DeliverablesSection() {
             </motion.div>
           ))}
         </div>
+        <motion.div variants={fadeUp} className="mt-10 flex justify-center">
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#0A66C2] hover:bg-[#084298] text-white font-semibold px-6 py-3 transition-colors"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+            </svg>
+            Conoce a nuestro Director Financiero
+          </a>
+        </motion.div>
         <motion.p variants={fadeUp} className="text-center text-white/60 text-sm mt-8 italic">
           * La videollamada de 30 minutos está incluida en todas las opciones de diagnóstico.
         </motion.p>
