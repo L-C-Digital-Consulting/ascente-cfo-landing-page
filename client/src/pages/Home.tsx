@@ -91,7 +91,7 @@ function Navbar() {
           <a href="#entregables" className="hover:text-white transition-colors">Entregables</a>
           <a href="#proceso" className="hover:text-white transition-colors">Proceso</a>
           <a href="#analisis" className="hover:text-white transition-colors">Análisis</a>
-          <a href="#precios" className="hover:text-white transition-colors">Precios</a>
+          <a href="#precios" className="hover:text-white transition-colors">Planes</a>
         </div>
         <div className="flex items-center gap-3">
           <a
@@ -684,7 +684,7 @@ function PricingSection() {
         <motion.div variants={fadeUp} className="text-center mb-16">
           <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Inversión</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            Precios y Propuesta de Valor
+            Planes y Propuesta de Valor
           </h2>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-6">
