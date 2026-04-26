@@ -28,6 +28,7 @@ import {
   ChevronDown,
   ExternalLink,
   MessageCircle,
+  HelpCircle,
 } from "lucide-react";
 
 // CDN URLs
@@ -98,16 +99,15 @@ function Navbar() {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
-            title="Contactar por WhatsApp"
+            className="hidden sm:inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
           >
-            <img src={WHATSAPP_LOGO} alt="WhatsApp" className="h-8 object-contain" />
+            <img src={WHATSAPP_LOGO} alt="WhatsApp" className="w-5 h-5 object-contain" />
           </a>
           <a
             href={TALLY_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#2800ff] hover:bg-[#2000d6] text-white text-sm font-semibold px-5 py-2.5 transition-colors"
+            className="bg-[#2800ff] hover:bg-[#2000d6] text-white font-semibold px-6 py-2 text-sm transition-colors"
           >
             Solicitar Diagnóstico
           </a>
@@ -141,7 +141,7 @@ function HeroSection() {
             <span className="text-[#7B8CFF]">Claridad Financiera</span>®
           </h1>
           <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Análisis financiero profesional para pymes. Conoce el estado real de tu empresa con 43 ratios, 8 KPIs y una sesión estratégica con un Director Financiero — en solo 48 horas.
+            Análisis financiero profesional para tu negocio. Descubre la situación real de tu empresa mediante un diagnóstico detallado y una sesión estratégica con un Director Financiero — en solo 48 horas.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
@@ -220,6 +220,11 @@ function StatsSection() {
             </motion.div>
           ))}
         </div>
+        <motion.div variants={fadeUp} className="mt-16 text-center max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Sí estás en etapa de crecimiento o estás pasando por problemas financieros y operativos, <span className="font-bold text-[#1C00A8]">es igual de importante realizar el Diagnóstico de Claridad Financiera</span>. Si no quieres terminar así.
+          </p>
+        </motion.div>
       </AnimatedSection>
     </section>
   );
@@ -258,42 +263,254 @@ function RootProblemSection() {
   );
 }
 
+// ─── WHAT IS DIAGNOSIS ───
+function WhatIsDiagnosisSection() {
+  return (
+    <section className="bg-white py-20 lg:py-28">
+      <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-16">
+          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Concepto</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            ¿Qué es el Diagnóstico de Claridad Financiera?
+          </h2>
+          <p className="text-lg text-gray-600">La herramienta que te da visibilidad total de tu negocio</p>
+        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div variants={fadeUp} className="space-y-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              El Diagnóstico de Claridad Financiera es un análisis financiero profesional y detallado que te proporciona visibilidad completa sobre la salud real de tu empresa. No es un simple reporte de números — es una radiografía financiera que te muestra exactamente dónde estás, hacia dónde vas, y qué debes hacer.
+            </p>
+            <div className="space-y-4">
+              {[
+                { icon: FileBarChart, text: "43 Ratios Financieros Analizados — Evaluamos cada aspecto de tu negocio" },
+                { icon: BarChart3, text: "8 KPIs Críticos — Los indicadores que realmente importan" },
+                { icon: Monitor, text: "Análisis Sectorial Comparativo — Cómo estás vs. tus competidores" },
+                { icon: Users, text: "Sesión Estratégica con Director Financiero Senior — 45 minutos de trabajo directo" },
+                { icon: Clock, text: "Entrega en 48 Horas — Rapidez sin sacrificar profundidad" },
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeUp} className="flex gap-4 items-start">
+                  <item.icon className="w-6 h-6 text-[#2800ff] flex-shrink-0 mt-1" />
+                  <p className="text-gray-700">{item.text}</p>
+                </motion.div>
+              ))}
+            </div>
+            <div className="pt-4 border-t border-gray-200">
+              <p className="text-lg text-gray-700 italic">
+                "El Diagnóstico de Claridad Financiera no es un gasto — es una inversión en visibilidad. Porque no puedes gestionar lo que no mides, y no puedes crecer de forma sostenible sin claridad financiera."
+              </p>
+            </div>
+          </motion.div>
+          <motion.div variants={fadeUp}>
+            <img src={ANALYSIS_VISUAL} alt="Diagnóstico" className="w-full object-contain" />
+          </motion.div>
+        </div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── WHY IS IMPORTANT ───
+function WhyIsImportantSection() {
+  return (
+    <section className="bg-[#f8f7ff] py-20 lg:py-28">
+      <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-16">
+          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Importancia</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            ¿Por Qué es Tan Importante?
+          </h2>
+          <p className="text-lg text-gray-600">Evita convertirte en una estadística</p>
+        </motion.div>
+        <div className="space-y-12">
+          <motion.div variants={fadeUp} className="bg-white p-8 border-l-4 border-[#2800ff]">
+            <h3 className="text-xl font-bold text-[#1C00A8] mb-4">El Contexto de Crisis</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <p className="text-3xl font-bold text-[#2800ff] mb-2">42%</p>
+                <p className="text-gray-700">de pymes cerraron sin beneficios</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-[#2800ff] mb-2">46%</p>
+                <p className="text-gray-700">sufrió problemas de liquidez</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-[#2800ff] mb-2">Récord</p>
+                <p className="text-gray-700">histórico de concursos</p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="bg-white p-8">
+            <h3 className="text-xl font-bold text-[#1C00A8] mb-4">¿Qué te Falta Sin Claridad Financiera?</h3>
+            <div className="space-y-3">
+              {[
+                "No sabes si realmente ganas dinero o solo 'parece' que ganas",
+                "No ves dónde se va tu margen y tu caja",
+                "No detectas a tiempo si estás en la zona de 'crecer sin ganar dinero'",
+                "No sabes si tu crecimiento es sostenible o te está consumiendo liquidez",
+                "No tienes una hoja de ruta concreta para evitar pérdidas",
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeUp} className="flex gap-3 items-start">
+                  <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700">{item}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="bg-[#1C00A8] text-white p-8">
+            <h3 className="text-xl font-bold mb-4">Por Qué es Crítico Ahora</h3>
+            <p className="mb-6">El Diagnóstico de Claridad Financiera se convierte en la herramienta clave para:</p>
+            <div className="space-y-3">
+              {[
+                "Detectar a tiempo si tu empresa está en esa zona de riesgo",
+                "Identificar exactamente dónde se te va el margen y la caja",
+                "Trazar una hoja de ruta concreta para evitar acabar en pérdidas o concurso",
+                "Tomar decisiones basadas en datos reales, no en intuición",
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeUp} className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-5 h-5 text-[#7B8CFF] flex-shrink-0 mt-0.5" />
+                  <p>{item}</p>
+                </motion.div>
+              ))}
+            </div>
+            <p className="mt-8 text-lg italic">
+              "La diferencia entre una Pyme que prospera y una que quiebra no es la suerte — es la claridad financiera."
+            </p>
+          </motion.div>
+        </div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── KEY QUESTIONS ───
+function KeyQuestionsSection() {
+  return (
+    <section className="bg-white py-20 lg:py-28">
+      <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-16">
+          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Autoevaluación</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            Las Preguntas que Toda Pyme Debe Hacerse
+          </h2>
+          <p className="text-lg text-gray-600">Si no puedes responder estas preguntas, tu negocio está en riesgo</p>
+        </motion.div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Category 1 */}
+          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-[#2800ff]">
+            <h3 className="text-lg font-bold text-[#1C00A8] mb-6 flex items-center gap-2">
+              <Shield className="w-5 h-5" />
+              Riesgo Financiero
+            </h3>
+            <div className="space-y-4">
+              {[
+                "¿Sabes si tu empresa es sólida patrimonialmente?",
+                "¿Conoces tu nivel real de endeudamiento?",
+                "¿Sabes si tu empresa es solvente?",
+                "¿Tienes claridad sobre tu grado de liquidez?",
+              ].map((q, i) => (
+                <motion.div key={i} variants={fadeUp} className="flex gap-2 items-start">
+                  <HelpCircle className="w-4 h-4 text-[#2800ff] flex-shrink-0 mt-1" />
+                  <p className="text-sm text-gray-700">{q}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Category 2 */}
+          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-[#2800ff]">
+            <h3 className="text-lg font-bold text-[#1C00A8] mb-6 flex items-center gap-2">
+              <TrendingUp className="w-5 h-5" />
+              Flujo de Caja
+            </h3>
+            <div className="space-y-4">
+              {[
+                "¿Generas suficiente caja para pagar nóminas e impuestos?",
+                "¿Sabes si tu crecimiento es financieramente sostenible?",
+                "¿Tu crecimiento consume más caja de la que genera?",
+                "¿Sabes cuál es tu ciclo financiero real?",
+                "¿Generas caja suficiente para cumplir con tu deuda?",
+              ].map((q, i) => (
+                <motion.div key={i} variants={fadeUp} className="flex gap-2 items-start">
+                  <HelpCircle className="w-4 h-4 text-[#2800ff] flex-shrink-0 mt-1" />
+                  <p className="text-sm text-gray-700">{q}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Category 3 */}
+          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-[#2800ff]">
+            <h3 className="text-lg font-bold text-[#1C00A8] mb-6 flex items-center gap-2">
+              <BarChart3 className="w-5 h-5" />
+              Rentabilidad
+            </h3>
+            <div className="space-y-4">
+              {[
+                "¿Sabes qué parte de tu P&L genera o destruye valor?",
+                "¿Conoces la ganancia unitaria de tus productos/servicios?",
+                "¿Tu modelo operativo es viable?",
+                "¿Sabes cuál es tu rentabilidad real sobre la inversión?",
+                "¿Endeudarte mejora o reduce la rentabilidad del accionista?",
+              ].map((q, i) => (
+                <motion.div key={i} variants={fadeUp} className="flex gap-2 items-start">
+                  <HelpCircle className="w-4 h-4 text-[#2800ff] flex-shrink-0 mt-1" />
+                  <p className="text-sm text-gray-700">{q}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+        <motion.div variants={fadeUp} className="mt-12 text-center bg-[#1C00A8] text-white p-8">
+          <p className="text-lg">
+            Si respondiste "no" a más de 3 preguntas, tu empresa está operando a ciegas. Y eso es exactamente lo que el Diagnóstico de Claridad Financiera resuelve.
+          </p>
+          <p className="text-xl font-bold mt-4">
+            Todas estas preguntas y más las contestamos con el diagnóstico.
+          </p>
+        </motion.div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
 // ─── 6 PROBLEMS ───
 const sixProblems = [
   {
     num: "01",
-    title: "Crecer en ventas puede destruir liquidez",
-    desc: "Si el margen es insuficiente, el crecimiento consume caja más rápido de lo que la genera.",
+    title: "El Síndrome de 'Crecer Vendiendo Aire'",
+    desc: "Aumentas ventas 20%, pero la caja disminuye. Tu crecimiento consume más dinero del que genera. El diagnóstico detecta tu Ciclo de Conversión de Caja real.",
     icon: TrendingUp,
   },
   {
     num: "02",
-    title: "Facturar más no garantiza ganar más",
-    desc: "Los costes pueden crecer más rápido que los ingresos. Un 10% más de facturación puede traducirse en un EBITDA igual o peor.",
+    title: "Márgenes Asfixiados que Nadie Ve",
+    desc: "Vendes más pero ganas menos. Tus costes variables crecen más rápido que tus ingresos. Un 2% de diferencia en margen puede significar pérdida vs. ganancia.",
     icon: BarChart3,
   },
   {
     num: "03",
-    title: "Beneficios en el papel, sin dinero en el banco",
-    desc: "El resultado contable y la liquidez son distintos. Se puede tener beneficios y no poder pagar la nómina.",
-    icon: Wallet,
-  },
-  {
-    num: "04",
-    title: "Deuda controlada — hasta que el banco dice que no",
-    desc: "DFN/EBITDA > 3,0x es una alerta roja para la banca. El diagnóstico lo calcula antes de que el banco cierre el grifo.",
+    title: "Deuda que Parece Controlada Hasta que Explota",
+    desc: "Tu ratio de endeudamiento parece normal, pero no tienes capacidad real de pago si algo falla. El banco cierra el grifo cuando descubre que no puedes pagar.",
     icon: AlertTriangle,
   },
   {
+    num: "04",
+    title: "Rentabilidad Fantasma del Accionista",
+    desc: "Crees que tu negocio es rentable, pero después de impuestos y deuda, la rentabilidad real es negativa. Podrías estar mejor invirtiendo en un fondo indexado.",
+    icon: Wallet,
+  },
+  {
     num: "05",
-    title: "Costes fijos que amplifican las pérdidas",
-    desc: "El Apalancamiento Operativo (GAO) mide la caída del resultado si las ventas bajan. Estructuras elevadas multiplican pérdidas.",
+    title: "Estructura de Costos que Multiplica Pérdidas",
+    desc: "Cuando las ventas bajan 10%, tus pérdidas caen 30%. Tus costes fijos son demasiado altos. Una recesión puede llevarte a la quiebra más rápido de lo que crees.",
     icon: Shield,
   },
   {
     num: "06",
-    title: "Facturar más cada año y destruir valor",
-    desc: "Se puede mejorar la cifra de negocio y reducir el Retorno sobre Capital Empleado (ROCE). Si ROCE < coste de deuda, se destruye valor.",
+    title: "Destrucción de Valor Disfrazada de Crecimiento",
+    desc: "Tu empresa crece, pero el valor real disminuye. Si ROCE < Coste de Deuda, cada inversión destruye valor. El diagnóstico lo detecta ahora, con tus datos reales.",
     icon: FileBarChart,
   },
 ];
@@ -305,31 +522,185 @@ function ProblemsSection() {
         <motion.div variants={fadeUp} className="text-center mb-16">
           <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Diagnóstico</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            Los 6 Problemas Financieros que Destruyen Pymes
+            Los Problemas Financieros que Destruyen Pymes
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            El diagnóstico detecta y cuantifica cada uno con los datos reales de su empresa.
-          </p>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">El diagnóstico detecta y cuantifica cada uno con los datos reales de su empresa</p>
         </motion.div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sixProblems.map((p) => (
-            <motion.div
-              key={p.num}
-              variants={fadeUp}
-              className="group relative p-6 border-l-4 border-[#2800ff] bg-[#f8f7ff] hover:bg-[#eeedff] transition-colors"
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#1C00A8] flex items-center justify-center">
+            <motion.div key={p.num} variants={fadeUp} className="bg-[#f8f7ff] p-8 border-l-4 border-[#2800ff] hover:shadow-lg transition-shadow">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 bg-[#2800ff] flex items-center justify-center flex-shrink-0">
                   <p.icon className="w-6 h-6 text-white" />
                 </div>
-                <div>
-                  <span className="text-xs font-bold text-[#2800ff] tracking-wider">{p.num}</span>
-                  <h3 className="text-lg font-bold text-[#1C00A8] mt-1 mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                    {p.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
-                </div>
+                <span className="text-3xl font-bold text-[#1C00A8]/20" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                  {p.num}
+                </span>
               </div>
+              <h3 className="text-lg font-bold text-[#1C00A8] mb-3">{p.title}</h3>
+              <p className="text-sm text-gray-700 leading-relaxed">{p.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+        <motion.div variants={fadeUp} className="mt-12 text-center bg-[#1C00A8] text-white p-8">
+          <p className="text-lg">
+            Estos 6 problemas tienen algo en común: <span className="font-bold">no los ves hasta que es demasiado tarde</span>. El Diagnóstico de Claridad Financiera los detecta ahora, con tus datos reales, y te da el mapa exacto para evitarlos.
+          </p>
+        </motion.div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── WHAT DIAGNOSIS DOES ───
+function WhatDiagnosisDoes() {
+  return (
+    <section className="bg-[#f8f7ff] py-20 lg:py-28">
+      <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-16">
+          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Impacto</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            Lo que este diagnóstico hace por tu negocio
+          </h2>
+        </motion.div>
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <motion.div variants={fadeUp} className="space-y-6">
+            {[
+              { icon: Monitor, title: "Visibilidad Total", desc: "Ves exactamente dónde estás financieramente" },
+              { icon: TrendingUp, title: "Detección de Riesgos", desc: "Identifica problemas antes de que exploten" },
+              { icon: FileText, title: "Hoja de Ruta Concreta", desc: "Plan de acción específico para tu empresa" },
+              { icon: Users, title: "Asesoramiento Experto", desc: "Sesión directa con Director Financiero Senior" },
+            ].map((item, i) => (
+              <motion.div key={i} variants={fadeUp} className="flex gap-4">
+                <item.icon className="w-8 h-8 text-[#2800ff] flex-shrink-0" />
+                <div>
+                  <h3 className="font-bold text-[#1C00A8] mb-1">{item.title}</h3>
+                  <p className="text-gray-700 text-sm">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+          <motion.div variants={fadeUp}>
+            <img src={ANALYSIS_VISUAL} alt="Impacto" className="w-full object-contain" />
+          </motion.div>
+        </div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── BENEFITS ───
+function BenefitsSection() {
+  return (
+    <section className="bg-white py-20 lg:py-28">
+      <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-16">
+          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Comparativa</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            Lo que Habilita vs Lo que Evita
+          </h2>
+        </motion.div>
+        <div className="grid md:grid-cols-2 gap-8">
+          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-[#2800ff]">
+            <h3 className="text-xl font-bold text-[#1C00A8] mb-6 flex items-center gap-2">
+              <CheckCircle2 className="w-6 h-6 text-green-500" />
+              Lo que Habilita
+            </h3>
+            <div className="space-y-4">
+              {[
+                "Tomar decisiones basadas en datos reales",
+                "Detectar oportunidades de mejora inmediatas",
+                "Negociar mejor con tu banco",
+                "Planificar crecimiento sostenible",
+                "Optimizar márgenes y rentabilidad",
+                "Reducir riesgo financiero",
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeUp} className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700">{item}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-red-500">
+            <h3 className="text-xl font-bold text-[#1C00A8] mb-6 flex items-center gap-2">
+              <XCircle className="w-6 h-6 text-red-500" />
+              Lo que Evita
+            </h3>
+            <div className="space-y-4">
+              {[
+                "Sorpresas financieras inesperadas",
+                "Decisiones basadas en intuición",
+                "Crecer sin ganar dinero",
+                "Falta de liquidez cuando más la necesitas",
+                "Que el banco cierre el grifo",
+                "Terminar en concurso de acreedores",
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeUp} className="flex gap-3 items-start">
+                  <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700">{item}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── ANALYSIS ───
+const analysisBlocks = [
+  {
+    num: "01",
+    title: "Análisis de Solvencia",
+    desc: "Evaluamos tu capacidad para cumplir obligaciones a largo plazo.",
+  },
+  {
+    num: "02",
+    title: "Análisis de Liquidez",
+    desc: "Medimos tu capacidad para pagar deudas a corto plazo.",
+  },
+  {
+    num: "03",
+    title: "Análisis de Rentabilidad",
+    desc: "Cuantificamos el retorno real de tu inversión.",
+  },
+  {
+    num: "04",
+    title: "Análisis de Eficiencia",
+    desc: "Optimizamos el uso de tus activos y recursos.",
+  },
+  {
+    num: "05",
+    title: "Análisis de Crecimiento",
+    desc: "Evaluamos si tu crecimiento es financieramente sostenible.",
+  },
+  {
+    num: "06",
+    title: "Análisis Sectorial",
+    desc: "Comparamos tu desempeño vs. competidores en tu industria.",
+  },
+];
+
+function AnalysisSection() {
+  return (
+    <section id="analisis" className="bg-[#f8f7ff] py-20 lg:py-28">
+      <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-16">
+          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Metodología</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            Los 6 Bloques del Análisis
+          </h2>
+        </motion.div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {analysisBlocks.map((block) => (
+            <motion.div key={block.num} variants={fadeUp} className="bg-white p-8 border-l-4 border-[#2800ff]">
+              <span className="text-4xl font-bold text-[#1C00A8]/20 block mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                {block.num}
+              </span>
+              <h3 className="text-lg font-bold text-[#1C00A8] mb-3">{block.title}</h3>
+              <p className="text-sm text-gray-700">{block.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -339,82 +710,110 @@ function ProblemsSection() {
 }
 
 // ─── DELIVERABLES ───
-const deliverables = [
-  {
-    icon: FileBarChart,
-    title: "Informe en formato HTML con PDF descargable",
-    items: [
-      "Punto de Partida — Lo que hace este diagnóstico por tu negocio, explicación de cada una de las 6 áreas de análisis financiero y contexto sectorial.",
-      "Diagnóstico: el estado real del negocio con resumen ejecutivo, riesgos críticos identificados, comparativa con indicadores medios del sectorial, estado de las 6 áreas de análisis y hallazgos del diagnóstico: fortalezas y áreas de mejora.",
-      "Plan de Acción: acciones identificadas en el diagnóstico, tus próximos pasos a 30, 60 y 90 días.",
-      "Dashboard: los indicadores principales de tu negocio en números, presentación gráfica comparativa de tu Balance, Cuenta de Resultados y flujo de efectivo, también tus márgenes y ratios financieros.",
-      "Estados Financieros: el Balance de Situación y Cuenta de Resultados comparativos con análisis de variaciones principales y estado de flujo de efectivo de tu empresa.",
-      "Indicadores Financieros: el detalle técnico completo con 43 indicadores financieros de tu negocio con referencia y estado.",
-      "Glosario de términos: definiciones de los principales términos contables y financieros.",
-    ],
-  },
-  {
-    icon: Video,
-    title: "Sesión estratégica con un Director Financiero Senior",
-    items: [
-      "Revisión personalizada de 45 minutos.",
-      "Contexto estratégico y resolución de dudas.",
-      "Priorización de acciones inmediatas.",
-    ],
-  },
-];
-
 function DeliverablesSection() {
   return (
-    <section id="entregables" className="bg-[#1C00A8] py-20 lg:py-28">
-      <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="entregables" className="bg-white py-20 lg:py-28">
+      <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#7B8CFF] font-semibold text-sm tracking-widest uppercase mb-3">Entregables</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Entregables</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Lo que Recibe con el Diagnóstico
           </h2>
-          <p className="text-lg text-white/70">Dos entregables completos en 48 horas.</p>
         </motion.div>
-        <div className="grid md:grid-cols-2 gap-6">
-          {deliverables.map((d, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              className="bg-white/10 backdrop-blur-sm border border-white/15 p-6 lg:p-8 hover:bg-white/15 transition-colors"
-            >
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 bg-[#2800ff] flex items-center justify-center flex-shrink-0">
-                  <d.icon className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  {d.title}
-                </h3>
-              </div>
-              <ul className="space-y-2">
-                {d.items.map((item, j) => (
-                  <li key={j} className="flex items-start gap-2 text-white/80 text-sm">
-                    <span className="text-[#7B8CFF] mt-0.5 flex-shrink-0">—</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-[#2800ff]">
+            <div className="flex items-center gap-3 mb-4">
+              <Monitor className="w-6 h-6 text-[#2800ff]" />
+              <h3 className="text-lg font-bold text-[#1C00A8]">Informe Interactivo</h3>
+            </div>
+            <ul className="space-y-3 text-sm text-gray-700">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                Dashboard interactivo con todos tus ratios
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                Visualizaciones de datos en tiempo real
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                Análisis comparativo sectorial
+              </li>
+            </ul>
+          </motion.div>
+          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-[#2800ff]">
+            <div className="flex items-center gap-3 mb-4">
+              <FileText className="w-6 h-6 text-[#2800ff]" />
+              <h3 className="text-lg font-bold text-[#1C00A8]">Informes PDF</h3>
+            </div>
+            <ul className="space-y-3 text-sm text-gray-700">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                PDF de diagnóstico ejecutivo
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                PDF financiero detallado
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                Plan de acción recomendado
+              </li>
+            </ul>
+          </motion.div>
+          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-[#2800ff]">
+            <div className="flex items-center gap-3 mb-4">
+              <Video className="w-6 h-6 text-[#2800ff]" />
+              <h3 className="text-lg font-bold text-[#1C00A8]">Sesión Estratégica</h3>
+            </div>
+            <ul className="space-y-3 text-sm text-gray-700">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                45 minutos de videollamada
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                Revisión personalizada del informe
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                Priorización de acciones inmediatas
+              </li>
+            </ul>
+          </motion.div>
+          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-[#2800ff]">
+            <div className="flex items-center gap-3 mb-4">
+              <Users className="w-6 h-6 text-[#2800ff]" />
+              <h3 className="text-lg font-bold text-[#1C00A8]">Director Financiero</h3>
+            </div>
+            <ul className="space-y-3 text-sm text-gray-700">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                Profesional certificado y con experiencia
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                Especializado en Pymes españolas
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                Disponible para seguimiento
+              </li>
+            </ul>
+          </motion.div>
         </div>
-        <motion.div variants={fadeUp} className="mt-10 flex justify-center">
+        <motion.div variants={fadeUp} className="text-center">
           <a
             href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#0A66C2] hover:bg-[#084298] text-white font-semibold px-6 py-3 transition-colors"
+            className="inline-flex items-center gap-2 bg-[#0A66C2] hover:bg-[#095195] text-white font-semibold px-8 py-3 transition-colors"
           >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
-            </svg>
             Conoce a nuestro Director Financiero
+            <ArrowRight className="w-4 h-4" />
           </a>
         </motion.div>
-        <motion.p variants={fadeUp} className="text-center text-white/60 text-sm mt-8 italic">
+        <motion.p variants={fadeUp} className="text-center text-white/60 text-sm mt-8 italic bg-[#1C00A8] py-4 px-6 rounded">
           * La videollamada de 45 minutos está incluida en todas las opciones de diagnóstico.
         </motion.p>
       </AnimatedSection>
@@ -485,197 +884,6 @@ function ProcessSection() {
   );
 }
 
-// ─── 6 ANALYSIS BLOCKS ───
-const analysisBlocks = [
-  {
-    num: 1,
-    title: "Solidez Patrimonial",
-    desc: "Mide si tu empresa está bien capitalizada o depende en exceso de deuda. Analiza el nivel de endeudamiento y si el inmovilizado está financiado con recursos a largo plazo — la condición de equilibrio patrimonial.",
-    color: "#2800ff",
-  },
-  {
-    num: 2,
-    title: "Solvencia",
-    desc: "Mide si el total de activos supera al total de pasivos. Tu empresa es solvente cuando lo que tiene vale más que lo que debe, en el largo plazo. No mide si tienes caja ahora — mide si podrías hacer frente a todas tus deudas con lo que posees.",
-    color: "#1C00A8",
-  },
-  {
-    num: 3,
-    title: "Liquidez",
-    desc: "Mide si tu empresa tiene capacidad de pagar sus compromisos a corto plazo. Tres niveles: liquidez general, prueba ácida y disponibilidad inmediata. Un negocio puede ser rentable y quedarse sin liquidez.",
-    color: "#2800ff",
-  },
-  {
-    num: 4,
-    title: "Ciclo de Caja",
-    desc: "Mide cuántos días tarda el dinero en volver a tu empresa tras invertirlo en operaciones. Combina cobro de clientes + rotación de existencias − pago a proveedores. El ciclo negativo (proveedores financian más) es la posición favorable.",
-    color: "#1C00A8",
-  },
-  {
-    num: 5,
-    title: "Rentabilidad",
-    desc: "Mide cuánto gana tu empresa en relación a lo que factura y a lo que tiene invertido. Cuatro márgenes (Bruto → EBITDA → EBIT → Neto), cada uno señalando un problema distinto si cae. Más rentabilidad de activos (ROA) y del accionista (ROE).",
-    color: "#2800ff",
-  },
-  {
-    num: 6,
-    title: "Estructura de Costes",
-    desc: "Mide el peso y la composición de tus costes, y la sensibilidad del negocio ante una caída de ventas. El GAO cuantifica ese riesgo: si es 3 veces, una caída del 10% en ventas destruye el 30% del beneficio operativo.",
-    color: "#1C00A8",
-  },
-];
-
-function AnalysisSection() {
-  return (
-    <section id="analisis" className="bg-[#f8f7ff] py-20 lg:py-28">
-      <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Metodología</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            Los 6 Bloques del Análisis
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Cada bloque recibe un semáforo con análisis calibrado al contexto del sector. 43 ratios en total.
-          </p>
-        </motion.div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-4">
-          {analysisBlocks.map((b) => (
-            <motion.div
-              key={b.num}
-              variants={fadeUp}
-              className="bg-white p-6 border-t-4 hover:shadow-lg transition-shadow"
-              style={{ borderTopColor: b.color }}
-            >
-              <div
-                className="w-10 h-10 flex items-center justify-center text-white font-bold text-lg mb-4"
-                style={{ backgroundColor: b.color }}
-              >
-                {b.num}
-              </div>
-              <h3 className="text-base font-bold text-[#1C00A8] mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                {b.title}
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">{b.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-        <motion.p variants={fadeUp} className="text-center text-gray-500 text-sm mt-8 italic">
-          * 43 ratios en la tabla principal + 8 KPIs en el dashboard + variaciones interanuales de cada partida.
-        </motion.p>
-      </AnimatedSection>
-    </section>
-  );
-}
-
-// ─── WHAT THIS DIAGNOSIS DOES ───
-const whatDoesDiagnosis = [
-  {
-    title: "Qué cubre",
-    icon: Shield,
-    desc: "Expone la posición real de la empresa: rentabilidad, riesgo, capacidad de financiación y eficiencia operativa, medido con los mismos indicadores que usa la banca y los inversores.",
-  },
-  {
-    title: "Qué riesgo reduce",
-    icon: AlertTriangle,
-    desc: "Cuando los costes fijos son elevados, cualquier caída de ventas golpea el beneficio de forma desproporcionada. El diagnóstico lo cuantifica con tus datos y permite tomar medidas antes de que sea demasiado tarde. Riesgo operativo identificado y cuantificado.",
-  },
-  {
-    title: "Qué mejora",
-    icon: TrendingUp,
-    desc: "Mejora lo que más importa: tus decisiones, tu margen y el dinero que ves en tu cuenta. Te da claridad y visibilidad real de tu negocio.",
-  },
-];
-
-function WhatDiagnosisDoes() {
-  return (
-    <section className="bg-[#f8f7ff] py-20 lg:py-28">
-      <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Impacto</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            Lo que este diagnóstico hace por tu negocio
-          </h2>
-        </motion.div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {whatDoesDiagnosis.map((item, i) => {
-            const Icon = item.icon;
-            return (
-              <motion.div key={i} variants={fadeUp} className="bg-white border-l-4 border-[#2800ff] p-8 hover:shadow-lg transition-shadow">
-                <div className="flex items-center gap-3 mb-4">
-                  <Icon className="w-6 h-6 text-[#2800ff] flex-shrink-0" />
-                  <h3 className="text-lg font-bold text-[#1C00A8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                    {item.title}
-                  </h3>
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
-              </motion.div>
-            );
-          })}
-        </div>
-      </AnimatedSection>
-    </section>
-  );
-}
-
-// ─── BENEFITS ───
-const enables = [
-  "Negociar financiación bancaria con los ratios de riesgo que usa la banca.",
-  "Decidir contrataciones o inversiones conociendo el impacto en el punto de equilibrio.",
-  "Iniciar conversaciones con socios o inversores con un informe financiero sólido.",
-  "Fijar precios conociendo el coste real y el margen de contribución.",
-  "Planificar sobre una base financiera medida y comparable.",
-];
-
-const avoids = [
-  "Tomar deuda sin saber si la empresa puede pagarla (DFN/EBITDA).",
-  "Repartir dividendos sin soporte de patrimonio neto o caja operativa.",
-  "Ignorar una crisis de liquidez hasta que no queda margen de maniobra.",
-  "Dimensionar costes fijos sin conocer la fragilidad que el GAO revela.",
-];
-
-function BenefitsSection() {
-  return (
-    <section className="bg-white py-20 lg:py-28">
-      <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Beneficios</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            Lo que Habilita vs. Lo que Evita
-          </h2>
-        </motion.div>
-        <div className="grid md:grid-cols-2 gap-8">
-          <motion.div variants={fadeUp} className="border-t-4 border-[#2800ff] bg-[#f8f7ff] p-8">
-            <h3 className="text-xl font-bold text-[#2800ff] uppercase tracking-wider mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Lo que Habilita
-            </h3>
-            <ul className="space-y-4">
-              {enables.map((e, i) => (
-                <li key={i} className="flex items-start gap-3 text-gray-700">
-                  <CheckCircle2 className="w-5 h-5 text-[#2800ff] mt-0.5 flex-shrink-0" />
-                  <span className="text-sm leading-relaxed">{e}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-          <motion.div variants={fadeUp} className="border-t-4 border-red-600 bg-red-50/50 p-8">
-            <h3 className="text-xl font-bold text-red-600 uppercase tracking-wider mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Lo que Evita
-            </h3>
-            <ul className="space-y-4">
-              {avoids.map((a, i) => (
-                <li key={i} className="flex items-start gap-3 text-gray-700">
-                  <XCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm leading-relaxed">{a}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-      </AnimatedSection>
-    </section>
-  );
-}
-
 // ─── PRICING ───
 function PricingSection() {
   return (
@@ -690,19 +898,13 @@ function PricingSection() {
         <div className="grid md:grid-cols-3 gap-6">
           {/* Diagnóstico Único */}
           <motion.div variants={fadeUp} className="bg-white border border-gray-200 p-8 flex flex-col">
-            <h3 className="text-lg font-bold text-[#1C00A8] mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Diagnóstico Único
-            </h3>
-            <p className="text-sm text-gray-500 mb-6">Análisis puntual completo</p>
-            <div className="mb-6">
-              <span className="text-4xl font-bold text-[#1C00A8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>447 €</span>
-              <span className="text-sm text-gray-500 ml-1">+ IVA</span>
+            <h3 className="text-xl font-bold text-[#1C00A8] mb-2">Diagnóstico Único</h3>
+            <p className="text-sm text-gray-600 mb-6">Perfecto para una evaluación puntual</p>
+            <div className="mb-8">
+              <span className="text-4xl font-bold text-[#2800ff]">447€</span>
+              <span className="text-gray-600 ml-2">+ IVA</span>
             </div>
-            <ul className="space-y-3 mb-8 flex-1">
-              <li className="flex items-start gap-2 text-sm text-gray-700">
-                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
-                1 diagnóstico completo
-              </li>
+            <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-start gap-2 text-sm text-gray-700">
                 <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
                 Informe interactivo + PDFs
@@ -720,28 +922,24 @@ function PricingSection() {
               href={TALLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center bg-white border-2 border-[#1C00A8] text-[#1C00A8] hover:bg-[#1C00A8] hover:text-white font-semibold py-3 transition-colors"
+              className="w-full bg-[#2800ff] hover:bg-[#2000d6] text-white font-semibold py-3 text-center transition-colors"
             >
-              Solicitar
+              Solicitar Diagnóstico
             </a>
           </motion.div>
 
           {/* Plan Semestral */}
-          <motion.div variants={fadeUp} className="bg-white border border-gray-200 p-8 flex flex-col">
-            <h3 className="text-lg font-bold text-[#1C00A8] mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Plan Semestral
-            </h3>
-            <p className="text-sm text-gray-500 mb-6">2 diagnósticos al año</p>
-            <div className="mb-2">
-              <span className="text-4xl font-bold text-[#1C00A8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>347 €</span>
-              <span className="text-sm text-gray-500 ml-1">+ IVA</span>
+          <motion.div variants={fadeUp} className="bg-white border-2 border-[#2800ff] p-8 flex flex-col relative">
+            <div className="absolute top-4 right-4 bg-[#2800ff] text-white px-3 py-1 text-xs font-bold">
+              RECOMENDADO
             </div>
-            <p className="text-sm text-gray-500 mb-6">por diagnóstico</p>
-            <ul className="space-y-3 mb-8 flex-1">
-              <li className="flex items-start gap-2 text-sm text-gray-700">
-                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
-                2 diagnósticos completos
-              </li>
+            <h3 className="text-xl font-bold text-[#1C00A8] mb-2">Plan Semestral</h3>
+            <p className="text-sm text-gray-600 mb-6">Monitoreo continuo de tu salud financiera</p>
+            <div className="mb-8">
+              <span className="text-4xl font-bold text-[#2800ff]">347€</span>
+              <span className="text-gray-600 ml-2">+ IVA</span>
+            </div>
+            <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-start gap-2 text-sm text-gray-700">
                 <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
                 Informes interactivos + PDFs
@@ -759,31 +957,21 @@ function PricingSection() {
               href={TALLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center bg-white border-2 border-[#1C00A8] text-[#1C00A8] hover:bg-[#1C00A8] hover:text-white font-semibold py-3 transition-colors"
+              className="w-full bg-[#2800ff] hover:bg-[#2000d6] text-white font-semibold py-3 text-center transition-colors"
             >
-              Solicitar
+              Solicitar Diagnóstico
             </a>
           </motion.div>
 
-          {/* Plan Trimestral — DESTACADO */}
-          <motion.div variants={fadeUp} className="relative bg-[#1C00A8] text-white p-8 flex flex-col">
-            <div className="absolute top-0 right-0 bg-[#2800ff] text-white text-xs font-bold px-4 py-1.5 uppercase tracking-wider">
-              Recomendado
+          {/* Plan Trimestral */}
+          <motion.div variants={fadeUp} className="bg-[#1C00A8] text-white p-8 flex flex-col">
+            <h3 className="text-xl font-bold mb-2">Plan Trimestral</h3>
+            <p className="text-sm text-white/80 mb-6">Máximo control y optimización financiera</p>
+            <div className="mb-8">
+              <span className="text-4xl font-bold text-[#7B8CFF]">267€</span>
+              <span className="text-white/80 ml-2">+ IVA</span>
             </div>
-            <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Plan Trimestral
-            </h3>
-            <p className="text-sm text-white/70 mb-6">4 diagnósticos al año</p>
-            <div className="mb-2">
-              <span className="text-4xl font-bold text-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>267 €</span>
-              <span className="text-sm text-white/70 ml-1">+ IVA</span>
-            </div>
-            <p className="text-sm text-[#7B8CFF] mb-6">por diagnóstico</p>
-            <ul className="space-y-3 mb-8 flex-1">
-              <li className="flex items-start gap-2 text-sm text-white/90">
-                <CheckCircle2 className="w-4 h-4 text-[#7B8CFF] mt-0.5 flex-shrink-0" />
-                4 diagnósticos completos
-              </li>
+            <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-start gap-2 text-sm text-white/90">
                 <CheckCircle2 className="w-4 h-4 text-[#7B8CFF] mt-0.5 flex-shrink-0" />
                 Informes interactivos + PDFs
@@ -801,24 +989,16 @@ function PricingSection() {
               href={TALLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center bg-[#2800ff] hover:bg-[#2000d6] text-white font-semibold py-3 transition-colors"
+              className="w-full bg-[#7B8CFF] hover:bg-[#6a7db8] text-white font-semibold py-3 text-center transition-colors"
             >
-              Solicitar Plan Trimestral
+              Solicitar Diagnóstico
             </a>
           </motion.div>
         </div>
-
-        {/* Note about monthly clients */}
-        <motion.div variants={fadeUp} className="mt-10 bg-white border-l-4 border-[#2800ff] p-6">
-          <p className="text-gray-700 text-sm leading-relaxed">
-            <strong className="text-[#1C00A8]">Clientes del servicio mensual de CFO externo:</strong> el diagnóstico trimestral está incluido de forma gratuita en su suscripción.
-          </p>
-        </motion.div>
-
-        <motion.div variants={fadeUp} className="mt-6 bg-[#eeedff] p-6">
-          <p className="text-gray-700 text-sm leading-relaxed">
-            Una auditoría financiera básica para pyme cuesta entre <strong className="text-[#1C00A8]">3.000 € y 6.000 €</strong>.
-            Este diagnóstico cubre 43 ratios, 8 KPIs, análisis sectorial y videollamada con el CFO en solo <strong className="text-[#1C00A8]">48 horas</strong>.
+        <motion.div variants={fadeUp} className="mt-12 bg-[#EEE0FF] border-l-4 border-[#2800ff] p-8">
+          <p className="text-gray-800">
+            Una auditoría financiera básica para pyme cuesta entre <strong>3.000 € y 6.000 €</strong>. <br />
+            Este diagnóstico cubre 43 ratios, 8 KPIs, análisis sectorial y sesión estratégica con un Director Financiero Senior en solo <strong>48 horas</strong>.
           </p>
         </motion.div>
       </AnimatedSection>
@@ -830,34 +1010,38 @@ function PricingSection() {
 function CTASection() {
   return (
     <section
-      className="relative py-24 lg:py-32 overflow-hidden"
+      className="relative py-20 lg:py-28 overflow-hidden"
       style={{
         backgroundImage: `url(${CTA_BG})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0d0060]/85 to-[#1C00A8]/90" />
-      <AnimatedSection className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-        <motion.div variants={fadeUp}>
-          <img src={LOGO_WHITE} alt="Ascente CFO" className="h-10 mx-auto mb-8 object-contain" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0d0060]/95 to-[#1C00A8]/90" />
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            Solicite su Diagnóstico Hoy
+            ¿Listo para obtener claridad financiera?
           </h2>
-          <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-xl mx-auto">
-            Transforme la incertidumbre en claridad financiera para su pyme en solo 48 horas.
+          <p className="text-lg text-white/80 mb-10 max-w-2xl mx-auto">
+            Descubre exactamente dónde estás financieramente y obtén un plan de acción concreto en solo 48 horas.
           </p>
           <a
             href={TALLY_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#2800ff] hover:bg-[#2000d6] text-white font-bold px-10 py-5 text-lg transition-colors"
+            className="inline-flex items-center gap-2 bg-[#2800ff] hover:bg-[#2000d6] text-white font-semibold px-10 py-4 text-lg transition-colors"
           >
-            Acceder al Formulario
+            Solicitar Diagnóstico Ahora
             <ArrowRight className="w-5 h-5" />
           </a>
         </motion.div>
-      </AnimatedSection>
+      </div>
     </section>
   );
 }
@@ -865,20 +1049,40 @@ function CTASection() {
 // ─── FOOTER ───
 function Footer() {
   return (
-    <footer className="bg-[#0d0060] py-8">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <img src={LOGO_WHITE} alt="Ascente CFO" className="h-6 object-contain" />
-        <div className="flex items-center gap-4">
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
-            title="Contactar por WhatsApp"
-          >
-            <img src={WHATSAPP_LOGO} alt="WhatsApp" className="h-8 object-contain" />
-          </a>
-          <p className="text-white/50 text-sm">
+    <footer className="bg-[#0d0060] text-white/60 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <img src={LOGO_WHITE} alt="Ascente CFO" className="h-8 object-contain mb-4" />
+            <p className="text-sm">Diagnóstico de Claridad Financiera para Pymes</p>
+          </div>
+          <div>
+            <h4 className="text-white font-semibold mb-4">Producto</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">Características</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Planes</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Preguntas Frecuentes</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white font-semibold mb-4">Empresa</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">Sobre Nosotros</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Contacto</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">Privacidad</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Términos</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="border-t border-white/10 pt-8">
+          <p className="text-center text-sm">
             © {new Date().getFullYear()} Ascente CFO® — Todos los derechos reservados
           </p>
         </div>
@@ -895,6 +1099,9 @@ export default function Home() {
       <HeroSection />
       <StatsSection />
       <RootProblemSection />
+      <WhatIsDiagnosisSection />
+      <WhyIsImportantSection />
+      <KeyQuestionsSection />
       <ProblemsSection />
       <WhatDiagnosisDoes />
       <BenefitsSection />
