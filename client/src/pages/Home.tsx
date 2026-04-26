@@ -629,33 +629,33 @@ function BenefitsSection() {
 const analysisBlocks = [
   {
     num: "01",
-    title: "Análisis de Solvencia",
-    desc: "Evaluamos tu capacidad para cumplir obligaciones a largo plazo.",
+    title: "Solidez Patrimonial",
+    desc: "Mide si tu empresa está bien capitalizada o depende en exceso de deuda. Analiza el nivel de endeudamiento y si el inmovilizado está financiado con recursos a largo plazo — la condición de equilibrio patrimonial.",
   },
   {
     num: "02",
-    title: "Análisis de Liquidez",
-    desc: "Medimos tu capacidad para pagar deudas a corto plazo.",
+    title: "Solvencia",
+    desc: "Mide si el total de activos supera al total de pasivos. Tu empresa es solvente cuando lo que tiene vale más que lo que debe, en el largo plazo. No mide si tienes caja ahora — mide si podrías hacer frente a todas tus deudas con lo que posees.",
   },
   {
     num: "03",
-    title: "Análisis de Rentabilidad",
-    desc: "Cuantificamos el retorno real de tu inversión.",
+    title: "Liquidez",
+    desc: "Mide si tu empresa tiene capacidad de pagar sus compromisos a corto plazo. Tres niveles: liquidez general, prueba ácida y disponibilidad inmediata. Un negocio puede ser rentable y quedarse sin liquidez.",
   },
   {
     num: "04",
-    title: "Análisis de Eficiencia",
-    desc: "Optimizamos el uso de tus activos y recursos.",
+    title: "Ciclo de Caja",
+    desc: "Mide cuántos días tarda el dinero en volver a tu empresa tras invertirlo en operaciones. Combina cobro de clientes + rotación de existencias − pago a proveedores. El ciclo negativo (proveedores financian más) es la posición favorable.",
   },
   {
     num: "05",
-    title: "Análisis de Crecimiento",
-    desc: "Evaluamos si tu crecimiento es financieramente sostenible.",
+    title: "Rentabilidad",
+    desc: "Mide cuánto gana tu empresa en relación a lo que factura y a lo que tiene invertido. Cuatro márgenes (Margen Bruto → Margen Operativo Bruto → Resultado de Explotación → Margen Neto), cada uno señalando un problema distinto si cae. Incluye rentabilidad de activos y del accionista.",
   },
   {
     num: "06",
-    title: "Análisis Sectorial",
-    desc: "Comparamos tu desempeño vs. competidores en tu industria.",
+    title: "Estructura de Costes",
+    desc: "Mide el peso y la composición de tus costes, y la sensibilidad del negocio ante una caída de ventas. El Grado de Apalancamiento Operativo cuantifica ese riesgo: si es 3 veces, una caída del 10% en ventas destruye el 30% del beneficio operativo.",
   },
 ];
 
