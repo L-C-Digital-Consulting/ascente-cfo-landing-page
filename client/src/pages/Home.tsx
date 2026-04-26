@@ -244,7 +244,7 @@ function RootProblemSection() {
         <motion.div variants={fadeUp} className="grid lg:grid-cols-5 gap-10 items-center">
           <div className="lg:col-span-3 space-y-6">
             <p className="text-lg text-gray-700 leading-relaxed">
-              La raíz del problema es que casi ninguna Pyme mide sus ratios financieros, y no tienen claridad real del estado en que se encuentra su negocio. Están vendiendo más, pero con márgenes asfixiados, falta de liquidez y morosidad creciente, no obtienen beneficios y se dispara el número de concursos.
+              La raíz del problema es que casi ninguna empresa mide sus ratios financieros, y no tienen claridad real del estado en que se encuentra su negocio. Están vendiendo más, pero con márgenes asfixiados, falta de liquidez y morosidad creciente, no obtienen beneficios y se dispara el número de concursos.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
               En este contexto, el Diagnóstico de Claridad Financiera se convierte en la herramienta clave para detectar a tiempo si tu empresa está en esa zona de "crecer sin ganar dinero", identificar dónde se le va el margen y la caja, y trazar una hoja de ruta concreta para evitar acabar en pérdidas o en concurso.
