@@ -39,6 +39,7 @@ const PROCESS_VISUAL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861
 const CTA_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/cta_bg-dTM6XQZtDsLVuXizNMU6cV.webp";
 const VINTAGE_ACCOUNTING = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/vintage-accounting_579c0da4.jpg";
 const MODERN_CFO_PRESENTATION = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/cfo-hispanic-white-40s_5440af83.jpg";
+const CFO_DASHBOARD_PRESENTATION = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/cfo-dashboard-presentation_c33aa15a.png";
 
 const TALLY_LINK = "https://tally.so/r/xXyWaJ";
 const WHATSAPP_LINK = "https://wa.me/34635580883?text=Hola%2C%20estoy%20viendo%20la%20demo%20de%20Ascente%20CFO%C2%AE%20y%20tengo%20una%20consulta.";
@@ -559,7 +560,7 @@ function WhatDiagnosisDoes() {
             ))}
           </motion.div>
           <motion.div variants={fadeUp}>
-            <img src={MODERN_CFO_PRESENTATION} alt="CFO Moderno Presentando Resultados Financieros" className="w-full object-contain" />
+            <img src={CFO_DASHBOARD_PRESENTATION} alt="CFO Presentando Diagnóstico de Claridad Financiera con Dashboard" className="w-full object-contain" />
           </motion.div>
         </div>
       </AnimatedSection>
