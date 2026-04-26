@@ -37,6 +37,8 @@ const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd
 const ANALYSIS_VISUAL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/analysis_visual-j2t5e5SjLANxscfmmRgggu.webp";
 const PROCESS_VISUAL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/process_visual-D5SBNVriRFz7PheorVEk5j.webp";
 const CTA_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/cta_bg-dTM6XQZtDsLVuXizNMU6cV.webp";
+const FINANCIAL_STATEMENT_PL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/financial-statement-pl_5e081b03.png";
+const FINANCIAL_DASHBOARD = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/financial-dashboard_b681f4ba.jpg";
 
 const TALLY_LINK = "https://tally.so/r/xXyWaJ";
 const WHATSAPP_LINK = "https://wa.me/34635580883?text=Hola%2C%20estoy%20viendo%20la%20demo%20de%20Ascente%20CFO%C2%AE%20y%20tengo%20una%20consulta.";
@@ -252,8 +254,8 @@ function RootProblemSection() {
           </div>
           <motion.div variants={fadeUp} className="lg:col-span-2">
             <img
-              src={ANALYSIS_VISUAL}
-              alt="Dashboard financiero"
+              src={FINANCIAL_STATEMENT_PL}
+              alt="Estado de Resultados Financiero"
               className="w-full object-contain"
             />
           </motion.div>
@@ -557,7 +559,7 @@ function WhatDiagnosisDoes() {
             ))}
           </motion.div>
           <motion.div variants={fadeUp}>
-            <img src={ANALYSIS_VISUAL} alt="Impacto" className="w-full object-contain" />
+            <img src={FINANCIAL_DASHBOARD} alt="Dashboard Financiero" className="w-full object-contain" />
           </motion.div>
         </div>
       </AnimatedSection>
