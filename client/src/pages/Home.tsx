@@ -93,10 +93,11 @@ function Navbar() {
         <span className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "'DM Sans', sans-serif" }}>L&amp;C CFO®</span>
         <div className="hidden md:flex items-center gap-8 text-sm text-white/80">
           <a href="#problema" className="hover:text-white transition-colors">El Problema</a>
+          <a href="#diagnostico" className="hover:text-white transition-colors">El Diagnóstico</a>
           <a href="#entregables" className="hover:text-white transition-colors">Entregables</a>
           <a href="#proceso" className="hover:text-white transition-colors">Proceso</a>
-          <a href="#miguel" className="hover:text-white transition-colors">Quién lo hace</a>
-          <a href="#precios" className="hover:text-white transition-colors">Planes</a>
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Quién lo hace</a>
+          <a href="#planes" className="hover:text-white transition-colors">Planes</a>
           <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
         </div>
         <div className="flex items-center gap-3">
@@ -175,7 +176,7 @@ function HeroSection() {
 // ─── STATS ───
 function StatsSection() {
   return (
-    <section id="estadisticas" className="bg-white py-20 lg:py-28">
+    <section id="problema" className="bg-white py-20 lg:py-28">
       <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
           <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Datos Alarmantes 2025</p>
@@ -238,7 +239,7 @@ function StatsSection() {
 // ─── ROOT PROBLEM ───
 function RootProblemSection() {
   return (
-    <section id="problema" className="bg-[#f8f7ff] py-20 lg:py-28">
+    <section className="bg-[#f8f7ff] py-20 lg:py-28">
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-12">
           <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">El Origen</p>
@@ -271,7 +272,7 @@ function RootProblemSection() {
 // ─── WHAT IS DIAGNOSIS ───
 function WhatIsDiagnosisSection() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section id="diagnostico" className="bg-white py-20 lg:py-28">
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
           <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Concepto</p>
@@ -844,7 +845,7 @@ function ProcessSection() {
 // ─── PRICING ───
 function PricingSection() {
   return (
-    <section id="precios" className="bg-[#f8f7ff] py-20 lg:py-28">
+    <section id="planes" className="bg-[#f8f7ff] py-20 lg:py-28">
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
           <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Inversión</p>
@@ -966,7 +967,7 @@ function PricingSection() {
 // ─── ABOUT MIGUEL ───
 function AboutMiguelSection() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section id="miguel" className="bg-white py-20 lg:py-28">
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
           <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Tu Interlocutor</p>
@@ -988,7 +989,7 @@ function AboutMiguelSection() {
               <h3 className="text-2xl font-bold text-[#1C00A8] mb-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 Miguel Ángel López Sainz
               </h3>
-              <p className="text-[#2800ff] font-semibold">Director Financiero Senior · Ascente CFO®</p>
+              <p className="text-[#2800ff] font-semibold">Director Financiero Senior · L&amp;C CFO®</p>
             </div>
             <div className="space-y-3">
               {[
@@ -1193,7 +1194,7 @@ function Footer() {
         </div>
         <div className="border-t border-white/10 pt-8">
           <p className="text-center text-sm">
-            © {new Date().getFullYear()} Ascente CFO® — Todos los derechos reservados
+            © {new Date().getFullYear()} L&amp;C CFO® — Todos los derechos reservados
           </p>
         </div>
       </div>
@@ -1207,18 +1208,27 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
+      {/* BLOQUE 1 — EL PROBLEMA */}
       <StatsSection />
       <RootProblemSection />
+      <ProblemsSection />
+      {/* BLOQUE 2 — EL DIAGNÓSTICO */}
       <WhatIsDiagnosisSection />
       <WhyIsImportantSection />
       <KeyQuestionsSection />
-      <ProblemsSection />
       <WhatDiagnosisDoes />
+      {/* BLOQUE 3 — QUÉ INCLUYE */}
       <BenefitsSection />
       <AnalysisSection />
       <DeliverablesSection />
+      {/* BLOQUE 4 — CÓMO FUNCIONA */}
       <ProcessSection />
+      {/* BLOQUE 5 — QUIÉN LO HACE */}
+      <AboutMiguelSection />
+      {/* BLOQUE 6 — PLANES */}
       <PricingSection />
+      {/* BLOQUE 7 — CIERRE */}
+      <FAQSection />
       <CTASection />
       <Footer />
     </div>
