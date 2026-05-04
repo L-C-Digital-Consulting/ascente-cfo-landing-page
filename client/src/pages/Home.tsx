@@ -144,7 +144,7 @@ function HeroSection() {
           <span className="block text-white font-bold text-2xl tracking-tight mb-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>L&amp;C CFO®</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Diagnóstico de<br />
-            <span className="text-[#7B8CFF]">Claridad Financiera</span>®
+            <span className="text-[#7B8CFF]">Claridad Financiera</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
             Análisis financiero profesional para tu negocio. Descubre la situación real de tu empresa mediante un diagnóstico detallado y una sesión estratégica con un Director Financiero — en solo 48 horas.
@@ -1067,7 +1067,7 @@ const faqItems = [
   },
   {
     q: "¿Cuál es la diferencia entre esto y lo que hace mi gestoría?",
-    a: "Tu gestoría registra y declara. El Diagnóstico de Claridad Financiera® interpreta: cuantifica los riesgos, detecta dónde se va el margen, compara con benchmarks sectoriales y propone acciones concretas. Es análisis financiero estratégico, no contabilidad fiscal.",
+    a: "Tu gestoría registra y declara. El Diagnóstico de Claridad Financiera interpreta: cuantifica los riesgos, detecta dónde se va el margen, compara con benchmarks sectoriales y propone acciones concretas. Es análisis financiero estratégico, no contabilidad fiscal.",
   },
   {
     q: "¿El diagnóstico es solo para empresas con problemas?",
