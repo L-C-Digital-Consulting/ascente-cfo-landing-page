@@ -1211,7 +1211,7 @@ function Footer() {
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="hover:text-white transition-colors">Sobre Nosotros</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contacto</a></li>
+              <li><a href="mailto:miguel.lopez@lycconsulting.com" className="hover:text-white transition-colors">Contacto</a></li>
             </ul>
           </div>
           <div>
