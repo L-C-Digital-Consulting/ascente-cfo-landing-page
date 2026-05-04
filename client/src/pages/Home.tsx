@@ -96,7 +96,7 @@ function Navbar() {
           <a href="#diagnostico" className="hover:text-white transition-colors">El Diagnóstico</a>
           <a href="#entregables" className="hover:text-white transition-colors">Entregables</a>
           <a href="#proceso" className="hover:text-white transition-colors">Proceso</a>
-          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Quién lo hace</a>
+          <a href="#miguel" className="hover:text-white transition-colors">Quién lo hace</a>
           <a href="#planes" className="hover:text-white transition-colors">Planes</a>
           <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
         </div>
@@ -160,7 +160,7 @@ function HeroSection() {
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
-              href="#estadisticas"
+              href="#problema"
               className="inline-flex items-center gap-2 text-white/70 hover:text-white font-medium transition-colors"
             >
               Descubrir más
@@ -532,7 +532,7 @@ function ProblemsSection() {
         </div>
         <motion.div variants={fadeUp} className="mt-12 text-center bg-[#1C00A8] text-white p-8">
           <p className="text-lg">
-            Estos 5 problemas tienen algo en común: <span className="font-bold">no los ves hasta que es demasiado tarde</span>. El Diagnóstico de Claridad Financiera los detecta ahora, con tus datos reales, y te da el mapa exacto para evitarlos.
+            Estos 6 problemas tienen algo en común: <span className="font-bold">no los ves hasta que es demasiado tarde</span>. El Diagnóstico de Claridad Financiera los detecta ahora, con tus datos reales, y te da el mapa exacto para evitarlos.
           </p>
         </motion.div>
       </AnimatedSection>
@@ -1085,7 +1085,7 @@ const faqItems = [
   },
   {
     q: "¿Cuál es la diferencia entre los tres planes?",
-    a: "El Diagnóstico Único (447 €) es un análisis puntual. El Plan Semestral (347 €/diagnóstico) incluye dos diagnósticos al año — uno por semestre. El Plan Anual (267 €/diagnóstico) incluye cuatro — uno por trimestre. Los tres incluyen exactamente lo mismo: informe completo HTML + PDF y sesión estratégica de 45 min.",
+    a: "El Diagnóstico Único (447 €) es un análisis puntual. El Plan Semestral (347 €/diagnóstico) incluye dos diagnósticos al año — uno por semestre. El Plan Trimestral (267 €/diagnóstico) incluye cuatro — uno por trimestre. Los tres incluyen exactamente lo mismo: informe completo HTML + PDF y sesión estratégica de 45 min.",
   },
 ];
 
