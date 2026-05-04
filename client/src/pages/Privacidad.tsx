@@ -45,7 +45,7 @@ export default function Privacidad() {
               <tbody>
                 {[
                   ["Denominación social", "L&C Digital & Consulting, S.L."],
-                  ["NIF", "B22652069Y"],
+                  ["NIF", "B22652069"],
                   ["Domicilio", "Calle del Poeta Joan Maragall 23, 28020, Madrid"],
                   ["Correo electrónico", "miguel.lopez@lycconsulting.com"],
                   [
@@ -323,7 +323,7 @@ export default function Privacidad() {
 
       {/* Footer */}
       <footer className="bg-gray-50 border-t border-gray-200 py-6 px-6 text-center text-xs text-gray-400">
-        L&amp;C Digital &amp; Consulting, S.L. · NIF B22652069Y · Madrid, España
+        L&amp;C Digital &amp; Consulting, S.L. · NIF B22652069 · Madrid, España
       </footer>
     </div>
   );

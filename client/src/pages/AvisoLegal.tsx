@@ -26,7 +26,6 @@ export default function AvisoLegal() {
         </div>
       </header>
 
-      {/* Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
         <h1 className="text-3xl font-bold text-[#1C00A8] mb-2">Aviso Legal</h1>
         <p className="text-sm text-gray-500 mb-10">
@@ -38,22 +37,25 @@ export default function AvisoLegal() {
           <h2 className="text-lg font-semibold text-gray-900 mb-4 border-l-4 border-[#1C00A8] pl-3">
             1. Datos identificativos del titular
           </h2>
+          <p className="text-sm text-gray-600 mb-4">
+            En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la
+            Sociedad de la Información y del Comercio Electrónico (LSSICE), se facilitan a
+            continuación los datos identificativos del titular de este sitio web:
+          </p>
           <div className="overflow-x-auto rounded-lg border border-gray-200">
             <table className="w-full text-sm">
               <tbody>
                 {[
                   ["Denominación social", "L&C Digital & Consulting, S.L."],
-                  ["NIF", "B22652069Y"],
+                  ["NIF", "B22652069"],
                   ["Domicilio social", "Calle del Poeta Joan Maragall 23, 28020, Madrid"],
                   ["Correo electrónico", "miguel.lopez@lycconsulting.com"],
-                  ["Teléfono", "+34 635 580 883"],
-                  [
-                    "Actividad",
-                    "Servicios de consultoría, análisis empresarial y herramientas digitales",
-                  ],
+                  ["Actividad principal", "Servicios de consultoría, análisis empresarial y herramientas digitales"],
+                  ["Inscripción registral", "Inscrita en el Registro Mercantil de Madrid, Tomo [pendiente], Folio [pendiente], Hoja M-859195"],
+                  ["EUID", "ES28065.082379878"],
                 ].map(([label, value], i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                    <td className="px-4 py-3 font-medium text-gray-700 w-1/3">{label}</td>
+                    <td className="px-4 py-3 font-medium text-gray-700 w-2/5">{label}</td>
                     <td className="px-4 py-3 text-gray-600">{value}</td>
                   </tr>
                 ))}
@@ -62,115 +64,146 @@ export default function AvisoLegal() {
           </div>
         </section>
 
-        {/* 2. Datos registrales */}
+        {/* 2. Objeto */}
         <section className="mb-10">
           <h2 className="text-lg font-semibold text-gray-900 mb-4 border-l-4 border-[#1C00A8] pl-3">
-            2. Datos registrales
+            2. Objeto y ámbito de aplicación
           </h2>
+          <p className="text-sm text-gray-600 mb-3">
+            El presente Aviso Legal regula el acceso y uso del sitio web titularidad de L&amp;C
+            Digital &amp; Consulting, S.L. (en adelante, «el Titular» o «el Prestador»). El acceso al
+            sitio web implica la aceptación plena y sin reservas de todas las condiciones incluidas en
+            este Aviso Legal en la versión publicada en el momento del acceso. El Titular se reserva
+            el derecho a modificar en cualquier momento las condiciones aquí establecidas.
+          </p>
           <p className="text-sm text-gray-600">
-            L&amp;C Digital &amp; Consulting, S.L. está inscrita en el Registro Mercantil de
-            Madrid.{" "}
-            <span className="bg-yellow-100 text-yellow-800 px-1 rounded text-xs font-medium">
-              [PENDIENTE: completar con Tomo, Folio, Hoja y Sección del Registro Mercantil]
-            </span>
+            El sitio web puede utilizarse para conocer los servicios ofrecidos bajo las marcas
+            comerciales del Titular, solicitar información y acceder al proceso de contratación
+            electrónica de dichos servicios.
           </p>
         </section>
 
-        {/* 3. Objeto */}
+        {/* 3. Propiedad intelectual */}
         <section className="mb-10">
           <h2 className="text-lg font-semibold text-gray-900 mb-4 border-l-4 border-[#1C00A8] pl-3">
-            3. Objeto y ámbito de aplicación
+            3. Propiedad intelectual e industrial
           </h2>
-          <p className="text-sm text-gray-600 mb-2">
-            El presente Aviso Legal regula el acceso y uso del sitio web accesible a través de
-            la dirección <strong>lccfo.es</strong> (en adelante, el «Sitio»), titularidad de
-            L&amp;C Digital &amp; Consulting, S.L. (en adelante, el «Titular»).
+          <p className="text-sm text-gray-600 mb-3">
+            Todos los contenidos del sitio web —incluyendo, sin limitación, textos, fotografías,
+            gráficos, imágenes, iconos, tecnología, software, diseños, logotipos y nombres
+            comerciales— son titularidad del Titular o de terceros que han autorizado su uso, y están
+            protegidos por la legislación española e internacional sobre propiedad intelectual e
+            industrial.
           </p>
           <p className="text-sm text-gray-600">
-            El acceso al Sitio implica la aceptación, sin reservas, del presente Aviso Legal.
-            Si el usuario no está de acuerdo con alguno de los términos aquí establecidos,
-            deberá abstenerse de utilizar el Sitio.
+            Queda expresamente prohibida la reproducción, distribución, comunicación pública,
+            transformación o cualquier otra forma de explotación de los contenidos sin autorización
+            escrita previa del Titular. El incumplimiento dará lugar a las responsabilidades
+            legalmente establecidas.
           </p>
         </section>
 
-        {/* 4. Propiedad intelectual */}
+        {/* 4. Condiciones de uso */}
         <section className="mb-10">
           <h2 className="text-lg font-semibold text-gray-900 mb-4 border-l-4 border-[#1C00A8] pl-3">
-            4. Propiedad intelectual e industrial
+            4. Condiciones de uso del sitio web
           </h2>
-          <p className="text-sm text-gray-600 mb-2">
-            Todos los contenidos del Sitio —incluyendo, sin carácter limitativo, textos,
-            imágenes, gráficos, logotipos, iconos, marcas y software— son propiedad del
-            Titular o de terceros que han autorizado su uso, y están protegidos por la
-            normativa española e internacional de propiedad intelectual e industrial.
+          <p className="text-sm text-gray-600 mb-3">
+            El usuario se compromete a hacer un uso adecuado del sitio web y, en particular, a:
           </p>
-          <p className="text-sm text-gray-600 mb-2">
-            Las denominaciones <strong>«L&amp;C CFO®»</strong>,{" "}
-            <strong>«Diagnóstico de Claridad Financiera®»</strong> y demás marcas registradas
-            que puedan figurar en el Sitio son propiedad del Titular o de empresas de su
-            grupo. Su uso no autorizado constituye una infracción de los derechos de propiedad
-            intelectual e industrial.
-          </p>
-          <p className="text-sm text-gray-600">
-            Queda prohibida la reproducción total o parcial, distribución, comunicación
-            pública, transformación o cualquier otra forma de explotación de los contenidos
-            del Sitio sin la autorización expresa y por escrito del Titular.
-          </p>
-        </section>
-
-        {/* 5. Responsabilidad */}
-        <section className="mb-10">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4 border-l-4 border-[#1C00A8] pl-3">
-            5. Responsabilidad y garantías
-          </h2>
-          <p className="text-sm text-gray-600 mb-2">
-            El Titular pone todos los medios razonables para garantizar la disponibilidad,
-            continuidad y correcto funcionamiento del Sitio, aunque no puede garantizar la
-            ausencia de interrupciones o errores técnicos.
-          </p>
-          <p className="text-sm text-gray-600 mb-2">
-            La información publicada en el Sitio tiene carácter meramente informativo y no
-            constituye asesoramiento fiscal, jurídico, financiero ni de inversión. El Titular
-            no asume responsabilidad alguna derivada del uso de dicha información.
-          </p>
-          <p className="text-sm text-gray-600">
-            El Titular no se hace responsable de los daños que pudieran derivarse del acceso
-            a sitios de terceros enlazados desde el Sitio, cuyo contenido y políticas son
-            ajenos al Titular.
-          </p>
-        </section>
-
-        {/* 6. Legislación */}
-        <section className="mb-10">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4 border-l-4 border-[#1C00A8] pl-3">
-            6. Legislación aplicable y jurisdicción
-          </h2>
-          <p className="text-sm text-gray-600 mb-2">
-            El presente Aviso Legal se rige por la legislación española, en particular por:
-          </p>
-          <ul className="space-y-1 text-sm text-gray-600 mb-3">
+          <ul className="space-y-2 text-sm text-gray-600">
             {[
-              "Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE).",
-              "Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (RGPD).",
-              "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).",
+              "No utilizar el sitio web con fines ilícitos o contrarios a este Aviso Legal.",
+              "No introducir, almacenar o difundir mediante el sitio web datos o contenidos que vulneren derechos de terceros o sean difamatorios, obscenos o contrarios al orden público.",
+              "No realizar acciones que puedan dañar, inutilizar o deteriorar el sitio web o impedir su normal funcionamiento.",
+              "No intentar acceder, obtener o modificar sin autorización los datos de otros usuarios o a otras secciones restringidas del sistema.",
             ].map((item, i) => (
               <li key={i} className="flex gap-2">
-                <span className="text-[#1C00A8] font-bold shrink-0">·</span>
+                <span className="font-medium text-gray-500 shrink-0">{String.fromCharCode(97 + i)})</span>
                 <span>{item}</span>
               </li>
             ))}
           </ul>
+        </section>
+
+        {/* 5. Exclusión de garantías */}
+        <section className="mb-10">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4 border-l-4 border-[#1C00A8] pl-3">
+            5. Exclusión de garantías y de responsabilidad
+          </h2>
+          <p className="text-sm text-gray-600 mb-3">
+            El Titular no garantiza la disponibilidad y continuidad ininterrumpida del funcionamiento
+            del sitio web y queda exonerado de toda responsabilidad por daños y perjuicios de
+            cualquier naturaleza derivados de la falta de disponibilidad o continuidad del sitio web.
+          </p>
+          <p className="text-sm text-gray-600 mb-3">
+            Los contenidos del sitio web tienen carácter meramente informativo y no constituyen
+            asesoramiento jurídico, financiero, fiscal ni de ningún otro tipo. El Titular no será
+            responsable de las decisiones adoptadas por el usuario en base a la información contenida
+            en el sitio web.
+          </p>
           <p className="text-sm text-gray-600">
-            Para la resolución de cualquier controversia derivada del uso del Sitio, las
-            partes se someten, con renuncia expresa a cualquier otro fuero, a los Juzgados y
-            Tribunales de la ciudad de Madrid.
+            El sitio web puede contener enlaces a sitios web de terceros. El Titular no controla
+            dichos sitios, no asume responsabilidad alguna por su contenido y recomienda al usuario
+            que consulte las políticas de privacidad y condiciones de uso de dichos sitios.
+          </p>
+        </section>
+
+        {/* 6. Protección de datos */}
+        <section className="mb-10">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4 border-l-4 border-[#1C00A8] pl-3">
+            6. Protección de datos personales
+          </h2>
+          <p className="text-sm text-gray-600">
+            El tratamiento de los datos personales recabados a través del sitio web se rige por la{" "}
+            <a href="/privacidad" className="text-[#1C00A8] underline underline-offset-2">
+              Política de Privacidad
+            </a>{" "}
+            del Titular, disponible en este mismo sitio web. Dicha Política informa al usuario sobre
+            los tratamientos realizados, sus finalidades, bases jurídicas, derechos y los
+            procedimientos para ejercerlos, de conformidad con el Reglamento (UE) 2016/679 (RGPD) y
+            la Ley Orgánica 3/2018 (LOPDGDD).
+          </p>
+        </section>
+
+        {/* 7. Cookies */}
+        <section className="mb-10">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4 border-l-4 border-[#1C00A8] pl-3">
+            7. Política de cookies
+          </h2>
+          <p className="text-sm text-gray-600">
+            El sitio web puede utilizar cookies y tecnologías similares. La información detallada
+            sobre las cookies utilizadas, su finalidad, el plazo de conservación y las opciones del
+            usuario para gestionarlas se encuentra en la{" "}
+            <a href="/cookies" className="text-[#1C00A8] underline underline-offset-2">
+              Política de Cookies
+            </a>
+            , accesible desde el pie de página del sitio web.
+          </p>
+        </section>
+
+        {/* 8. Legislación */}
+        <section className="mb-10">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4 border-l-4 border-[#1C00A8] pl-3">
+            8. Legislación aplicable y jurisdicción
+          </h2>
+          <p className="text-sm text-gray-600 mb-3">
+            Las presentes condiciones se rigen por la legislación española. Para la resolución de
+            cualquier controversia derivada del acceso o uso del sitio web, el Titular y el usuario,
+            con renuncia expresa a cualquier otro fuero que pudiera corresponderles, se someten a los
+            Juzgados y Tribunales de la ciudad de Madrid, sin perjuicio de los derechos que asistan
+            al usuario como consumidor conforme a la normativa vigente.
+          </p>
+          <p className="text-sm text-gray-500 text-xs">
+            Normativa de referencia: Ley 34/2002 (LSSICE), Ley 7/1998 (LCGC), Real Decreto
+            Legislativo 1/2007 (TRLGDCU), Reglamento (UE) 2016/679 (RGPD), Ley Orgánica 3/2018
+            (LOPDGDD).
           </p>
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="bg-gray-50 border-t border-gray-200 py-6 px-6 text-center text-xs text-gray-400">
-        L&amp;C Digital &amp; Consulting, S.L. · NIF B22652069Y · Madrid, España
+        L&amp;C Digital &amp; Consulting, S.L. · NIF B22652069 · Madrid, España
       </footer>
     </div>
   );

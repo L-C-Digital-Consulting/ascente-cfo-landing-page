@@ -1219,12 +1219,13 @@ function Footer() {
               <li><a href="/aviso-legal" className="hover:text-white transition-colors">Aviso Legal</a></li>
               <li><a href={PRIVACY_POLICY_URL} className="hover:text-white transition-colors">Privacidad</a></li>
               <li><a href="/cookies" className="hover:text-white transition-colors">Cookies</a></li>
+              <li><a href="https://drive.google.com/file/d/TODO_CONDICIONES_URL/view" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Condiciones Generales</a></li>
             </ul>
           </div>
         </div>
         <div className="border-t border-white/10 pt-8">
           <p className="text-center text-sm">
-            © {new Date().getFullYear()} L&amp;C CFO® — Todos los derechos reservados
+            © {new Date().getFullYear()} L&amp;C Digital &amp; Consulting, S.L. — NIF B22652069 — Todos los derechos reservados
           </p>
         </div>
       </div>
