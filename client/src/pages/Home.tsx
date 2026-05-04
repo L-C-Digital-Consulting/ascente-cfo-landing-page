@@ -42,9 +42,10 @@ const MODERN_CFO_PRESENTATION = "https://d2xsxph8kpxj0f.cloudfront.net/310519663
 const CFO_DASHBOARD_PRESENTATION = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/cfo-dashboard-presentation_c33aa15a.png";
 
 const TALLY_LINK = "https://tally.so/r/ZjGg0z";
-const WHATSAPP_LINK = "https://wa.me/34635580883?text=Hola%2C%20estoy%20viendo%20la%20demo%20de%20Ascente%20CFO%C2%AE%20y%20tengo%20una%20consulta.";
+const WHATSAPP_LINK = "https://wa.me/34635580883?text=Hola%2C%20me%20interesa%20el%20Diagn%C3%B3stico%20de%20Claridad%20Financiera%C2%AE%20y%20tengo%20una%20pregunta.";
 const WHATSAPP_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/whatsapp_logo_09eed037.png";
 const LINKEDIN_URL = "https://www.linkedin.com/in/miguel-ángel-lópez-sainz-0bb25341";
+const PRIVACY_POLICY_URL = "https://drive.google.com/file/d/1TT0JQTvREZFzacdKwBSnCQLj8MI9Eez9/view";
 
 // Animation variants
 const fadeUp = {
@@ -89,13 +90,14 @@ function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <img src={LOGO_WHITE} alt="Ascente CFO" className="h-8 object-contain" />
+        <span className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "'DM Sans', sans-serif" }}>L&amp;C CFO®</span>
         <div className="hidden md:flex items-center gap-8 text-sm text-white/80">
           <a href="#problema" className="hover:text-white transition-colors">El Problema</a>
           <a href="#entregables" className="hover:text-white transition-colors">Entregables</a>
           <a href="#proceso" className="hover:text-white transition-colors">Proceso</a>
-          <a href="#analisis" className="hover:text-white transition-colors">Análisis</a>
+          <a href="#miguel" className="hover:text-white transition-colors">Quién lo hace</a>
           <a href="#precios" className="hover:text-white transition-colors">Planes</a>
+          <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
         </div>
         <div className="flex items-center gap-3">
           <a
@@ -138,7 +140,7 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <img src={LOGO_WHITE} alt="Ascente CFO" className="h-12 mx-auto mb-8 object-contain" />
+          <span className="block text-white font-bold text-2xl tracking-tight mb-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>L&amp;C CFO®</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Diagnóstico de<br />
             <span className="text-[#7B8CFF]">Claridad Financiera</span>®
@@ -492,7 +494,7 @@ const sixProblems = [
     desc: "Cuando las ventas bajan 10%, tus pérdidas caen 30%. Tus costes fijos son demasiado altos. Una recesión puede llevarte a la quiebra más rápido de lo que crees.",
     icon: Shield,
   },
-  ];
+];
 
 function ProblemsSection() {
   return (
@@ -952,9 +954,162 @@ function PricingSection() {
         </div>
         <motion.div variants={fadeUp} className="mt-12 bg-[#EEE0FF] border-l-4 border-[#2800ff] p-8">
           <p className="text-gray-800">
-            Una auditoría financiera básica para pyme cuesta entre <strong>3.000 € y 6.000 €</strong>. <br />
-            Este diagnóstico cubre 43 ratios, 8 KPIs, análisis sectorial y sesión estratégica con un Director Financiero Senior en solo <strong>48 horas</strong>.
+            Una auditoría financiera básica para pyme cuesta entre <strong>3.000 € y 6.000 €</strong>. Un CFO externo mensual, entre <strong>2.000 € y 4.000 € al mes</strong>. <br className="hidden sm:block" />
+            El Diagnóstico cubre 43 ratios, análisis sectorial y sesión con Director Financiero Senior en <strong>48 horas — desde 447 €</strong>. La puerta correcta antes de cualquier compromiso mayor.
           </p>
+        </motion.div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── ABOUT MIGUEL ───
+function AboutMiguelSection() {
+  return (
+    <section className="bg-white py-20 lg:py-28">
+      <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-16">
+          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Tu Interlocutor</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            Quién Hace Tu Diagnóstico
+          </h2>
+          <p className="text-lg text-gray-600">No una gestoría. No un software. Un Director Financiero Senior con 20 años de experiencia real.</p>
+        </motion.div>
+        <div className="grid lg:grid-cols-5 gap-12 items-center">
+          <motion.div variants={fadeUp} className="lg:col-span-2">
+            <img
+              src={MODERN_CFO_PRESENTATION}
+              alt="Miguel Ángel López Sainz — Director Financiero Senior"
+              className="w-full object-cover grayscale-[15%]"
+            />
+          </motion.div>
+          <motion.div variants={fadeUp} className="lg:col-span-3 space-y-6">
+            <div>
+              <h3 className="text-2xl font-bold text-[#1C00A8] mb-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                Miguel Ángel López Sainz
+              </h3>
+              <p className="text-[#2800ff] font-semibold">Director Financiero Senior · Ascente CFO®</p>
+            </div>
+            <div className="space-y-3">
+              {[
+                { icon: Shield, text: "Ex PwC (Big 4) — Auditoría Senior. Base de rigor técnico y metodología financiera." },
+                { icon: TrendingUp, text: "Grupo Televisa · 10 años — CFO Argentina + Controller Miami. Finanzas en escala real." },
+                { icon: BarChart3, text: "CFO en México, Panamá y Uruguay — operaciones en más de 20 países simultáneamente." },
+                { icon: FileBarChart, text: "Especialista en FP&A, M&A, reestructuración de capital y transformación digital con IA." },
+                { icon: Monitor, text: "Máster en Finanzas — ESADE España · Certificado en Machine Learning e IA para Directivos." },
+              ].map((item, i) => (
+                <motion.div key={i} variants={fadeUp} className="flex gap-3 items-start">
+                  <item.icon className="w-5 h-5 text-[#2800ff] flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-sm leading-relaxed">{item.text}</p>
+                </motion.div>
+              ))}
+            </div>
+            <p className="text-gray-600 italic text-sm border-l-4 border-[#2800ff] pl-4">
+              "Lo que hago hoy: convertir los números de tu empresa en decisiones claras. Basado en Madrid, asesorando pymes españolas."
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#0A66C2] hover:bg-[#095195] text-white font-semibold px-6 py-3 text-sm transition-colors"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.05-8.836 0-9.754h3.554v1.391c.435-.671 1.213-1.627 2.948-1.627 2.154 0 3.767 1.41 3.767 4.44v5.55zM5.337 8.855c-1.144 0-1.915-.759-1.915-1.71 0-.955.771-1.71 1.958-1.71 1.187 0 1.914.755 1.939 1.71 0 .951-.752 1.71-1.982 1.71zm1.581 11.597H3.635V9.558h3.283v10.894zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                </svg>
+                Perfil LinkedIn
+              </a>
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white font-semibold px-6 py-3 text-sm transition-colors"
+              >
+                <img src={WHATSAPP_LOGO} alt="WhatsApp" className="w-4 h-4 object-contain" />
+                Preguntar por WhatsApp
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── FAQ ───
+const faqItems = [
+  {
+    q: "¿Qué documentos necesito para el diagnóstico?",
+    a: "Necesitas el Balance de Situación y la Cuenta de Resultados (PyG) de los dos últimos ejercicios cerrados. Opcionalmente, el detalle de deuda financiera y la plantilla de costes fijos y variables — para un análisis más completo. Si tus datos están en formato Cegid, A3, ContaPlus u otro ERP, los procesamos directamente.",
+  },
+  {
+    q: "¿En qué formato recibo el informe?",
+    a: "Recibirás por email un informe HTML interactivo con 8 secciones (Diagnóstico, Dashboard, Gráficos, Ratios, Plan de Acción…) con acceso durante 30 días, más los PDFs descargables. El informe incluye 43 indicadores financieros con semáforos de estado y comparativa sectorial.",
+  },
+  {
+    q: "¿Qué pasa en la sesión de 45 minutos?",
+    a: "Es una videollamada con Miguel Ángel donde revisamos juntos el informe: los hallazgos más relevantes, el plan de acción priorizado a 30/60/90 días, y tus preguntas. No es una presentación — es una sesión de trabajo estratégico sobre los datos reales de tu empresa.",
+  },
+  {
+    q: "¿Cuál es la diferencia entre esto y lo que hace mi gestoría?",
+    a: "Tu gestoría registra y declara. El Diagnóstico de Claridad Financiera® interpreta: cuantifica los riesgos, detecta dónde se va el margen, compara con benchmarks sectoriales y propone acciones concretas. Es análisis financiero estratégico, no contabilidad fiscal.",
+  },
+  {
+    q: "¿El diagnóstico es solo para empresas con problemas?",
+    a: "No. El 60% de empresas que hacen el diagnóstico están en crecimiento — y descubren que su crecimiento consume más caja de la que genera, o que su margen real es la mitad de lo que creían. La claridad financiera es igual de valiosa cuando las cosas van bien: te permite crecer de forma sostenible.",
+  },
+  {
+    q: "¿Cuánto tiempo tarda en estar listo el informe?",
+    a: "48 horas desde que recibimos los documentos completos. Recibirás el informe por email junto con el enlace para reservar la videollamada en el horario que mejor te venga.",
+  },
+  {
+    q: "¿Qué incluye el Plan Anual (267 €/diagnóstico)?",
+    a: "4 diagnósticos al año — uno por trimestre — con 4 sesiones estratégicas incluidas. Es la opción para quien quiere seguimiento continuo de la salud financiera sin el compromiso de un CFO externo mensual. El precio por diagnóstico pasa de 447 € a 267 €.",
+  },
+];
+
+function FAQSection() {
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <section id="faq" className="bg-[#f8f7ff] py-20 lg:py-28">
+      <AnimatedSection className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-16">
+          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Preguntas Frecuentes</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            Lo que Suelen Preguntar
+          </h2>
+        </motion.div>
+        <div className="space-y-3">
+          {faqItems.map((item, i) => (
+            <motion.div key={i} variants={fadeUp} className="bg-white border border-gray-200">
+              <button
+                className="w-full text-left px-6 py-5 flex justify-between items-start gap-4 font-semibold text-[#1C00A8] hover:bg-[#f8f7ff] transition-colors"
+                onClick={() => setOpen(open === i ? null : i)}
+              >
+                <span>{item.q}</span>
+                <ChevronDown
+                  className={`w-5 h-5 text-[#2800ff] flex-shrink-0 transition-transform duration-200 ${open === i ? "rotate-180" : ""}`}
+                />
+              </button>
+              {open === i && (
+                <div className="px-6 pb-5 text-gray-700 text-sm leading-relaxed border-t border-gray-100 pt-4">
+                  {item.a}
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+        <motion.div variants={fadeUp} className="mt-12 text-center">
+          <p className="text-gray-600 mb-4">¿Tienes otra pregunta?</p>
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white font-semibold px-8 py-3 transition-colors"
+          >
+            <img src={WHATSAPP_LOGO} alt="WhatsApp" className="w-5 h-5 object-contain" />
+            Preguntar por WhatsApp
+          </a>
         </motion.div>
       </AnimatedSection>
     </section>
@@ -1008,7 +1163,7 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <img src={LOGO_WHITE} alt="Ascente CFO" className="h-8 object-contain mb-4" />
+            <span className="block text-white font-bold text-xl tracking-tight mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>L&amp;C CFO®</span>
             <p className="text-sm">Diagnóstico de Claridad Financiera para Pymes</p>
           </div>
           <div>
