@@ -1219,7 +1219,7 @@ function Footer() {
               <li><a href="/aviso-legal" className="hover:text-white transition-colors">Aviso Legal</a></li>
               <li><a href={PRIVACY_POLICY_URL} className="hover:text-white transition-colors">Privacidad</a></li>
               <li><a href="/cookies" className="hover:text-white transition-colors">Cookies</a></li>
-              <li><a href="https://drive.google.com/file/d/1mQ7RkXnQs4fxr4NXfqDIPMDed3OBsJRd/view" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Condiciones Generales</a></li>
+              <li><a href="/condiciones" className="hover:text-white transition-colors">Condiciones Generales</a></li>
             </ul>
           </div>
         </div>

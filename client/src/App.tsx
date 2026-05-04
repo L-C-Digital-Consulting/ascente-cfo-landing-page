@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Privacidad from "./pages/Privacidad";
 import AvisoLegal from "./pages/AvisoLegal";
 import Cookies from "./pages/Cookies";
+import Condiciones from "./pages/Condiciones";
 
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
       <Route path={"/privacidad"} component={Privacidad} />
       <Route path={"/aviso-legal"} component={AvisoLegal} />
       <Route path={"/cookies"} component={Cookies} />
+      <Route path={"/condiciones"} component={Condiciones} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
