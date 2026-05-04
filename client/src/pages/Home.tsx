@@ -495,6 +495,12 @@ const sixProblems = [
     desc: "Cuando las ventas bajan 10%, tus pérdidas caen 30%. Tus costes fijos son demasiado altos. Una recesión puede llevarte a la quiebra más rápido de lo que crees.",
     icon: Shield,
   },
+  {
+    num: "06",
+    title: "Decisiones sin Visibilidad Financiera",
+    desc: "Las decisiones más costosas no son las malas — son las que se toman sin información. Contratar, invertir o pedir financiación sin datos financieros claros no es falta de capacidad: es falta de sistema. El 68% de los cierres de pymes ocurren en empresas que 'iban bien' según su dueño.",
+    icon: HelpCircle,
+  },
 ];
 
 function ProblemsSection() {
