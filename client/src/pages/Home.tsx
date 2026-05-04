@@ -1065,7 +1065,7 @@ const faqItems = [
   },
   {
     q: "¿Sirve si mi contabilidad no está del todo ordenada?",
-    a: "El análisis funciona siempre que tengas los estados financieros de los 2 últimos ejercicios. Si hay lagunas o falta desglose de cuentas, te indicamos exactamente qué corregir antes de arrancar. Nunca iniciamos el análisis con datos incompletos.",
+    a: "El análisis requiere Balance de Situación y Cuenta de PyG de los 2 últimos ejercicios cerrados, con desglose mínimo de 3 dígitos PGC. Sin ese nivel de detalle, el diagnóstico no puede realizarse. Si tienes dudas sobre si tu documentación cumple los requisitos, consúltanos antes de contratar — te lo confirmamos en el momento.",
   },
   {
     q: "¿Cuál es la diferencia entre los tres planes?",
