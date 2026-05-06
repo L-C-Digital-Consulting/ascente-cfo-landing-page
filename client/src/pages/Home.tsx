@@ -90,7 +90,7 @@ function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <a href="#"><img src="/logo-lc-negro.png" alt="L&C CFO®" className="h-11 w-auto object-contain mix-blend-screen" /></a>
+        <a href="#"><img src="/logo-lc-negro.png" alt="L&C CFO®" className="h-14 w-auto object-contain mix-blend-screen" /></a>
         <div className="hidden md:flex items-center gap-8 text-sm text-white/80">
           <a href="#problema" className="hover:text-white transition-colors">El Problema</a>
           <a href="#diagnostico" className="hover:text-white transition-colors">El Diagnóstico</a>
@@ -1194,7 +1194,7 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <img src="/logo-lc-negro.png" alt="L&C CFO®" className="h-16 w-auto object-contain mb-3 mix-blend-screen" />
+            <img src="/logo-lc-negro.png" alt="L&C CFO®" className="h-20 w-auto object-contain mb-3 mix-blend-screen" />
             <p className="text-sm">Diagnóstico de Claridad Financiera para Pymes</p>
           </div>
           <div>
