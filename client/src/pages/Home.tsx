@@ -1039,7 +1039,7 @@ function AboutMiguelSection() {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white font-semibold px-6 py-3 text-sm transition-colors"
+                className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-[#25D366] border border-[#25D366] font-semibold px-6 py-3 text-sm transition-colors"
               >
                 <img src={WHATSAPP_LOGO} alt="WhatsApp" className="w-4 h-4 object-contain" />
                 Preguntar por WhatsApp
@@ -1125,7 +1125,7 @@ function FAQSection() {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white font-semibold px-8 py-3 transition-colors"
+            className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-[#25D366] border border-[#25D366] font-semibold px-8 py-3 transition-colors"
           >
             <img src={WHATSAPP_LOGO} alt="WhatsApp" className="w-5 h-5 object-contain" />
             Preguntar por WhatsApp
