@@ -3,11 +3,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* 
- * DESIGN SYSTEM: "Financial Clarity Blueprint"
- * Brand: Ascente CFO® — Diagnóstico de Claridad Financiera®
- * Primary: #1C00A8 (dark corporate blue)
- * Accent: #2800ff (vibrant blue)
+/*
+ * DESIGN SYSTEM: "Executive Black & Gold"
+ * Brand: L&C CFO® — Diagnóstico de Claridad Financiera®
+ * Primary: #0A0A0A (executive black)
+ * Accent: #C9A84C (muted gold / premium)
  * Typography: DM Sans (titles), Inter (body)
  * Style: Swiss Design meets Bloomberg dashboard
  */
@@ -51,45 +51,45 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-heading: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
-  --color-ascente-dark: oklch(0.25 0.18 270);
-  --color-ascente-vibrant: oklch(0.45 0.3 270);
-  --color-ascente-light: oklch(0.95 0.02 270);
+  --color-ascente-dark: oklch(0.10 0.005 75);
+  --color-ascente-vibrant: oklch(0.72 0.10 85);
+  --color-ascente-light: oklch(0.97 0.01 85);
 }
 
 :root {
-  --primary: oklch(0.25 0.18 270);
+  --primary: oklch(0.10 0.005 75);
   --primary-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.35 0.22 270);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --chart-1: oklch(0.45 0.3 270);
-  --chart-2: oklch(0.35 0.22 270);
-  --chart-3: oklch(0.55 0.2 270);
-  --chart-4: oklch(0.65 0.15 270);
-  --chart-5: oklch(0.75 0.1 270);
+  --sidebar-primary: oklch(0.72 0.10 85);
+  --sidebar-primary-foreground: oklch(0.10 0.005 75);
+  --chart-1: oklch(0.72 0.10 85);
+  --chart-2: oklch(0.60 0.08 85);
+  --chart-3: oklch(0.50 0.07 85);
+  --chart-4: oklch(0.40 0.05 85);
+  --chart-5: oklch(0.30 0.03 85);
   --radius: 0.5rem;
-  --background: oklch(0.99 0.002 270);
-  --foreground: oklch(0.15 0.01 270);
+  --background: oklch(0.99 0.003 85);
+  --foreground: oklch(0.15 0.01 75);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.01 270);
+  --card-foreground: oklch(0.15 0.01 75);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.01 270);
-  --secondary: oklch(0.96 0.01 270);
-  --secondary-foreground: oklch(0.25 0.18 270);
-  --muted: oklch(0.96 0.005 270);
-  --muted-foreground: oklch(0.5 0.03 270);
-  --accent: oklch(0.94 0.02 270);
-  --accent-foreground: oklch(0.25 0.18 270);
+  --popover-foreground: oklch(0.15 0.01 75);
+  --secondary: oklch(0.97 0.008 85);
+  --secondary-foreground: oklch(0.10 0.005 75);
+  --muted: oklch(0.97 0.004 85);
+  --muted-foreground: oklch(0.5 0.02 85);
+  --accent: oklch(0.95 0.015 85);
+  --accent-foreground: oklch(0.10 0.005 75);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.91 0.01 270);
-  --input: oklch(0.91 0.01 270);
-  --ring: oklch(0.45 0.3 270);
+  --border: oklch(0.91 0.008 85);
+  --input: oklch(0.91 0.008 85);
+  --ring: oklch(0.72 0.10 85);
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.15 0.01 270);
-  --sidebar-accent: oklch(0.96 0.01 270);
-  --sidebar-accent-foreground: oklch(0.25 0.18 270);
-  --sidebar-border: oklch(0.91 0.01 270);
-  --sidebar-ring: oklch(0.45 0.3 270);
+  --sidebar-foreground: oklch(0.15 0.01 75);
+  --sidebar-accent: oklch(0.97 0.008 85);
+  --sidebar-accent-foreground: oklch(0.10 0.005 75);
+  --sidebar-border: oklch(0.91 0.008 85);
+  --sidebar-ring: oklch(0.72 0.10 85);
 }
 
 @layer base {

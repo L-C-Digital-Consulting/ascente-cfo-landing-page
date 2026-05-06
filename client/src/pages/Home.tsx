@@ -1,8 +1,8 @@
 /*
- * DESIGN SYSTEM: "Financial Clarity Blueprint"
- * Brand: Ascente CFO® — Diagnóstico de Claridad Financiera®
- * Primary: #1C00A8 (dark corporate blue)
- * Accent: #2800ff (vibrant blue)
+ * DESIGN SYSTEM: "Executive Black & Gold"
+ * Brand: L&C CFO® — Diagnóstico de Claridad Financiera®
+ * Primary: #0A0A0A (executive black)
+ * Accent: #C9A84C (muted gold / premium)
  * Typography: DM Sans (titles), Inter (body)
  * Style: Swiss Design meets Bloomberg dashboard
  */
@@ -86,7 +86,7 @@ function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#0d0060]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        scrolled ? "bg-[#0A0A0A]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
@@ -113,7 +113,7 @@ function Navbar() {
             href={TALLY_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#2800ff] hover:bg-[#2000d6] text-white font-semibold px-6 py-2 text-sm transition-colors"
+            className="bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-6 py-2 text-sm transition-colors"
           >
             Solicitar Diagnóstico
           </a>
@@ -134,7 +134,7 @@ function HeroSection() {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0d0060]/80 via-[#1C00A8]/70 to-[#0d0060]/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/90 via-[#0A0A0A]/60 to-[#0A0A0A]/95" />
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -144,7 +144,7 @@ function HeroSection() {
           <span className="block text-white font-bold text-2xl tracking-tight mb-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>L&amp;C CFO®</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Diagnóstico de<br />
-            <span className="text-[#7B8CFF]">Claridad Financiera</span>
+            <span className="text-[#C9A84C]">Claridad Financiera</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
             Análisis financiero profesional para tu negocio. Descubre la situación real de tu empresa mediante un diagnóstico detallado y una sesión estratégica con un Director Financiero — en solo 48 horas.
@@ -154,7 +154,7 @@ function HeroSection() {
               href={TALLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#2800ff] hover:bg-[#2000d6] text-white font-semibold px-8 py-4 text-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-8 py-4 text-lg transition-colors"
             >
               Solicitar Diagnóstico
               <ArrowRight className="w-5 h-5" />
@@ -179,8 +179,8 @@ function StatsSection() {
     <section id="problema" className="bg-white py-20 lg:py-28">
       <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Datos Alarmantes 2025</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Datos Alarmantes 2025</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Las pymes españolas están en riesgo
           </h2>
         </motion.div>
@@ -208,9 +208,9 @@ function StatsSection() {
             <motion.div
               key={i}
               variants={fadeUp}
-              className="text-center p-8 border-t-4 border-[#2800ff] bg-[#f8f7ff]"
+              className="text-center p-8 border-t-4 border-[#C9A84C] bg-[#FAF8F4]"
             >
-              <span className="block text-5xl lg:text-6xl font-bold text-[#1C00A8] mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              <span className="block text-5xl lg:text-6xl font-bold text-[#C9A84C] mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 {item.stat}
               </span>
               <p className="text-lg text-gray-700 mb-4">{item.text}</p>
@@ -218,7 +218,7 @@ function StatsSection() {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-[#2800ff] hover:underline"
+                className="inline-flex items-center gap-1 text-sm text-[#C9A84C] hover:underline"
               >
                 Fuente: {item.source}
                 <ExternalLink className="w-3 h-3" />
@@ -228,7 +228,7 @@ function StatsSection() {
         </div>
         <motion.div variants={fadeUp} className="mt-16 text-center max-w-3xl mx-auto">
           <p className="text-lg text-gray-700 leading-relaxed">
-            Sí estás en etapa de crecimiento o estás pasando por problemas financieros y operativos, <span className="font-bold text-[#1C00A8]">es igual de importante realizar el Diagnóstico de Claridad Financiera</span>. Si no quieres terminar así.
+            Sí estás en etapa de crecimiento o estás pasando por problemas financieros y operativos, <span className="font-bold text-[#C9A84C]">es igual de importante realizar el Diagnóstico de Claridad Financiera</span>. Si no quieres terminar así.
           </p>
         </motion.div>
       </AnimatedSection>
@@ -239,11 +239,11 @@ function StatsSection() {
 // ─── ROOT PROBLEM ───
 function RootProblemSection() {
   return (
-    <section className="bg-[#f8f7ff] py-20 lg:py-28">
+    <section className="bg-[#FAF8F4] py-20 lg:py-28">
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-12">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">El Origen</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">El Origen</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             La Raíz del Problema
           </h2>
         </motion.div>
@@ -275,8 +275,8 @@ function WhatIsDiagnosisSection() {
     <section id="diagnostico" className="bg-white py-20 lg:py-28">
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Concepto</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Concepto</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             ¿Qué es el Diagnóstico de Claridad Financiera?
           </h2>
           <p className="text-lg text-gray-600">La herramienta que te da visibilidad total de tu negocio</p>
@@ -295,7 +295,7 @@ function WhatIsDiagnosisSection() {
                 { icon: Clock, text: "Entrega en 48 Horas — Rapidez sin sacrificar profundidad" },
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeUp} className="flex gap-4 items-start">
-                  <item.icon className="w-6 h-6 text-[#2800ff] flex-shrink-0 mt-1" />
+                  <item.icon className="w-6 h-6 text-[#C9A84C] flex-shrink-0 mt-1" />
                   <p className="text-gray-700">{item.text}</p>
                 </motion.div>
               ))}
@@ -318,18 +318,18 @@ function WhatIsDiagnosisSection() {
 // ─── WHY IS IMPORTANT ───
 function WhyIsImportantSection() {
   return (
-    <section className="bg-[#f8f7ff] py-20 lg:py-28">
+    <section className="bg-[#FAF8F4] py-20 lg:py-28">
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Importancia</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Importancia</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             ¿Por Qué es Tan Importante?
           </h2>
           <p className="text-lg text-gray-600">Evita convertirte en una estadística</p>
         </motion.div>
         <div className="space-y-12">
           <motion.div variants={fadeUp} className="bg-white p-8">
-            <h3 className="text-xl font-bold text-[#1C00A8] mb-4">¿Qué te Falta Sin Claridad Financiera?</h3>
+            <h3 className="text-xl font-bold text-[#C9A84C] mb-4">¿Qué te Falta Sin Claridad Financiera?</h3>
             <div className="space-y-3">
               {[
                 "No sabes si realmente ganas dinero o solo 'parece' que ganas",
@@ -346,7 +346,7 @@ function WhyIsImportantSection() {
             </div>
           </motion.div>
 
-          <motion.div variants={fadeUp} className="bg-[#1C00A8] text-white p-8">
+          <motion.div variants={fadeUp} className="bg-[#0A0A0A] text-white p-8">
             <h3 className="text-xl font-bold mb-4">Por Qué es Crítico Ahora</h3>
             <p className="mb-6">El Diagnóstico de Claridad Financiera se convierte en la herramienta clave para:</p>
             <div className="space-y-3">
@@ -357,7 +357,7 @@ function WhyIsImportantSection() {
                 "Tomar decisiones basadas en datos reales, no en intuición",
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeUp} className="flex gap-3 items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#7B8CFF] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#C9A84C] flex-shrink-0 mt-0.5" />
                   <p>{item}</p>
                 </motion.div>
               ))}
@@ -378,16 +378,16 @@ function KeyQuestionsSection() {
     <section className="bg-white py-20 lg:py-28">
       <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Autoevaluación</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Autoevaluación</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Las Preguntas que Toda Empresa Debe Hacerse
           </h2>
           <p className="text-lg text-gray-600">Si no puedes responder estas preguntas, tu negocio está en riesgo</p>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-8">
           {/* Category 1 */}
-          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-[#2800ff]">
-            <h3 className="text-lg font-bold text-[#1C00A8] mb-6 flex items-center gap-2">
+          <motion.div variants={fadeUp} className="bg-[#FAF8F4] p-8 border-t-4 border-[#C9A84C]">
+            <h3 className="text-lg font-bold text-[#C9A84C] mb-6 flex items-center gap-2">
               <Shield className="w-5 h-5" />
               Riesgo Financiero
             </h3>
@@ -399,7 +399,7 @@ function KeyQuestionsSection() {
                 "¿Tienes claridad sobre tu grado de liquidez?",
               ].map((q, i) => (
                 <motion.div key={i} variants={fadeUp} className="flex gap-2 items-start">
-                  <HelpCircle className="w-4 h-4 text-[#2800ff] flex-shrink-0 mt-1" />
+                  <HelpCircle className="w-4 h-4 text-[#C9A84C] flex-shrink-0 mt-1" />
                   <p className="text-sm text-gray-700">{q}</p>
                 </motion.div>
               ))}
@@ -407,8 +407,8 @@ function KeyQuestionsSection() {
           </motion.div>
 
           {/* Category 2 */}
-          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-[#2800ff]">
-            <h3 className="text-lg font-bold text-[#1C00A8] mb-6 flex items-center gap-2">
+          <motion.div variants={fadeUp} className="bg-[#FAF8F4] p-8 border-t-4 border-[#C9A84C]">
+            <h3 className="text-lg font-bold text-[#C9A84C] mb-6 flex items-center gap-2">
               <TrendingUp className="w-5 h-5" />
               Flujo de Caja
             </h3>
@@ -421,7 +421,7 @@ function KeyQuestionsSection() {
                 "¿Generas caja suficiente para cumplir con tu deuda?",
               ].map((q, i) => (
                 <motion.div key={i} variants={fadeUp} className="flex gap-2 items-start">
-                  <HelpCircle className="w-4 h-4 text-[#2800ff] flex-shrink-0 mt-1" />
+                  <HelpCircle className="w-4 h-4 text-[#C9A84C] flex-shrink-0 mt-1" />
                   <p className="text-sm text-gray-700">{q}</p>
                 </motion.div>
               ))}
@@ -429,8 +429,8 @@ function KeyQuestionsSection() {
           </motion.div>
 
           {/* Category 3 */}
-          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-[#2800ff]">
-            <h3 className="text-lg font-bold text-[#1C00A8] mb-6 flex items-center gap-2">
+          <motion.div variants={fadeUp} className="bg-[#FAF8F4] p-8 border-t-4 border-[#C9A84C]">
+            <h3 className="text-lg font-bold text-[#C9A84C] mb-6 flex items-center gap-2">
               <BarChart3 className="w-5 h-5" />
               Rentabilidad
             </h3>
@@ -443,14 +443,14 @@ function KeyQuestionsSection() {
                 "¿Endeudarte mejora o reduce la rentabilidad del accionista?",
               ].map((q, i) => (
                 <motion.div key={i} variants={fadeUp} className="flex gap-2 items-start">
-                  <HelpCircle className="w-4 h-4 text-[#2800ff] flex-shrink-0 mt-1" />
+                  <HelpCircle className="w-4 h-4 text-[#C9A84C] flex-shrink-0 mt-1" />
                   <p className="text-sm text-gray-700">{q}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
-        <motion.div variants={fadeUp} className="mt-12 text-center bg-[#1C00A8] text-white p-8">
+        <motion.div variants={fadeUp} className="mt-12 text-center bg-[#0A0A0A] text-white p-8">
           <p className="text-lg">
             Si respondiste "no" a más de 3 preguntas, tu empresa está operando a ciegas. Y eso es exactamente lo que el Diagnóstico de Claridad Financiera resuelve.
           </p>
@@ -508,29 +508,29 @@ function ProblemsSection() {
     <section className="bg-white py-20 lg:py-28">
       <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Diagnóstico</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Diagnóstico</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Los Problemas Financieros que Destruyen Pymes
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">El diagnóstico detecta y cuantifica cada uno con los datos reales de su empresa</p>
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sixProblems.map((p) => (
-            <motion.div key={p.num} variants={fadeUp} className="bg-[#f8f7ff] p-8 border-l-4 border-[#2800ff] hover:shadow-lg transition-shadow">
+            <motion.div key={p.num} variants={fadeUp} className="bg-[#FAF8F4] p-8 border-l-4 border-[#C9A84C] hover:shadow-lg transition-shadow">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 bg-[#2800ff] flex items-center justify-center flex-shrink-0">
-                  <p.icon className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 bg-[#C9A84C] flex items-center justify-center flex-shrink-0">
+                  <p.icon className="w-6 h-6 text-[#0A0A0A]" />
                 </div>
-                <span className="text-3xl font-bold text-[#1C00A8]/20" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <span className="text-3xl font-bold text-[#C9A84C]/30" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                   {p.num}
                 </span>
               </div>
-              <h3 className="text-lg font-bold text-[#1C00A8] mb-3">{p.title}</h3>
+              <h3 className="text-lg font-bold text-[#C9A84C] mb-3">{p.title}</h3>
               <p className="text-sm text-gray-700 leading-relaxed">{p.desc}</p>
             </motion.div>
           ))}
         </div>
-        <motion.div variants={fadeUp} className="mt-12 text-center bg-[#1C00A8] text-white p-8">
+        <motion.div variants={fadeUp} className="mt-12 text-center bg-[#0A0A0A] text-white p-8">
           <p className="text-lg">
             Estos 6 problemas tienen algo en común: <span className="font-bold">no los ves hasta que es demasiado tarde</span>. El Diagnóstico de Claridad Financiera los detecta ahora, con tus datos reales, y te da el mapa exacto para evitarlos.
           </p>
@@ -543,11 +543,11 @@ function ProblemsSection() {
 // ─── WHAT DIAGNOSIS DOES ───
 function WhatDiagnosisDoes() {
   return (
-    <section className="bg-[#f8f7ff] py-20 lg:py-28">
+    <section className="bg-[#FAF8F4] py-20 lg:py-28">
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Impacto</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Impacto</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Lo que este diagnóstico hace por tu negocio
           </h2>
         </motion.div>
@@ -560,9 +560,9 @@ function WhatDiagnosisDoes() {
               { icon: Users, title: "Asesoramiento Experto", desc: "Sesión directa con Director Financiero Senior" },
             ].map((item, i) => (
               <motion.div key={i} variants={fadeUp} className="flex gap-4">
-                <item.icon className="w-8 h-8 text-[#2800ff] flex-shrink-0" />
+                <item.icon className="w-8 h-8 text-[#C9A84C] flex-shrink-0" />
                 <div>
-                  <h3 className="font-bold text-[#1C00A8] mb-1">{item.title}</h3>
+                  <h3 className="font-bold text-[#C9A84C] mb-1">{item.title}</h3>
                   <p className="text-gray-700 text-sm">{item.desc}</p>
                 </div>
               </motion.div>
@@ -583,14 +583,14 @@ function BenefitsSection() {
     <section className="bg-white py-20 lg:py-28">
       <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Comparativa</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Comparativa</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Lo que Habilita vs Lo que Evita
           </h2>
         </motion.div>
         <div className="grid md:grid-cols-2 gap-8">
-          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-[#2800ff]">
-            <h3 className="text-xl font-bold text-[#1C00A8] mb-6 flex items-center gap-2">
+          <motion.div variants={fadeUp} className="bg-[#FAF8F4] p-8 border-t-4 border-[#C9A84C]">
+            <h3 className="text-xl font-bold text-[#C9A84C] mb-6 flex items-center gap-2">
               <CheckCircle2 className="w-6 h-6 text-green-500" />
               Lo que Habilita
             </h3>
@@ -610,8 +610,8 @@ function BenefitsSection() {
               ))}
             </div>
           </motion.div>
-          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-t-4 border-red-500">
-            <h3 className="text-xl font-bold text-[#1C00A8] mb-6 flex items-center gap-2">
+          <motion.div variants={fadeUp} className="bg-[#FAF8F4] p-8 border-t-4 border-red-500">
+            <h3 className="text-xl font-bold text-[#C9A84C] mb-6 flex items-center gap-2">
               <XCircle className="w-6 h-6 text-red-500" />
               Lo que Evita
             </h3>
@@ -673,21 +673,21 @@ const analysisBlocks = [
 
 function AnalysisSection() {
   return (
-    <section id="analisis" className="bg-[#f8f7ff] py-20 lg:py-28">
+    <section id="analisis" className="bg-[#FAF8F4] py-20 lg:py-28">
       <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Metodología</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Metodología</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Los 6 Bloques del Análisis
           </h2>
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {analysisBlocks.map((block) => (
-            <motion.div key={block.num} variants={fadeUp} className="bg-white p-8 border-l-4 border-[#2800ff]">
-              <span className="text-4xl font-bold text-[#1C00A8]/20 block mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            <motion.div key={block.num} variants={fadeUp} className="bg-white p-8 border-l-4 border-[#C9A84C]">
+              <span className="text-4xl font-bold text-[#C9A84C]/30 block mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 {block.num}
               </span>
-              <h3 className="text-lg font-bold text-[#1C00A8] mb-3">{block.title}</h3>
+              <h3 className="text-lg font-bold text-[#C9A84C] mb-3">{block.title}</h3>
               <p className="text-sm text-gray-700">{block.desc}</p>
             </motion.div>
           ))}
@@ -703,65 +703,65 @@ function DeliverablesSection() {
     <section id="entregables" className="bg-white py-20 lg:py-28">
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Entregables</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Entregables</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Lo que Recibe con el Diagnóstico
           </h2>
           <p className="text-lg text-gray-600">Dos entregables completos en 48 horas.</p>
         </motion.div>
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-l-4 border-[#2800ff]">
-            <h3 className="text-lg font-bold text-[#1C00A8] mb-4 flex items-start gap-2">
-              <FileText className="w-5 h-5 text-[#2800ff] mt-0.5 flex-shrink-0" />
+          <motion.div variants={fadeUp} className="bg-[#FAF8F4] p-8 border-l-4 border-[#C9A84C]">
+            <h3 className="text-lg font-bold text-[#C9A84C] mb-4 flex items-start gap-2">
+              <FileText className="w-5 h-5 text-[#C9A84C] mt-0.5 flex-shrink-0" />
               Informe en formato HTML con PDF descargable
             </h3>
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-2">
-                <span className="text-[#2800ff] font-bold mt-0.5">•</span>
+                <span className="text-[#C9A84C] font-bold mt-0.5">•</span>
                 <span>Punto de Partida: Lo que hace este diagnóstico por tu negocio, explicación de cada una de las 6 áreas de análisis financiero y contexto sectorial.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#2800ff] font-bold mt-0.5">•</span>
+                <span className="text-[#C9A84C] font-bold mt-0.5">•</span>
                 <span>Diagnóstico: el estado real del negocio con resumen ejecutivo, riesgos críticos identificados, comparativa con indicadores medios del sectorial, estado de las 6 áreas de análisis y hallazgos del diagnóstico: fortalezas y áreas de mejora.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#2800ff] font-bold mt-0.5">•</span>
+                <span className="text-[#C9A84C] font-bold mt-0.5">•</span>
                 <span>Plan de Acción: acciones identificadas en el diagnóstico, tus próximos pasos a 30, 60 y 90 días.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#2800ff] font-bold mt-0.5">•</span>
+                <span className="text-[#C9A84C] font-bold mt-0.5">•</span>
                 <span>Dashboard: los indicadores principales de tu negocio en números, presentación gráfica comparativa de tu Balance, Cuenta de Resultados y flujo de efectivo, también tus márgenes y ratios financieros.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#2800ff] font-bold mt-0.5">•</span>
+                <span className="text-[#C9A84C] font-bold mt-0.5">•</span>
                 <span>Estados Financieros: el Balance de Situación y Cuenta de Resultados comparativos con análisis de variaciones principales y estado de flujo de efectivo de tu empresa.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#2800ff] font-bold mt-0.5">•</span>
+                <span className="text-[#C9A84C] font-bold mt-0.5">•</span>
                 <span>Indicadores Financieros: el detalle técnico completo con 43 indicadores financieros de tu negocio con referencia y estado.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#2800ff] font-bold mt-0.5">•</span>
+                <span className="text-[#C9A84C] font-bold mt-0.5">•</span>
                 <span>Glosario de términos: definiciones de los principales términos contables y financieros.</span>
               </li>
             </ul>
           </motion.div>
-          <motion.div variants={fadeUp} className="bg-[#f8f7ff] p-8 border-l-4 border-[#2800ff]">
-            <h3 className="text-lg font-bold text-[#1C00A8] mb-4 flex items-start gap-2">
-              <Video className="w-5 h-5 text-[#2800ff] mt-0.5 flex-shrink-0" />
+          <motion.div variants={fadeUp} className="bg-[#FAF8F4] p-8 border-l-4 border-[#C9A84C]">
+            <h3 className="text-lg font-bold text-[#C9A84C] mb-4 flex items-start gap-2">
+              <Video className="w-5 h-5 text-[#C9A84C] mt-0.5 flex-shrink-0" />
               Sesión estratégica con un Director Financiero Senior
             </h3>
             <ul className="space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-2">
-                <span className="text-[#2800ff] font-bold mt-0.5">•</span>
+                <span className="text-[#C9A84C] font-bold mt-0.5">•</span>
                 <span>Revisión personalizada de 45 minutos.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#2800ff] font-bold mt-0.5">•</span>
+                <span className="text-[#C9A84C] font-bold mt-0.5">•</span>
                 <span>Contexto estratégico y resolución de dudas.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#2800ff] font-bold mt-0.5">•</span>
+                <span className="text-[#C9A84C] font-bold mt-0.5">•</span>
                 <span>Priorización de acciones inmediatas.</span>
               </li>
             </ul>
@@ -812,8 +812,8 @@ function ProcessSection() {
     <section id="proceso" className="bg-white py-20 lg:py-28">
       <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Proceso</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Proceso</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Cómo Funciona
           </h2>
           <p className="text-lg text-gray-600">3 pasos sencillos para obtener claridad financiera</p>
@@ -822,13 +822,13 @@ function ProcessSection() {
           <div className="lg:col-span-3 grid sm:grid-cols-3 gap-6">
             {steps.map((s) => (
               <motion.div key={s.num} variants={fadeUp} className="text-center sm:text-left">
-                <div className="w-16 h-16 bg-[#2800ff] flex items-center justify-center mx-auto sm:mx-0 mb-4">
-                  <s.icon className="w-7 h-7 text-white" />
+                <div className="w-16 h-16 bg-[#C9A84C] flex items-center justify-center mx-auto sm:mx-0 mb-4">
+                  <s.icon className="w-7 h-7 text-[#0A0A0A]" />
                 </div>
-                <span className="text-4xl font-bold text-[#1C00A8]/20 block mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <span className="text-4xl font-bold text-[#C9A84C]/30 block mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                   {s.num}
                 </span>
-                <h3 className="text-lg font-bold text-[#1C00A8] mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <h3 className="text-lg font-bold text-[#C9A84C] mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                   {s.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{s.desc}</p>
@@ -851,34 +851,34 @@ function ProcessSection() {
 // ─── PRICING ───
 function PricingSection() {
   return (
-    <section id="planes" className="bg-[#f8f7ff] py-20 lg:py-28">
+    <section id="planes" className="bg-[#FAF8F4] py-20 lg:py-28">
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Inversión</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Inversión</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Planes y Propuesta de Valor
           </h2>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-6">
           {/* Diagnóstico Único */}
           <motion.div variants={fadeUp} className="bg-white border border-gray-200 p-8 flex flex-col">
-            <h3 className="text-xl font-bold text-[#1C00A8] mb-2">Diagnóstico Único</h3>
+            <h3 className="text-xl font-bold text-[#C9A84C] mb-2">Diagnóstico Único</h3>
             <p className="text-sm text-gray-600 mb-6">Perfecto para una evaluación puntual</p>
             <div className="mb-8">
-              <span className="text-4xl font-bold text-[#2800ff]">447€</span>
+              <span className="text-4xl font-bold text-[#C9A84C]">447€</span>
               <span className="text-gray-600 ml-2">+ IVA</span>
             </div>
             <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-start gap-2 text-sm text-gray-700">
-                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#C9A84C] mt-0.5 flex-shrink-0" />
                 Informe interactivo + PDFs
               </li>
               <li className="flex items-start gap-2 text-sm text-gray-700">
-                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#C9A84C] mt-0.5 flex-shrink-0" />
                 Videollamada de 45 min con un Director Financiero Senior
               </li>
               <li className="flex items-start gap-2 text-sm text-gray-700">
-                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#C9A84C] mt-0.5 flex-shrink-0" />
                 Entrega en 48 horas
               </li>
             </ul>
@@ -886,34 +886,34 @@ function PricingSection() {
               href={TALLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-[#2800ff] hover:bg-[#2000d6] text-white font-semibold py-3 text-center transition-colors"
+              className="w-full bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold py-3 text-center transition-colors"
             >
               Solicitar Diagnóstico
             </a>
           </motion.div>
 
           {/* Plan Semestral */}
-          <motion.div variants={fadeUp} className="bg-white border-2 border-[#2800ff] p-8 flex flex-col relative">
-            <div className="absolute top-4 right-4 bg-[#2800ff] text-white px-3 py-1 text-xs font-bold">
+          <motion.div variants={fadeUp} className="bg-white border-2 border-[#C9A84C] p-8 flex flex-col relative">
+            <div className="absolute top-4 right-4 bg-[#C9A84C] text-[#0A0A0A] px-3 py-1 text-xs font-bold">
               RECOMENDADO
             </div>
-            <h3 className="text-xl font-bold text-[#1C00A8] mb-2">Plan Semestral</h3>
+            <h3 className="text-xl font-bold text-[#C9A84C] mb-2">Plan Semestral</h3>
             <p className="text-sm text-gray-600 mb-6">Monitoreo continuo de tu salud financiera</p>
             <div className="mb-8">
-              <span className="text-4xl font-bold text-[#2800ff]">347€</span>
+              <span className="text-4xl font-bold text-[#C9A84C]">347€</span>
               <span className="text-gray-600 ml-2">+ IVA</span>
             </div>
             <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-start gap-2 text-sm text-gray-700">
-                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#C9A84C] mt-0.5 flex-shrink-0" />
                 Informes interactivos + PDFs
               </li>
               <li className="flex items-start gap-2 text-sm text-gray-700">
-                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#C9A84C] mt-0.5 flex-shrink-0" />
                 2 videollamadas de 45 min con un Director Financiero Senior
               </li>
               <li className="flex items-start gap-2 text-sm text-gray-700">
-                <CheckCircle2 className="w-4 h-4 text-[#2800ff] mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#C9A84C] mt-0.5 flex-shrink-0" />
                 Seguimiento semestral
               </li>
             </ul>
@@ -921,31 +921,31 @@ function PricingSection() {
               href={TALLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-[#2800ff] hover:bg-[#2000d6] text-white font-semibold py-3 text-center transition-colors"
+              className="w-full bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold py-3 text-center transition-colors"
             >
               Solicitar Diagnóstico
             </a>
           </motion.div>
 
           {/* Plan Trimestral */}
-          <motion.div variants={fadeUp} className="bg-[#1C00A8] text-white p-8 flex flex-col">
+          <motion.div variants={fadeUp} className="bg-[#0A0A0A] text-white p-8 flex flex-col">
             <h3 className="text-xl font-bold mb-2">Plan Trimestral</h3>
             <p className="text-sm text-white/80 mb-6">Máximo control y optimización financiera</p>
             <div className="mb-8">
-              <span className="text-4xl font-bold text-[#7B8CFF]">267€</span>
+              <span className="text-4xl font-bold text-[#C9A84C]">267€</span>
               <span className="text-white/80 ml-2">+ IVA</span>
             </div>
             <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-start gap-2 text-sm text-white/90">
-                <CheckCircle2 className="w-4 h-4 text-[#7B8CFF] mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#C9A84C] mt-0.5 flex-shrink-0" />
                 Informes interactivos + PDFs
               </li>
               <li className="flex items-start gap-2 text-sm text-white/90">
-                <CheckCircle2 className="w-4 h-4 text-[#7B8CFF] mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#C9A84C] mt-0.5 flex-shrink-0" />
                 4 videollamadas de 45 min con un Director Financiero Senior
               </li>
               <li className="flex items-start gap-2 text-sm text-white/90">
-                <CheckCircle2 className="w-4 h-4 text-[#7B8CFF] mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#C9A84C] mt-0.5 flex-shrink-0" />
                 Máximo ahorro por diagnóstico
               </li>
             </ul>
@@ -953,13 +953,13 @@ function PricingSection() {
               href={TALLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-[#7B8CFF] hover:bg-[#6a7db8] text-white font-semibold py-3 text-center transition-colors"
+              className="w-full bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold py-3 text-center transition-colors"
             >
               Solicitar Diagnóstico
             </a>
           </motion.div>
         </div>
-        <motion.div variants={fadeUp} className="mt-12 bg-[#EEE0FF] border-l-4 border-[#2800ff] p-8">
+        <motion.div variants={fadeUp} className="mt-12 bg-[#FBF5E6] border-l-4 border-[#C9A84C] p-8">
           <p className="text-gray-800">
             Una auditoría financiera básica para pyme cuesta entre <strong>3.000 € y 6.000 €</strong>. Un CFO externo mensual, entre <strong>2.000 € y 4.000 € al mes</strong>. <br className="hidden sm:block" />
             El Diagnóstico cubre 43 ratios, análisis sectorial y sesión con Director Financiero Senior en <strong>48 horas — desde 447 €</strong>. La puerta correcta antes de cualquier compromiso mayor.
@@ -976,18 +976,18 @@ function AboutMiguelSection() {
     <section id="miguel" className="bg-white py-20 lg:py-28">
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Tu Interlocutor</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Tu Interlocutor</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Quién Hace Tu Diagnóstico
           </h2>
         </motion.div>
         <div className="max-w-3xl mx-auto">
           <motion.div variants={fadeUp} className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold text-[#1C00A8] mb-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              <h3 className="text-2xl font-bold text-[#C9A84C] mb-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 Miguel Ángel López Sainz
               </h3>
-              <p className="text-[#2800ff] font-semibold">Director Financiero Senior · L&amp;C CFO®</p>
+              <p className="text-[#C9A84C] font-semibold">Director Financiero Senior · L&amp;C CFO®</p>
             </div>
             <div className="space-y-4">
               {[
@@ -999,16 +999,16 @@ function AboutMiguelSection() {
                 { icon: Users, text: "En colaboración con Grupo Next — soporte fiscal, legal y contable integrado." },
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeUp} className="flex gap-3 items-start">
-                  <item.icon className="w-5 h-5 text-[#2800ff] flex-shrink-0 mt-0.5" />
+                  <item.icon className="w-5 h-5 text-[#C9A84C] flex-shrink-0 mt-0.5" />
                   <p className="text-gray-700 text-sm leading-relaxed">{item.text}</p>
                 </motion.div>
               ))}
             </div>
-            <p className="text-gray-600 italic text-sm border-l-4 border-[#2800ff] pl-4">
+            <p className="text-gray-600 italic text-sm border-l-4 border-[#C9A84C] pl-4">
               "Lo que hago hoy: convertir los números de tu empresa en decisiones claras. Basado en Madrid, asesorando pymes españolas."
             </p>
-            <div className="bg-[#f8f7ff] p-6 border-l-4 border-[#2800ff] space-y-3">
-              <p className="text-sm font-semibold text-[#1C00A8] uppercase tracking-widest mb-4">Lo que hago</p>
+            <div className="bg-[#FAF8F4] p-6 border-l-4 border-[#C9A84C] space-y-3">
+              <p className="text-sm font-semibold text-[#C9A84C] uppercase tracking-widest mb-4">Lo que hago</p>
               {[
                 { text: "Diagnóstico de Claridad Financiera", desc: "Diagnóstico financiero completo para detectar riesgos, ineficiencias y oportunidades." },
                 { text: "Planeación Financiera Mensual", desc: "CFO estratégico sin contratar estructura interna." },
@@ -1019,8 +1019,8 @@ function AboutMiguelSection() {
                 { text: "Validación de Nuevos Negocios", desc: "Viabilidad de nuevos negocios o líneas: mercado, modelo e inversión." },
               ].map((item, i) => (
                 <div key={i} className="flex gap-3 items-start">
-                  <CheckCircle2 className="w-4 h-4 text-[#2800ff] flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-gray-700"><span className="font-semibold text-[#1C00A8]">{item.text}</span> — {item.desc}</p>
+                  <CheckCircle2 className="w-4 h-4 text-[#C9A84C] flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-gray-700"><span className="font-semibold text-[#C9A84C]">{item.text}</span> — {item.desc}</p>
                 </div>
               ))}
             </div>
@@ -1092,11 +1092,11 @@ const faqItems = [
 function FAQSection() {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section id="faq" className="bg-[#f8f7ff] py-20 lg:py-28">
+    <section id="faq" className="bg-[#FAF8F4] py-20 lg:py-28">
       <AnimatedSection className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
-          <p className="text-[#2800ff] font-semibold text-sm tracking-widest uppercase mb-3">Preguntas Frecuentes</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1C00A8] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">Preguntas Frecuentes</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#C9A84C] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Lo que Suelen Preguntar
           </h2>
         </motion.div>
@@ -1104,12 +1104,12 @@ function FAQSection() {
           {faqItems.map((item, i) => (
             <motion.div key={i} variants={fadeUp} className="bg-white border border-gray-200">
               <button
-                className="w-full text-left px-6 py-5 flex justify-between items-start gap-4 font-semibold text-[#1C00A8] hover:bg-[#f8f7ff] transition-colors"
+                className="w-full text-left px-6 py-5 flex justify-between items-start gap-4 font-semibold text-[#C9A84C] hover:bg-[#FAF8F4] transition-colors"
                 onClick={() => setOpen(open === i ? null : i)}
               >
                 <span>{item.q}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-[#2800ff] flex-shrink-0 transition-transform duration-200 ${open === i ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-[#C9A84C] flex-shrink-0 transition-transform duration-200 ${open === i ? "rotate-180" : ""}`}
                 />
               </button>
               {open === i && (
@@ -1148,7 +1148,7 @@ function CTASection() {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0d0060]/95 to-[#1C00A8]/90" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/97 to-[#0A0A0A]/92" />
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -1167,7 +1167,7 @@ function CTASection() {
               href={TALLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#2800ff] hover:bg-[#2000d6] text-white font-semibold px-10 py-4 text-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-10 py-4 text-lg transition-colors"
             >
               Solicitar Diagnóstico Ahora
               <ArrowRight className="w-5 h-5" />
@@ -1191,7 +1191,7 @@ function CTASection() {
 // ─── FOOTER ───
 function Footer() {
   return (
-    <footer className="bg-[#0d0060] text-white/60 py-12">
+    <footer className="bg-[#0A0A0A] text-white/60 py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
