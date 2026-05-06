@@ -6,7 +6,7 @@
         font-style: normal;
         font-weight: 700;
       }
-      .t-main { font-family: 'DM Sans', 'Helvetica Neue', Arial Black, sans-serif; font-weight: 800; }
+      .t-main { font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; }
       .t-tag  { font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif; font-weight: 400; }
     </style>
   </defs>
