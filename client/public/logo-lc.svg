@@ -1,28 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 195" role="img" aria-label="L&amp;C CFO® — Dirección Financiera Externa">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 190" role="img" aria-label="L&amp;C CFO® — Dirección Financiera Externa">
   <defs>
     <style>
-      @font-face {
-        font-family: 'DM Sans';
-        font-style: normal;
+      .t-main {
+        font-family: 'DM Sans', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
         font-weight: 700;
+        font-size: 88px;
       }
-      .t-main { font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; }
-      .t-tag  { font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif; font-weight: 400; }
+      .t-reg {
+        font-family: 'DM Sans', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+        font-weight: 400;
+        font-size: 26px;
+      }
+      .t-tag {
+        font-family: 'DM Sans', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+        font-weight: 400;
+        font-size: 12.5px;
+        letter-spacing: 4px;
+      }
     </style>
   </defs>
 
-  <!-- ─── L&C ─── -->
-  <text class="t-main" x="148" y="132" font-size="96" fill="#FFFFFF" text-anchor="middle">L&amp;C</text>
+  <!-- L&C — anclado a la derecha del divisor -->
+  <text class="t-main" x="232" y="128" fill="#FFFFFF" text-anchor="end">L&amp;C</text>
 
-  <!-- ─── Divisor dorado ─── -->
-  <rect x="234" y="28" width="3.5" height="118" fill="#C9A84C" rx="1"/>
+  <!-- Divisor dorado — centro del logo -->
+  <rect x="244" y="28" width="5" height="115" fill="#C9A84C" rx="1.5"/>
 
-  <!-- ─── CFO ─── -->
-  <text class="t-main" x="355" y="132" font-size="96" fill="#FFFFFF" text-anchor="middle">CFO</text>
+  <!-- CFO — anclado a la izquierda del divisor -->
+  <text class="t-main" x="258" y="128" fill="#FFFFFF" text-anchor="start">CFO</text>
 
-  <!-- ─── ® superíndice ─── -->
-  <text class="t-main" x="437" y="58" font-size="28" fill="#FFFFFF" text-anchor="start">®</text>
+  <!-- ® superíndice -->
+  <text class="t-reg" x="448" y="55" fill="#FFFFFF" text-anchor="start">®</text>
 
-  <!-- ─── Tagline ─── -->
-  <text class="t-tag" x="240" y="174" font-size="13" fill="#C9A84C" text-anchor="middle" letter-spacing="3.5">DIRECCIÓN FINANCIERA EXTERNA</text>
+  <!-- Tagline centrada -->
+  <text class="t-tag" x="280" y="172" fill="#C9A84C" text-anchor="middle">DIRECCIÓN FINANCIERA EXTERNA</text>
 </svg>
