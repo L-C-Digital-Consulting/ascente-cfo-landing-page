@@ -168,7 +168,7 @@ function HeroSection() {
             La mayoría de los empresarios llevan años gestionando su empresa sin
             saber si realmente gana dinero.
           </h1>
-          <p className="text-lg text-white/70 mb-4 whitespace-nowrap">
+          <p className="text-lg text-white/70 mb-4">
             No porque no se preocupen por su negocio. Sino porque nadie se lo ha dicho con claridad.
           </p>
           <p
