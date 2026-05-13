@@ -2,19 +2,26 @@
 <html lang="es">
 
   <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) — Consent Mode v2: analytics desactivado por defecto hasta consentimiento -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3R4Q142R2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied' });
       gtag('js', new Date());
       gtag('config', 'G-T3R4Q142R2');
+      // Restaurar consentimiento si ya fue dado
+      if (localStorage.getItem('lc_cookies_ok') === '1') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
     </script>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>L&C CFO® — Diagnóstico de Claridad Financiera®</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="shortcut icon" href="/favicon.svg" />
     <meta name="description" content="Diagnóstico de Claridad Financiera para pymes. Análisis completo en 48 horas con sesión estratégica de CFO." />
     <link rel="canonical" href="https://lccfo.es" />
     <meta property="og:title" content="L&C CFO® — Diagnóstico de Claridad Financiera®" />
@@ -22,9 +29,13 @@
     <meta property="og:url" content="https://lccfo.es" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
+    <meta property="og:image" content="https://lccfo.es/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="L&C CFO® — Diagnóstico de Claridad Financiera®" />
     <meta name="twitter:description" content="Más de 40 indicadores financieros. Informe en 48 horas. Sesión estratégica con Director Financiero Senior." />
+    <meta name="twitter:image" content="https://lccfo.es/og-image.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -33,10 +44,6 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      defer
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
   </body>
 
 </html>
