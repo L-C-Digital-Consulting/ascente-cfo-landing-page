@@ -47,7 +47,7 @@ export default function AvisoLegal() {
                   ["Denominación social", "L&C Digital & Consulting, S.L."],
                   ["NIF", "B22652069"],
                   ["Domicilio social", "Calle del Poeta Joan Maragall 23, 28020, Madrid"],
-                  ["Correo electrónico", "miguel.lopez@lycconsulting.com"],
+                  ["Correo electrónico", "legal@lycconsulting.com"],
                   ["Actividad principal", "Servicios de consultoría, análisis empresarial y herramientas digitales"],
                   ["Inscripción registral", "Inscrita en el Registro Mercantil de Madrid, Hoja M-859195, Inscripción 1ª"],
                   ["EUID", "ES28065.082379878"],

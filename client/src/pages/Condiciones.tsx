@@ -45,7 +45,7 @@ export default function Condiciones() {
                   ["Denominación social", "L&C Digital & Consulting, S.L."],
                   ["NIF", "B22652069"],
                   ["Domicilio", "Calle del Poeta Joan Maragall 23, 28020, Madrid"],
-                  ["Correo electrónico", "miguel.lopez@lycconsulting.com"],
+                  ["Correo electrónico", "legal@lycconsulting.com"],
                   ["Inscripción registral", "Registro Mercantil de Madrid, Hoja M-859195, Inscripción 1ª"],
                 ].map(([label, value], i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
@@ -138,8 +138,8 @@ export default function Condiciones() {
             En caso de que el servicio no haya sido iniciado, el Cliente podrá ejercer el derecho de
             desistimiento en el plazo de catorce (14) días naturales desde la fecha de contratación, mediante
             comunicación escrita dirigida a{" "}
-            <a href="mailto:miguel.lopez@lycconsulting.com" className="text-[#C9A84C] underline underline-offset-2">
-              miguel.lopez@lycconsulting.com
+            <a href="mailto:legal@lycconsulting.com" className="text-[#C9A84C] underline underline-offset-2">
+              legal@lycconsulting.com
             </a>.
           </p>
         </section>
@@ -240,8 +240,8 @@ export default function Condiciones() {
             </a>{" "}
             del Prestador. El Responsable del tratamiento es L&amp;C Digital &amp; Consulting, S.L. (NIF B22652069),
             correo electrónico:{" "}
-            <a href="mailto:miguel.lopez@lycconsulting.com" className="text-[#C9A84C] underline underline-offset-2">
-              miguel.lopez@lycconsulting.com
+            <a href="mailto:legal@lycconsulting.com" className="text-[#C9A84C] underline underline-offset-2">
+              legal@lycconsulting.com
             </a>.
             El tratamiento tiene como base jurídica la ejecución del contrato (art. 6.1.b RGPD). El Cliente
             podrá ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación y

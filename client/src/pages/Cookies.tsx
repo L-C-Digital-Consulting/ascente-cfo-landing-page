@@ -208,10 +208,10 @@ export default function Cookies() {
             futuro, se actualizará esta política y se habilitará el mecanismo de consentimiento
             obligatorio. Para cualquier consulta:{" "}
             <a
-              href="mailto:miguel.lopez@lycconsulting.com"
+              href="mailto:legal@lycconsulting.com"
               className="text-[#C9A84C] underline underline-offset-2"
             >
-              miguel.lopez@lycconsulting.com
+              legal@lycconsulting.com
             </a>
           </p>
         </section>

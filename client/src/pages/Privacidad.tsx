@@ -45,7 +45,7 @@ export default function Privacidad() {
                   ["Denominación social", "L&C Digital & Consulting, S.L."],
                   ["NIF", "B22652069"],
                   ["Domicilio", "Calle del Poeta Joan Maragall 23, 28020, Madrid"],
-                  ["Correo electrónico", "miguel.lopez@lycconsulting.com"],
+                  ["Correo electrónico", "legal@lycconsulting.com"],
                   [
                     "Actividad",
                     "Servicios de consultoría, análisis empresarial y herramientas digitales",
@@ -246,10 +246,10 @@ export default function Privacidad() {
           <p className="text-sm text-gray-600 mb-2">
             Para ejercer estos derechos, el interesado deberá dirigir comunicación escrita a{" "}
             <a
-              href="mailto:miguel.lopez@lycconsulting.com"
+              href="mailto:legal@lycconsulting.com"
               className="text-[#C9A84C] underline underline-offset-2"
             >
-              miguel.lopez@lycconsulting.com
+              legal@lycconsulting.com
             </a>
             , indicando el derecho que desea ejercer y adjuntando copia de documento
             acreditativo de identidad. El Responsable responderá en el plazo de un (1) mes

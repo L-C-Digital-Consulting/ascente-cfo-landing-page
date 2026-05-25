@@ -1212,7 +1212,7 @@ function Footer() {
             <h4 className="text-white font-semibold mb-4">Empresa</h4>
             <ul className="space-y-2 text-sm">
               <li><a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Sobre Nosotros</a></li>
-              <li><a href="mailto:miguel.lopez@lycconsulting.com" className="hover:text-white transition-colors">Contacto</a></li>
+              <li><a href="mailto:legal@lycconsulting.com" className="hover:text-white transition-colors">Contacto</a></li>
             </ul>
           </div>
           <div>
