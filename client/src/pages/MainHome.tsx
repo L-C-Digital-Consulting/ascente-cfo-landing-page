@@ -593,18 +593,10 @@ function RespaldoIntegralSection() {
               Respaldo integral para tu empresa
             </h2>
             <p className="text-gray-600 mb-6">
-              La Dirección Financiera Externa de L&C CFO® trabaja integrada con{" "}
-              <strong className="text-[#0A0A0A]">Ascente · Grupo Next</strong>{" "}
-              — para que además del área financiera, tengas cubiertos los
-              servicios legales, fiscales y contables en un solo ecosistema.{" "}
-              <a
-                href="https://nextabogados.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#C9A84C] hover:underline font-semibold"
-              >
-                nextabogados.com
-              </a>
+              La Dirección Financiera Externa de L&C CFO® trabaja integrada con
+              otros despachos — para que además del área financiera, tengas
+              cubiertos los servicios legales, fiscales y contables en un solo
+              ecosistema.
             </p>
             <a
               href={WHATSAPP_LINK}
