@@ -998,7 +998,7 @@ function AboutMiguelSection() {
                 { icon: TrendingUp, text: "16 años como Director Financiero en Latinoamérica y España. Negociación bancaria, reestructuración de deuda, planificación financiera, presupuestos, control de gestión, flujo de caja, mejora de rentabilidad y reducción de costes." },
                 { icon: BarChart3, text: "Eficiencia de procesos administrativos y operativos mediante inteligencia artificial y la experiencia real de haber resuelto problemas financieros en más de 20 países — la combinación de ambos es lo que marca la diferencia." },
                 { icon: FileBarChart, text: "Máster en Finanzas — ESADE España." },
-                { icon: Users, text: "En colaboración con Grupo Next — soporte fiscal, legal y contable integrado." },
+                { icon: Users, text: "En colaboración con otros despachos — soporte fiscal, legal y contable integrado." },
               ].map((item, i) => (
                 <motion.div key={i} variants={fadeUp} className="flex gap-3 items-start">
                   <item.icon className="w-5 h-5 text-[#C9A84C] flex-shrink-0 mt-0.5" />
