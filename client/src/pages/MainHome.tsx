@@ -39,6 +39,7 @@ const WHATSAPP_LOGO =
 const LINKEDIN_URL =
   "https://www.linkedin.com/in/miguel-ángel-lópez-sainz-0bb25341";
 const DIAGNOSTICO_URL = "/diagnostico-financiero-pyme";
+const S2_URL = "/direccion-financiera-mensual";
 
 // ─── ANIMATION VARIANTS ───
 const fadeUp = {
@@ -179,6 +180,12 @@ function Navbar() {
               alt="WhatsApp"
               className="w-5 h-5 object-contain"
             />
+          </a>
+          <a
+            href={S2_URL}
+            className="hidden lg:inline-flex border border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#0A0A0A] font-semibold px-6 py-2 text-sm transition-colors"
+          >
+            Dirección Financiera
           </a>
           <a
             href={DIAGNOSTICO_URL}
