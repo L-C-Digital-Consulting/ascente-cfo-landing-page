@@ -146,9 +146,9 @@
   }
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling — solo para navegación por anclas, no global */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Custom scrollbar */
