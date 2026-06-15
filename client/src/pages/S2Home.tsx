@@ -452,7 +452,7 @@ function EntregablesSection() {
     {
       icon: Package,
       nombre: "Tu inventario",
-      desc: "Qué producto te deja margen y cuál te lo come. El coste real de lo que vendes, no una estimación.",
+      desc: "Control de stock con alertas y cuánto te cuesta de verdad lo que vendes. Tu food cost en hostelería; tus materiales por obra frente a presupuesto en construcción.",
     },
     {
       icon: Landmark,
