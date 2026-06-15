@@ -284,11 +284,9 @@ function QueEsSection() {
           <div className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed space-y-5 text-pretty">
             <p>
               Tu gestor lleva la contabilidad fiscal, presenta los impuestos y entrega el balance.
-              Lo hace bien. Es su función.
-            </p>
-            <p>
-              Pero el balance que te entrega en abril refleja lo que pasó en diciembre.
-              Para entonces llevas cuatro meses tomando decisiones con datos del año anterior.
+              Lo hace bien — es su función. Pero el balance que te entrega en abril refleja lo que
+              pasó en diciembre: para entonces llevas cuatro meses tomando decisiones con datos del
+              año anterior.
             </p>
             <p>
               La Dirección Financiera Mensual® es la función que falta:{" "}
