@@ -39,15 +39,14 @@ function Router() {
 
 function App() {
   useEffect(() => {
-    document.body.tabIndex = -1;
-    const handleClick = (e: MouseEvent) => {
+    const handleMouseDown = (e: MouseEvent) => {
       const t = e.target as HTMLElement;
-      if (!t.closest('a, button, input, textarea, select, [role="button"], [tabindex]')) {
-        document.body.focus({ preventScroll: true });
+      if (!t.closest('a, button, input, textarea, select, label, td, th, [role="button"], [contenteditable], [tabindex]')) {
+        e.preventDefault();
       }
     };
-    document.addEventListener('click', handleClick);
-    return () => document.removeEventListener('click', handleClick);
+    document.addEventListener('mousedown', handleMouseDown);
+    return () => document.removeEventListener('mousedown', handleMouseDown);
   }, []);
 
   return (
