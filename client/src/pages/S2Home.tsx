@@ -939,7 +939,7 @@ const faqs = [
   },
   {
     q: "¿Cuánto tiempo necesito dedicar al mes?",
-    a: "Entre 45 y 60 minutos para la sesión mensual. El resto — recoger los datos, analizarlos, preparar el dashboard, proyectar la caja — lo hacemos nosotros. No necesitas aprender ningún software, preparar informes ni interpretar nada.",
+    a: "Muy poco: aprobar tus pagos y avisarnos de los cambios relevantes — un cliente nuevo, un contrato que cambia. El resto — recoger los datos, analizarlos, preparar el dashboard y proyectar la caja — lo hacemos nosotros. No necesitas aprender ningún software, preparar informes ni interpretar nada.",
   },
   {
     q: "¿Hay permanencia mínima?",
@@ -947,7 +947,7 @@ const faqs = [
   },
   {
     q: "¿Tengo acceso a la plataforma de gestión?",
-    a: "La plataforma L&C CFO® la operamos nosotros. Es lo que nos permite analizar con rapidez y entregar resultados precisos. Tú recibes los outputs directamente: dashboard mensual, P&G, proyección de caja, aging de cobros y la sesión mensual con tu Director Financiero. No necesitas entrar a ningún sistema.",
+    a: "Hoy la plataforma L&C CFO® la operamos nosotros — es lo que nos permite analizar con rapidez y entregar resultados precisos. Tú recibes los outputs directamente: dashboard mensual, P&G, proyección de caja a 12 meses, aging de cobros y la lectura de tu Director Financiero. Recibes los resultados sin trabajo operativo de tu parte.",
   },
   {
     q: "¿Cómo son las primeras semanas?",
@@ -955,7 +955,7 @@ const faqs = [
   },
   {
     q: "¿Para qué sectores trabajáis?",
-    a: "Hostelería (bares, restaurantes, grupos de restauración), Servicios Profesionales (despachos, consultoras, gestorías) y Construcción (constructoras, reformas, arquitectura llave en mano). Son los sectores donde la dirección financiera mensual tiene mayor impacto directo en los resultados reales del negocio.",
+    a: "Hostelería (bares, restaurantes, grupos de restauración), Servicios Profesionales (despachos, consultoras, gestorías), Empresas de Servicios (limpieza, mantenimiento, fumigación y similares) y Construcción (constructoras, reformas, arquitectura llave en mano). Son los sectores donde la dirección financiera mensual tiene mayor impacto directo en los resultados reales del negocio.",
   },
   {
     q: "¿Qué diferencia hay entre los planes Control, Dirección y Estrategia?",
