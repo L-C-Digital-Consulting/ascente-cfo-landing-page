@@ -599,42 +599,42 @@ function PlanesSection() {
           </p>
         </motion.div>
 
-        {/* Cabecera planes */}
-        <motion.div variants={fadeUp} className="grid grid-cols-4 gap-0 mb-0">
-          <div className="col-span-1" />
-          {planes.map((p, i) => (
-            <div
-              key={i}
-              className={`p-6 text-center ${
-                p.highlight
-                  ? "bg-[#C9A84C] text-[#0A0A0A]"
-                  : "bg-white/5 border border-white/10 text-white"
-              }`}
-            >
-              {p.highlight && (
-                <p className="text-[0.65rem] font-bold tracking-widest uppercase mb-2 text-[#0A0A0A]/60">
-                  Más popular
-                </p>
-              )}
-              <h3
-                className={`text-2xl font-bold mb-1 ${p.highlight ? "text-[#0A0A0A]" : "text-white"}`}
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
-              >
-                {p.nombre}
-              </h3>
-              <p className={`text-xs mb-0.5 ${p.highlight ? "text-[#0A0A0A]/70" : "text-white/50"}`}>
-                {p.target}
-              </p>
-              <p className={`text-xs font-semibold ${p.highlight ? "text-[#0A0A0A]/80" : "text-[#C9A84C]"}`}>
-                {p.facturacion}
-              </p>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Tabla módulos */}
+        {/* Tabla módulos con cabecera integrada */}
         <motion.div variants={fadeUp} className="overflow-x-auto overflow-y-hidden">
           <table className="w-full border-collapse">
+            <thead>
+              <tr>
+                <th className="w-[52%]" />
+                {planes.map((p, i) => (
+                  <th
+                    key={i}
+                    className={`p-6 text-center ${
+                      p.highlight
+                        ? "bg-[#C9A84C] text-[#0A0A0A]"
+                        : "bg-white/5 border border-white/10 text-white"
+                    }`}
+                  >
+                    {p.highlight && (
+                      <p className="text-[0.65rem] font-bold tracking-widest uppercase mb-2 text-[#0A0A0A]/60">
+                        MÁS POPULAR
+                      </p>
+                    )}
+                    <h3
+                      className={`text-2xl font-bold mb-1 ${p.highlight ? "text-[#0A0A0A]" : "text-white"}`}
+                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                      {p.nombre}
+                    </h3>
+                    <p className={`text-xs mb-0.5 ${p.highlight ? "text-[#0A0A0A]/70" : "text-white/50"}`}>
+                      {p.target}
+                    </p>
+                    <p className={`text-xs font-semibold ${p.highlight ? "text-[#0A0A0A]/80" : "text-[#C9A84C]"}`}>
+                      {p.facturacion}
+                    </p>
+                  </th>
+                ))}
+              </tr>
+            </thead>
             <tbody>
               {modulosPlanes.map((row, i) => {
                 if (row.type === "header") {
