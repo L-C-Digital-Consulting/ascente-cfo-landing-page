@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -13,24 +12,6 @@ import Privacidad from "./pages/Privacidad";
 import AvisoLegal from "./pages/AvisoLegal";
 import Cookies from "./pages/Cookies";
 import Condiciones from "./pages/Condiciones";
-
-function usePageKeys() {
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      const tag = (e.target as HTMLElement)?.tagName;
-      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
-      if (e.key === "PageDown") {
-        e.preventDefault();
-        window.scrollBy(0, window.innerHeight * 0.9);
-      } else if (e.key === "PageUp") {
-        e.preventDefault();
-        window.scrollBy(0, -window.innerHeight * 0.9);
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
-}
 
 
 function Router() {
@@ -56,7 +37,6 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
-  usePageKeys();
   return (
     <ErrorBoundary>
       <ThemeProvider
