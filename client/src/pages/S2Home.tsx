@@ -669,7 +669,7 @@ function PlanesSection() {
                 Hostelería
               </span>
               <p className="text-white/50 text-xs leading-relaxed">
-                Escandallos y análisis de food cost incluidos desde Plan Dirección — fichas de producto, coste por receta y análisis de rentabilidad por referencia.
+                Escandallos y análisis de food cost incluidos desde Plan Dirección — fichas de producto, coste por receta y control de stock con alertas.
               </p>
             </div>
             <div className="flex items-start gap-3">
@@ -677,7 +677,7 @@ function PlanesSection() {
                 Construcción
               </span>
               <p className="text-white/30 text-xs leading-relaxed italic">
-                Módulos específicos por obra en desarrollo. Disponibles cuando se incorpore el primer cliente del sector.
+                Módulos sectoriales por obra — control de materiales frente a presupuesto. En desarrollo.
               </p>
             </div>
           </div>
