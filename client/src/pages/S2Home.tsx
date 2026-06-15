@@ -530,7 +530,7 @@ const planes = [
   {
     nombre: "Control",
     target: "1–15 empleados",
-    facturacion: "150K–800K €/año",
+    facturacion: "300K–800K €/año",
     tagline: "Visibilidad y control total de tu operativa financiera mensual.",
     highlight: false,
   },
@@ -705,7 +705,7 @@ function PlanesSection() {
 // ─── PARA QUIÉN ───
 function ParaQuienSection() {
   const encaja = [
-    "Tu empresa factura entre 150.000€ y 15M€ y sigues tomando decisiones financieras sin un número claro que las respalde.",
+    "Tu empresa factura entre 300.000€ y 15M€ y sigues tomando decisiones financieras sin un número claro que las respalde.",
     "Tienes gestor o contable, pero nadie te dice qué va a pasar con tu caja el mes que viene.",
     "Hay meses en los que no sabes si vas a llegar a nóminas sin revisar el saldo bancario con angustia.",
     "Estás contratando, invirtiendo o pidiendo financiación y la decisión la tomas más con sensación que con datos.",
@@ -713,7 +713,7 @@ function ParaQuienSection() {
   ];
 
   const noEncaja = [
-    { text: "Facturas menos de 150.000€.", sub: "El Diagnóstico de Claridad Financiera® es el primer paso correcto." },
+    { text: "Facturas menos de 300.000€.", sub: "El Diagnóstico de Claridad Financiera® es el primer paso correcto." },
     { text: "Necesitas un director financiero en plantilla, a jornada completa.", sub: "La Dirección Financiera Mensual® es un servicio externo: llevamos tu dirección financiera por ti, sin el coste de un CFO interno." },
     { text: "Buscas un software para gestionarlo tú mismo.", sub: "Esto es un servicio operado por nosotros, no una herramienta de autogestión: del dato nos encargamos nosotros." },
   ];
