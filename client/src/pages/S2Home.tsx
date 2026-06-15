@@ -295,8 +295,8 @@ function QueEsSection() {
               <span className="text-[#0A0A0A] font-semibold">el control total de tu negocio en un solo sitio.</span>{" "}
               Tu caja, con saldos reales y proyectados. Tus cobros, registrados, aplicados y ordenados
               por antigüedad para saber a quién reclamar y cuándo. Tus inventarios, tus salidas por banco,
-              tus créditos y la estrategia de deuda para sentarte a negociar con el banco con los números
-              delante. Y la planificación que lo une todo: el resultado real de cada mes — y, según tu plan,
+              tus créditos y la negociación de tu deuda con los bancos, que llevamos nosotros por ti.
+              Y la planificación que lo une todo: el resultado real de cada mes — y, según tu plan,
               el presupuesto anual, la previsión financiera y el reporting.
             </p>
           </div>
