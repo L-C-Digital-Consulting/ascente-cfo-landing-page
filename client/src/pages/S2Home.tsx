@@ -291,8 +291,13 @@ function QueEsSection() {
               Para entonces llevas cuatro meses tomando decisiones con datos del año anterior.
             </p>
             <p>
-              La Dirección Financiera Mensual® es la función que falta: la lectura financiera mensual
-              que te dice qué pasa ahora y qué hacer con ello antes de que el banco o el mercado te lo digan ellos.
+              La Dirección Financiera Mensual® es la función que falta:{" "}
+              <span className="text-[#0A0A0A] font-semibold">el control total de tu negocio en un solo sitio.</span>{" "}
+              Tu caja, con saldos reales y proyectados. Tus cobros, registrados, aplicados y ordenados
+              por antigüedad para saber a quién reclamar y cuándo. Tus inventarios, tus salidas por banco,
+              tus créditos y la estrategia de deuda para sentarte a negociar con el banco con los números
+              delante. Y la planificación que lo une todo: el resultado real de cada mes — y, según tu plan,
+              el presupuesto anual, la previsión financiera y el reporting.
             </p>
           </div>
         </motion.div>
