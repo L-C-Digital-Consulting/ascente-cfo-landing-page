@@ -600,8 +600,9 @@ function PlanesSection() {
         </motion.div>
 
         {/* Tabla módulos con cabecera integrada */}
+        <p className="text-white/30 text-xs text-right mb-1 sm:hidden">← Desliza para ver los tres planes →</p>
         <motion.div variants={fadeUp} className="overflow-x-auto overflow-y-hidden">
-          <table className="w-full border-collapse">
+          <table className="w-full min-w-[560px] border-collapse">
             <thead>
               <tr>
                 <th className="w-[52%]" />
@@ -815,8 +816,9 @@ function VsCFOSection() {
           </p>
         </motion.div>
 
+        <p className="text-gray-400 text-xs text-right mb-1 sm:hidden">← Desliza para comparar →</p>
         <motion.div variants={fadeUp} className="overflow-x-auto overflow-y-hidden">
-          <table className="w-full border-collapse">
+          <table className="w-full min-w-[480px] border-collapse">
             <thead>
               <tr>
                 <th className="text-left py-3 px-5 bg-gray-100 text-xs font-semibold text-gray-500 uppercase tracking-wide w-1/4">
@@ -826,7 +828,7 @@ function VsCFOSection() {
                   CFO interno
                 </th>
                 <th className="text-left py-3 px-5 bg-[#0A0A0A] text-xs font-semibold text-[#C9A84C] uppercase tracking-wide w-3/8">
-                  L&C CFO® — Dirección Financiera Mensual®
+                  L&C CFO®
                 </th>
               </tr>
             </thead>
