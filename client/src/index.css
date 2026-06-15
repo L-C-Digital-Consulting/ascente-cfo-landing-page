@@ -146,9 +146,9 @@
   }
 }
 
-/* Smooth scrolling para navegación por anclas */
+/* Scroll instantáneo — evita scroll lento línea a línea en Windows */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Custom scrollbar */

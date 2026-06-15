@@ -2,7 +2,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
-import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import CookieBanner from "./components/CookieBanner";
@@ -38,17 +37,6 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
-  useEffect(() => {
-    const handleMouseDown = (e: MouseEvent) => {
-      const t = e.target as HTMLElement;
-      if (!t.closest('a, button, input, textarea, select, label, td, th, [role="button"], [contenteditable], [tabindex]')) {
-        e.preventDefault();
-      }
-    };
-    document.addEventListener('mousedown', handleMouseDown);
-    return () => document.removeEventListener('mousedown', handleMouseDown);
-  }, []);
-
   return (
     <ErrorBoundary>
       <ThemeProvider
