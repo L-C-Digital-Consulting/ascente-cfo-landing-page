@@ -714,8 +714,8 @@ function ParaQuienSection() {
 
   const noEncaja = [
     { text: "Facturas menos de 150.000€.", sub: "El Diagnóstico de Claridad Financiera® es el primer paso correcto." },
-    { text: "Necesitas a alguien con presencia física diaria en tu empresa.", sub: "La Dirección Financiera Mensual® es un servicio remoto y mensual. No sustituye a un equipo interno a tiempo completo." },
-    { text: "Tu contabilidad lleva meses atrasada o desordenada.", sub: "Primero hay que sentar la base contable. Hablamos cuando esté ordenada." },
+    { text: "Necesitas un director financiero en plantilla, a jornada completa.", sub: "La Dirección Financiera Mensual® es un servicio externo: llevamos tu dirección financiera por ti, sin el coste de un CFO interno." },
+    { text: "Buscas un software para gestionarlo tú mismo.", sub: "Esto es un servicio operado por nosotros, no una herramienta de autogestión: del dato nos encargamos nosotros." },
   ];
 
   return (
