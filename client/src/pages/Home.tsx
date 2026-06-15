@@ -1202,18 +1202,19 @@ function Footer() {
             <p className="text-sm">Diagnóstico de Claridad Financiera para Pymes</p>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4">Producto</h4>
+            <h4 className="text-white font-semibold mb-4">Servicios</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#diagnostico" className="hover:text-white transition-colors">Características</a></li>
-              <li><a href="#planes" className="hover:text-white transition-colors">Planes</a></li>
-              <li><a href="#faq" className="hover:text-white transition-colors">Preguntas Frecuentes</a></li>
+              <li><a href="/diagnostico-financiero-pyme" className="hover:text-white transition-colors">Diagnóstico de Claridad Financiera®</a></li>
+              <li><a href="/direccion-financiera-mensual" className="hover:text-white transition-colors">Dirección Financiera Mensual®</a></li>
+              <li><a href="/#servicios" className="hover:text-white transition-colors">Todos los servicios</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4">Empresa</h4>
+            <h4 className="text-white font-semibold mb-4">Contacto</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Sobre Nosotros</a></li>
-              <li><a href="mailto:legal@lycconsulting.com" className="hover:text-white transition-colors">Contacto</a></li>
+              <li><a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
+              <li><a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a></li>
+              <li><a href="mailto:legal@lycconsulting.com" className="hover:text-white transition-colors">legal@lycconsulting.com</a></li>
             </ul>
           </div>
           <div>

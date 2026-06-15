@@ -297,7 +297,7 @@ function QueEsSection() {
           </div>
         </motion.div>
 
-        <div className="overflow-x-auto mb-12">
+        <div className="overflow-x-auto overflow-y-hidden mb-12">
           <table className="w-full border-collapse">
             <thead>
               <tr>
@@ -633,7 +633,7 @@ function PlanesSection() {
         </motion.div>
 
         {/* Tabla módulos */}
-        <motion.div variants={fadeUp} className="overflow-x-auto">
+        <motion.div variants={fadeUp} className="overflow-x-auto overflow-y-hidden">
           <table className="w-full border-collapse">
             <tbody>
               {modulosPlanes.map((row, i) => {
@@ -815,7 +815,7 @@ function VsCFOSection() {
           </p>
         </motion.div>
 
-        <motion.div variants={fadeUp} className="overflow-x-auto">
+        <motion.div variants={fadeUp} className="overflow-x-auto overflow-y-hidden">
           <table className="w-full border-collapse">
             <thead>
               <tr>
