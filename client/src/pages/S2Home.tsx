@@ -286,7 +286,7 @@ function QueEsSection() {
               Tu gestor lleva la contabilidad fiscal, presenta los impuestos y entrega el balance.
               Lo hace bien — es su función. Pero el balance que te entrega en abril refleja lo que
               pasó en diciembre: para entonces llevas cuatro meses tomando decisiones con datos del
-              año anterior.
+              año anterior. O peor: con una hoja de Excel que actualizas tú a mano.
             </p>
             <p>
               La Dirección Financiera Mensual® es la función que falta:{" "}
