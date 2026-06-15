@@ -792,7 +792,7 @@ function VsCFOSection() {
             className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            Un CFO interno cuesta entre 5.000 y 8.000 €/mes.
+            Un CFO interno cuesta entre 6.000 y 9.000 €/mes.
             <br />
             Estos son los números.
           </h2>
@@ -837,7 +837,7 @@ function VsCFOSection() {
         <motion.div variants={fadeUp} className="mt-8 border-l-4 border-[#C9A84C] pl-6">
           <p className="text-gray-700 text-base leading-relaxed">
             La mayoría de las empresas que necesitan dirección financiera mensual
-            no pueden esperar 6 meses ni comprometerse con una nómina fija de 8.000 €.
+            no pueden esperar 6 meses ni comprometerse con una nómina fija de 9.000 €.
             <span className="font-semibold text-[#0A0A0A]"> Hay otra forma.</span>
           </p>
         </motion.div>
