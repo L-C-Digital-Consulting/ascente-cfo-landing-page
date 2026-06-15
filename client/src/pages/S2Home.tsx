@@ -289,7 +289,7 @@ function QueEsSection() {
               año anterior. O peor: con una hoja de Excel que actualizas tú a mano.
             </p>
             <p>
-              La Dirección Financiera Mensual® es la función que falta:{" "}
+              <strong>La Dirección Financiera Mensual®</strong> es la función que falta:{" "}
               <span className="text-[#0A0A0A] font-semibold">el control total de tu negocio en un solo sitio.</span>{" "}
               Tu caja, con saldos reales y proyectados. Tus cobros, registrados, aplicados y ordenados
               por antigüedad para saber a quién reclamar y cuándo. Tus inventarios, tus salidas por banco,
@@ -316,19 +316,19 @@ function QueEsSection() {
               {[
                 [
                   "Tu gestor registra lo que pasó",
-                  "Tu Director Financiero te dice lo que significa para el mes que viene",
+                  "Analizamos tu negocio y lo proyectamos para que tomes mejores decisiones",
                 ],
                 [
                   "El balance de diciembre llega en abril",
-                  "La lectura del mes, cuando todavía puedes actuar",
+                  "Te damos información estimada en tiempo real",
                 ],
                 [
                   "Sin un número para tomar la decisión",
-                  "Proyección de caja 90 días antes de comprometerte",
+                  "Toda la información necesaria para saber el estado de tu negocio",
                 ],
                 [
                   "Cierre fiscal trimestral o anual",
-                  "Ciclo mensual: qué pasó, qué viene, qué haces",
+                  "Te damos cierres mensuales para actuar a tiempo",
                 ],
               ].map(([left, right], i) => (
                 <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
