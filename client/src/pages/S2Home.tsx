@@ -10,14 +10,12 @@ import {
   ArrowRight,
   CheckCircle2,
   ChevronDown,
-  BarChart3,
   TrendingUp,
-  FileText,
   AlertCircle,
-  MessageCircle,
   Banknote,
-  Calendar,
-  Clock,
+  Wallet,
+  Package,
+  Landmark,
 } from "lucide-react";
 
 const HERO_BG =
@@ -368,23 +366,18 @@ function CicloSection() {
   const pasos = [
     {
       num: "01",
-      titulo: "Cierre",
-      desc: "Recogemos los datos del mes: extractos bancarios, cobros pendientes, pagos realizados, facturas emitidas y recibidas. No te pedimos que los prepares ni que aprendas ningún sistema.",
+      titulo: "Lo ponemos en marcha por ti",
+      desc: "Empezamos entendiendo tu negocio en una conversación. Lo diagnosticamos y lo configuramos en la plataforma por ti. No peleas con hojas de cálculo ni aprendes ningún sistema.",
     },
     {
       num: "02",
-      titulo: "Análisis",
-      desc: "P&G real frente a lo previsto. Dónde se fue la caja. Qué cobros llevan más días de lo normal. Qué pago importante llega el mes que viene.",
+      titulo: "Lo mantenemos al día, cada mes",
+      desc: "Tu caja, tus cobros, tus pagos, tu inventario y tu financiación, siempre actualizados y ordenados por unidad de negocio. Cerramos tu mes dentro de los primeros 10 días.",
     },
     {
       num: "03",
-      titulo: "Sesión mensual",
-      desc: "45-60 minutos contigo. No una presentación de diapositivas. Una sesión de trabajo: qué dice el mes, qué viene en los próximos 90 días, qué decisiones tienes encima y con qué datos las tomas.",
-    },
-    {
-      num: "04",
-      titulo: "Seguimiento",
-      desc: "Cuando surge algo entre sesiones — un cliente que no paga, una decisión urgente, una oferta de financiación que tienes que valorar — respondemos. No esperas al mes que viene para tener criterio.",
+      titulo: "Te damos la lectura para decidir",
+      desc: "No solo qué pasó: qué viene y qué hacer con ello. Anticipamos los meses en rojo y los picos de caja para que decidas financiación o inversión a tiempo. La tecnología hace el trabajo; el criterio lo ponemos nosotros.",
     },
   ];
 
@@ -393,17 +386,17 @@ function CicloSection() {
       <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
           <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
-            El ritmo concreto
+            Cómo lo hacemos
           </p>
           <h2
             className="text-3xl sm:text-4xl font-bold text-white mb-4"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            Así funciona cada mes
+            Cómo trabajamos contigo
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-4 gap-0">
+        <div className="grid md:grid-cols-3 gap-0">
           {pasos.map((p, i) => (
             <motion.div
               key={i}
@@ -429,7 +422,7 @@ function CicloSection() {
           className="mt-12 text-center border-t border-white/10 pt-10"
         >
           <p className="text-white/70 text-lg">
-            <span className="text-white font-semibold">Tu tiempo: entre 45 y 60 minutos al mes.</span>
+            <span className="text-white font-semibold">Tú apruebas lo importante y nos avisas de los cambios.</span>
             {" "}El resto lo hacemos nosotros.
           </p>
         </motion.div>
@@ -442,44 +435,34 @@ function CicloSection() {
 function EntregablesSection() {
   const entregables = [
     {
-      icon: BarChart3,
-      nombre: "Dashboard financiero mensual",
-      desc: "Estado real de tu empresa: cuánta caja tienes, cuánto cobras esta semana, qué pagas el mes que viene y cómo está tu margen. Sin necesidad de interpretar nada.",
-    },
-    {
-      icon: TrendingUp,
-      nombre: "P&G real vs. proyectado",
-      desc: "Cuánto ganaste este mes frente a lo que esperabas — con explicación de cada desviación relevante. Sabes por qué el número es el que es.",
-    },
-    {
-      icon: Clock,
-      nombre: "Proyección de caja 90 días",
-      desc: "Dónde estará tu caja dentro de 30, 60 y 90 días. Con alertas cuando algo no cuadra antes de que lo notes en el saldo.",
+      icon: Wallet,
+      nombre: "Tu caja",
+      desc: "Sabes cuánto tienes, cuánto tendrás o cuánto te faltará. Todos tus bancos en un solo sitio, con saldo real y proyectado.",
     },
     {
       icon: AlertCircle,
-      nombre: "Aging de cobros",
-      desc: "Qué facturas tienes pendientes de cobro, a quién le debes reclamar y cuánto tiempo llevan sin pagar. Actúas antes de que afecte a tu caja.",
+      nombre: "Tus cobros",
+      desc: "Quién te debe, cuánto y desde cuándo. A quién reclamar y cuándo, ordenado por antigüedad. Actúas antes de que afecte a tu caja.",
     },
     {
       icon: Banknote,
-      nombre: "Control de pagos",
-      desc: "Qué has pagado este mes, qué está pendiente y qué llega en los próximos días. Ningún pago importante te sorprende.",
+      nombre: "Tus pagos",
+      desc: "Qué pagas y en qué orden. Tú autorizas desde la plataforma y la conciliación con el banco es automática. Ningún pago te sorprende.",
     },
     {
-      icon: Calendar,
-      nombre: "Sesión estratégica con tu Director Financiero",
-      desc: "45-60 minutos de trabajo. No de reporting. Tu Director Financiero te dice qué significa el mes y qué decisión tienes encima con números reales detrás.",
+      icon: Package,
+      nombre: "Tu inventario",
+      desc: "Qué producto te deja margen y cuál te lo come. El coste real de lo que vendes, no una estimación.",
     },
     {
-      icon: MessageCircle,
-      nombre: "Consultas entre sesiones",
-      desc: "Cuando tienes una decisión urgente que no puede esperar a la sesión del mes — escribes y tienes respuesta.",
+      icon: Landmark,
+      nombre: "Tu financiación",
+      desc: "El coste real de tu deuda y cuándo conviene amortizar o refinanciar. Tus créditos bajo control, no dispersos en cada banco.",
     },
     {
-      icon: FileText,
-      nombre: "Reporting ejecutivo",
-      desc: "Informe mensual estructurado listo para compartir con socios, inversores o tu equipo directivo. Disponible en planes avanzados.",
+      icon: TrendingUp,
+      nombre: "Tu rentabilidad",
+      desc: "Cuánto ganas de verdad cada mes — y por unidad de negocio, no en bloque. El resultado real frente a lo que esperabas.",
     },
   ];
 
@@ -488,20 +471,20 @@ function EntregablesSection() {
       <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-16">
           <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
-            Lo tangible
+            El alcance
           </p>
           <h2
             className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            Lo que recibes cada mes
+            Todo lo que tienes bajo control
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            No accedes a ningún sistema. Recibes directamente lo que necesitas para decidir.
+            Cada área de tu negocio financiero, ordenada y al día. Según el plan que contrates.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {entregables.map((e, i) => (
             <motion.div
               key={i}
