@@ -116,7 +116,7 @@ function Navbar() {
           />
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-white/80">
-          <a href="#" className="hover:text-white transition-colors">
+          <a href="/" className="hover:text-white transition-colors">
             Inicio
           </a>
           <a href="#filosofia" className="hover:text-white transition-colors">
@@ -136,7 +136,7 @@ function Navbar() {
                 {servicios.map((s, i) => (
                   <a
                     key={i}
-                    href={s.link ?? "#servicios"}
+                    href={s.link ?? "/#servicios"}
                     onClick={() => setMenuOpen(false)}
                     className="flex items-center justify-between px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
                   >
@@ -745,6 +745,14 @@ function Footer() {
               </li>
               <li>
                 <a
+                  href="/direccion-financiera-mensual"
+                  className="hover:text-white transition-colors"
+                >
+                  Dirección Financiera Mensual®
+                </a>
+              </li>
+              <li>
+                <a
                   href="#servicios"
                   className="hover:text-white transition-colors"
                 >
@@ -837,6 +845,10 @@ function Footer() {
 
 // ─── MAIN PAGE ───
 export default function MainHome() {
+  useEffect(() => {
+    document.title = "L&C CFO® — Dirección Financiera Externa";
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar />

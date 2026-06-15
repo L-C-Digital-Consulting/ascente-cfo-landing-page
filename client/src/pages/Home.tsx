@@ -90,8 +90,9 @@ function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <a href="#"><img src="/logo-lc-negro.png" alt="L&C CFO®" className="h-14 w-auto object-contain mix-blend-screen" /></a>
+        <a href="/"><img src="/logo-lc-negro.png" alt="L&C CFO®" className="h-14 w-auto object-contain mix-blend-screen" /></a>
         <div className="hidden md:flex items-center gap-8 text-sm text-white/80">
+          <a href="/" className="hover:text-white transition-colors">Inicio</a>
           <a href="#problema" className="hover:text-white transition-colors">El Problema</a>
           <a href="#diagnostico" className="hover:text-white transition-colors">El Diagnóstico</a>
           <a href="#entregables" className="hover:text-white transition-colors">Entregables</a>
@@ -1237,6 +1238,10 @@ function Footer() {
 
 // ─── MAIN PAGE ───
 export default function Home() {
+  useEffect(() => {
+    document.title = "Diagnóstico de Claridad Financiera® | L&C CFO®";
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar />

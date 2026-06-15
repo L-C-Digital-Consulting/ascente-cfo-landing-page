@@ -1151,6 +1151,10 @@ function Footer() {
 
 // ─── MAIN PAGE ───
 export default function S2Home() {
+  useEffect(() => {
+    document.title = "Dirección Financiera Mensual® | L&C CFO®";
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar />
