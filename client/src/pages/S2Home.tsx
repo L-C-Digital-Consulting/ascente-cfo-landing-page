@@ -959,7 +959,7 @@ const faqs = [
   },
   {
     q: "¿Qué diferencia hay entre los planes Control, Dirección y Estrategia?",
-    a: "Control es para empresas de hasta 800K€ que necesitan dominar tesorería, cobros, pagos, inventarios y conocer su P&G mensual. Dirección añade financiación, previsiones y el Diagnóstico de Claridad Financiera® bonificado. Estrategia incluye además la planificación anual completa con presupuesto vs. real, previsión financiera con IA y reporting ejecutivo — con el setup del Presupuesto Estratégico Anual® incluido.",
+    a: "Control cubre tesorería, cobros, pagos, inventarios y tu P&G mensual (Resultados Operativos). Dirección añade el módulo de Financiación, el Presupuesto Estratégico Anual® y el Diagnóstico de Claridad Financiera® bonificado. Estrategia incluye además la previsión financiera con IA y el reporting ejecutivo, con el setup del Presupuesto Estratégico Anual® ya incluido.",
   },
 ];
 
