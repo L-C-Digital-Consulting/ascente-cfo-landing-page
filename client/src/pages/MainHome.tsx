@@ -23,10 +23,11 @@ import {
   Wallet,
   Landmark,
   Rocket,
-  Brain,
+  Users,
   Network,
   ArrowRight,
   CheckCircle2,
+  ChevronDown,
 } from "lucide-react";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/hero_bg-hCmBTqbzuN6tTGJpJsBUWU.webp";
@@ -79,10 +80,23 @@ function AnimatedSection({
 // ─── NAVBAR ───
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
+  }, []);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
   return (
@@ -108,9 +122,44 @@ function Navbar() {
           <a href="#filosofia" className="hover:text-white transition-colors">
             Filosofía
           </a>
-          <a href="#servicios" className="hover:text-white transition-colors">
-            Servicios
-          </a>
+          {/* Servicios dropdown */}
+          <div ref={menuRef} className="relative">
+            <button
+              onClick={() => setMenuOpen((v) => !v)}
+              className="flex items-center gap-1 hover:text-white transition-colors focus:outline-none"
+            >
+              Servicios
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${menuOpen ? "rotate-180" : ""}`} />
+            </button>
+            {menuOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-[#0A0A0A] border border-white/10 shadow-2xl py-2">
+                {servicios.map((s, i) => (
+                  <a
+                    key={i}
+                    href={s.link ?? "#servicios"}
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center justify-between px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                  >
+                    <span>{s.name}</span>
+                    {s.ia && (
+                      <span className="text-[0.5rem] font-bold tracking-[0.1em] uppercase text-[#C9A84C] bg-[#C9A84C]/10 border border-[#C9A84C]/40 rounded-[3px] px-1.5 py-px ml-2 flex-shrink-0">
+                        ✦ IA
+                      </span>
+                    )}
+                  </a>
+                ))}
+                <div className="border-t border-white/10 mt-2 pt-2 px-4 pb-1">
+                  <a
+                    href="#servicios"
+                    onClick={() => setMenuOpen(false)}
+                    className="text-[#C9A84C] text-xs font-semibold hover:text-[#B8943B] transition-colors flex items-center gap-1"
+                  >
+                    Ver todos los servicios <ArrowRight className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
           <a href="#valores" className="hover:text-white transition-colors">
             Valores
           </a>
@@ -378,48 +427,56 @@ const servicios = [
     name: "Diagnóstico de Claridad Financiera®",
     desc: "La radiografía financiera de tu empresa en 48h. Más de 40 indicadores financieros e informe completo.",
     link: DIAGNOSTICO_URL,
+    ia: true,
   },
   {
     icon: Calendar,
-    name: "Planeación Financiera Mensual®",
-    desc: "Dirección financiera continua. Análisis, escenarios y decisiones clave cada mes.",
-    link: null,
+    name: "Dirección Financiera Mensual®",
+    desc: "Todo el área financiera de tu empresa, operada mes a mes: tesorería, cobros, pagos, proyecciones, financiación, inventarios, control de gestión y reporting. Con sesión estratégica mensual con tu Director Financiero.",
+    link: "/direccion-financiera-mensual",
+    ia: true,
   },
   {
     icon: PieChart,
     name: "Presupuesto Estratégico Anual®",
-    desc: "Convierte tu estrategia en números accionables.",
+    desc: "Plan financiero anual con objetivos por unidad de negocio mes a mes, seguimiento real vs. presupuesto y previsión a 12 meses. Sabrás a dónde vas a llegar antes de que finalice el año.",
     link: null,
+    ia: false,
+  },
+  {
+    icon: Users,
+    name: "Gestión de Personal®",
+    desc: "Estructura de puestos, costes laborales y planificación estratégica de plantilla.",
+    link: null,
+    ia: false,
   },
   {
     icon: AlertCircle,
     name: "Análisis de Decisiones Críticas®",
     desc: "Evaluación multiescenario para decisiones de alto impacto.",
     link: null,
+    ia: true,
   },
   {
     icon: Wallet,
     name: "Optimización de Rentabilidad y Caja®",
     desc: "Mejora márgenes y flujos de caja con reingeniería financiera.",
     link: null,
+    ia: false,
   },
   {
     icon: Landmark,
     name: "Estrategia de Deuda y Capital®",
     desc: "Financiación, estructuración de deuda y acceso a capital.",
     link: null,
+    ia: false,
   },
   {
     icon: Rocket,
     name: "Validación de Nuevos Negocios®",
     desc: "Viabilidad real antes de invertir en algo nuevo.",
     link: null,
-  },
-  {
-    icon: Brain,
-    name: "Soluciones con IA",
-    desc: "Automatización e inteligencia artificial aplicadas a la gestión financiera.",
-    link: null,
+    ia: false,
   },
 ];
 
@@ -443,8 +500,13 @@ function ServiciosSection() {
             <motion.div
               key={i}
               variants={fadeUp}
-              className="bg-white border border-gray-200 p-6 flex flex-col group hover:border-[#C9A84C] transition-colors"
+              className="relative bg-white border border-gray-200 p-6 flex flex-col group hover:border-[#C9A84C] transition-colors"
             >
+              {s.ia && (
+                <span className="absolute top-3 right-3 text-[0.5rem] font-bold tracking-[0.1em] uppercase text-[#C9A84C] bg-[#C9A84C]/10 border border-[#C9A84C]/40 rounded-[3px] px-1.5 py-px">
+                  ✦ IA
+                </span>
+              )}
               <div className="w-10 h-10 bg-[#0A0A0A] flex items-center justify-center mb-4 group-hover:bg-[#C9A84C] transition-colors flex-shrink-0">
                 <s.icon className="w-5 h-5 text-[#C9A84C] group-hover:text-[#0A0A0A] transition-colors" />
               </div>

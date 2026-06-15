@@ -1,0 +1,1170 @@
+/*
+ * L&C CFO® — Dirección Financiera Mensual® (S2)
+ * Landing page: /direccion-financiera-mensual
+ * Dark: #0A0A0A · Accent: #C9A84C · Light: #FAF8F4
+ */
+
+import { useState, useRef, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ChevronDown,
+  BarChart3,
+  TrendingUp,
+  FileText,
+  AlertCircle,
+  MessageCircle,
+  Banknote,
+  Calendar,
+  Clock,
+} from "lucide-react";
+
+const HERO_BG =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/hero_bg-hCmBTqbzuN6tTGJpJsBUWU.webp";
+const WHATSAPP_LOGO =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/whatsapp_logo_09eed037.png";
+const LINKEDIN_URL =
+  "https://www.linkedin.com/in/miguel-ángel-lópez-sainz-0bb25341";
+const DIAGNOSTICO_URL = "/diagnostico-financiero-pyme";
+const WA_S2 =
+  "https://wa.me/34635580883?text=Hola%2C%20me%20interesa%20la%20Direcci%C3%B3n%20Financiera%20Mensual%C2%AE%20de%20L%26C%20CFO%C2%AE%20y%20quiero%20ver%20si%20encaja%20con%20mi%20empresa.";
+const WA_POST_DIAGNOSTICO =
+  "https://wa.me/34635580883?text=Hola%2C%20ya%20hice%20el%20Diagn%C3%B3stico%20y%20me%20interesa%20ver%20c%C3%B3mo%20encaja%20la%20Direcci%C3%B3n%20Financiera%20Mensual%C2%AE%20con%20mi%20empresa.";
+
+// ─── ANIMATION VARIANTS ───
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0, 0, 0.2, 1] as const },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12 } },
+};
+
+function AnimatedSection({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={staggerContainer}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function IaBadge() {
+  return (
+    <span className="inline-flex text-[0.5rem] font-bold tracking-[0.1em] uppercase text-[#C9A84C] bg-[#C9A84C]/10 border border-[#C9A84C]/40 rounded-[3px] px-1.5 py-px ml-1.5 align-middle">
+      ✦ IA
+    </span>
+  );
+}
+
+// ─── SERVICIOS (para dropdown navbar) ───
+const servicios = [
+  { name: "Diagnóstico de Claridad Financiera®", link: DIAGNOSTICO_URL, ia: true },
+  { name: "Dirección Financiera Mensual®", link: "/direccion-financiera-mensual", ia: true },
+  { name: "Presupuesto Estratégico Anual®", link: null, ia: false },
+  { name: "Gestión de Personal®", link: null, ia: false },
+  { name: "Análisis de Decisiones Críticas®", link: null, ia: true },
+  { name: "Optimización de Rentabilidad y Caja®", link: null, ia: false },
+  { name: "Estrategia de Deuda y Capital®", link: null, ia: false },
+  { name: "Validación de Nuevos Negocios®", link: null, ia: false },
+];
+
+// ─── NAVBAR ───
+function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#0A0A0A]/95 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <a href="/">
+          <img
+            src="/logo-lc-negro.png"
+            alt="L&C CFO®"
+            className="h-14 w-auto object-contain mix-blend-screen"
+          />
+        </a>
+        <div className="hidden md:flex items-center gap-8 text-sm text-white/80">
+          <a href="/" className="hover:text-white transition-colors">
+            Inicio
+          </a>
+          <a href="#que-es" className="hover:text-white transition-colors">
+            Qué es
+          </a>
+          <div ref={menuRef} className="relative">
+            <button
+              onClick={() => setMenuOpen((v) => !v)}
+              className="flex items-center gap-1 hover:text-white transition-colors focus:outline-none"
+            >
+              Servicios
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${menuOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            {menuOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-[#0A0A0A] border border-white/10 shadow-2xl py-2">
+                {servicios.map((s, i) => (
+                  <a
+                    key={i}
+                    href={s.link ?? "/#servicios"}
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center justify-between px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                  >
+                    <span>{s.name}</span>
+                    {s.ia && (
+                      <span className="text-[0.5rem] font-bold tracking-[0.1em] uppercase text-[#C9A84C] bg-[#C9A84C]/10 border border-[#C9A84C]/40 rounded-[3px] px-1.5 py-px ml-2 flex-shrink-0">
+                        ✦ IA
+                      </span>
+                    )}
+                  </a>
+                ))}
+                <div className="border-t border-white/10 mt-2 pt-2 px-4 pb-1">
+                  <a
+                    href="/#servicios"
+                    onClick={() => setMenuOpen(false)}
+                    className="text-[#C9A84C] text-xs font-semibold hover:text-[#B8943B] transition-colors flex items-center gap-1"
+                  >
+                    Ver todos los servicios <ArrowRight className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+          <a href="#planes" className="hover:text-white transition-colors">
+            Planes
+          </a>
+          <a href="#faq" className="hover:text-white transition-colors">
+            FAQ
+          </a>
+        </div>
+        <div className="flex items-center gap-3">
+          <a
+            href={WA_S2}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          >
+            <img src={WHATSAPP_LOGO} alt="WhatsApp" className="w-5 h-5 object-contain" />
+          </a>
+          <a
+            href={WA_S2}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-6 py-2 text-sm transition-colors"
+          >
+            Contáctanos
+          </a>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+// ─── HERO ───
+function HeroSection() {
+  return (
+    <section
+      className="relative min-h-screen flex items-center overflow-hidden"
+      style={{
+        backgroundImage: `url(${HERO_BG})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/97 to-[#0A0A0A]/80" />
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#C9A84C]" />
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <p className="text-[#C9A84C] font-bold text-base tracking-widest uppercase mb-6 border-l-4 border-[#C9A84C] pl-4">
+            L&C CFO® · Dirección Financiera Mensual®
+          </p>
+          <h1
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Tu empresa tiene gestoría.
+            <br />
+            Pero la gestoría no te dice qué va a pasar
+            <br />
+            el mes que viene.
+          </h1>
+          <p className="text-lg text-white/70 mb-8 max-w-2xl">
+            Un Director Financiero Externo que analiza tu empresa cada mes,
+            proyecta tu caja y decide contigo lo que viene.
+            Sin contratarlo en plantilla. Sin permanencia.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href={WA_S2}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-10 py-4 text-lg transition-colors"
+            >
+              <img src={WHATSAPP_LOGO} alt="" className="w-5 h-5 object-contain" />
+              Contáctanos
+            </a>
+            <a
+              href="#que-es"
+              className="inline-flex items-center gap-2 border border-white/30 hover:border-white/60 text-white px-10 py-4 text-lg transition-colors"
+            >
+              Ver cómo funciona
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ─── QUÉ ES S2 ───
+function QueEsSection() {
+  return (
+    <section id="que-es" className="bg-white py-20 lg:py-28">
+      <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-14">
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
+            La distinción clave
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-6 text-balance"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Lo que hace tu gestoría.<br />
+            Lo que hace un Director Financiero.
+            <span className="block text-[#C9A84C] mt-1">No es lo mismo.</span>
+          </h2>
+          <div className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed space-y-5 text-pretty">
+            <p>
+              Tu gestor lleva la contabilidad fiscal, presenta los impuestos y entrega el balance.
+              Lo hace bien. Es su función.
+            </p>
+            <p>
+              Pero el balance que te entrega en abril refleja lo que pasó en diciembre.
+              Para entonces llevas cuatro meses tomando decisiones con datos del año anterior.
+            </p>
+            <p>
+              La Dirección Financiera Mensual® es la función que falta: la lectura financiera mensual
+              que te dice qué pasa ahora y qué hacer con ello antes de que el banco o el mercado te lo digan ellos.
+            </p>
+          </div>
+        </motion.div>
+
+        <div className="overflow-x-auto mb-12">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr>
+                <th className="text-left py-3 px-6 bg-gray-50 text-sm font-semibold text-gray-500 w-1/2">
+                  Lo que ya tienes
+                </th>
+                <th className="text-left py-3 px-6 bg-[#0A0A0A] text-sm font-semibold text-[#C9A84C] w-1/2">
+                  Lo que añade la Dirección Financiera Mensual®
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                [
+                  "Tu gestor registra lo que pasó",
+                  "Tu Director Financiero te dice lo que significa para el mes que viene",
+                ],
+                [
+                  "El balance de diciembre llega en abril",
+                  "La lectura del mes, cuando todavía puedes actuar",
+                ],
+                [
+                  "Sin un número para tomar la decisión",
+                  "Proyección de caja 90 días antes de comprometerte",
+                ],
+                [
+                  "Cierre fiscal trimestral o anual",
+                  "Ciclo mensual: qué pasó, qué viene, qué haces",
+                ],
+              ].map(([left, right], i) => (
+                <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
+                  <td className="py-4 px-6 text-sm text-gray-600 border-b border-gray-100">
+                    {left}
+                  </td>
+                  <td className="py-4 px-6 text-sm text-[#0A0A0A] font-medium border-b border-gray-100 bg-[#FAF8F4]">
+                    {right}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <motion.div
+          variants={fadeUp}
+          className="bg-[#0A0A0A] px-8 py-8 border-l-4 border-[#C9A84C]"
+        >
+          <p
+            className="text-xl sm:text-2xl text-white leading-snug"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            "Tu gestor lleva la contabilidad fiscal.
+            Nosotros llevamos la dirección financiera.
+            Son funciones distintas.
+            Y ambas son necesarias."
+          </p>
+        </motion.div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── CICLO MENSUAL ───
+function CicloSection() {
+  const pasos = [
+    {
+      num: "01",
+      titulo: "Cierre",
+      desc: "Recogemos los datos del mes: extractos bancarios, cobros pendientes, pagos realizados, facturas emitidas y recibidas. No te pedimos que los prepares ni que aprendas ningún sistema.",
+    },
+    {
+      num: "02",
+      titulo: "Análisis",
+      desc: "P&G real frente a lo previsto. Dónde se fue la caja. Qué cobros llevan más días de lo normal. Qué pago importante llega el mes que viene.",
+    },
+    {
+      num: "03",
+      titulo: "Sesión mensual",
+      desc: "45-60 minutos contigo. No una presentación de diapositivas. Una sesión de trabajo: qué dice el mes, qué viene en los próximos 90 días, qué decisiones tienes encima y con qué datos las tomas.",
+    },
+    {
+      num: "04",
+      titulo: "Seguimiento",
+      desc: "Cuando surge algo entre sesiones — un cliente que no paga, una decisión urgente, una oferta de financiación que tienes que valorar — respondemos. No esperas al mes que viene para tener criterio.",
+    },
+  ];
+
+  return (
+    <section id="ciclo" className="bg-[#0A0A0A] py-20 lg:py-28">
+      <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-16">
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
+            El ritmo concreto
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-white mb-4"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Así funciona cada mes
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-4 gap-0">
+          {pasos.map((p, i) => (
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              className="relative p-6 border-t-2 border-[#C9A84C] md:border-t-2 md:border-l-0 first:border-l-0"
+            >
+              <p className="text-[#C9A84C] font-bold text-3xl mb-3 opacity-40">
+                {p.num}
+              </p>
+              <h3
+                className="text-white font-bold text-lg mb-3"
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+              >
+                {p.titulo}
+              </h3>
+              <p className="text-white/60 text-sm leading-relaxed">{p.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          variants={fadeUp}
+          className="mt-12 text-center border-t border-white/10 pt-10"
+        >
+          <p className="text-white/70 text-lg">
+            <span className="text-white font-semibold">Tu tiempo: entre 45 y 60 minutos al mes.</span>
+            {" "}El resto lo hacemos nosotros.
+          </p>
+        </motion.div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── ENTREGABLES ───
+function EntregablesSection() {
+  const entregables = [
+    {
+      icon: BarChart3,
+      nombre: "Dashboard financiero mensual",
+      desc: "Estado real de tu empresa: cuánta caja tienes, cuánto cobras esta semana, qué pagas el mes que viene y cómo está tu margen. Sin necesidad de interpretar nada.",
+    },
+    {
+      icon: TrendingUp,
+      nombre: "P&G real vs. proyectado",
+      desc: "Cuánto ganaste este mes frente a lo que esperabas — con explicación de cada desviación relevante. Sabes por qué el número es el que es.",
+    },
+    {
+      icon: Clock,
+      nombre: "Proyección de caja 90 días",
+      desc: "Dónde estará tu caja dentro de 30, 60 y 90 días. Con alertas cuando algo no cuadra antes de que lo notes en el saldo.",
+    },
+    {
+      icon: AlertCircle,
+      nombre: "Aging de cobros",
+      desc: "Qué facturas tienes pendientes de cobro, a quién le debes reclamar y cuánto tiempo llevan sin pagar. Actúas antes de que afecte a tu caja.",
+    },
+    {
+      icon: Banknote,
+      nombre: "Control de pagos",
+      desc: "Qué has pagado este mes, qué está pendiente y qué llega en los próximos días. Ningún pago importante te sorprende.",
+    },
+    {
+      icon: Calendar,
+      nombre: "Sesión estratégica con tu Director Financiero",
+      desc: "45-60 minutos de trabajo. No de reporting. Tu Director Financiero te dice qué significa el mes y qué decisión tienes encima con números reales detrás.",
+    },
+    {
+      icon: MessageCircle,
+      nombre: "Consultas entre sesiones",
+      desc: "Cuando tienes una decisión urgente que no puede esperar a la sesión del mes — escribes y tienes respuesta.",
+    },
+    {
+      icon: FileText,
+      nombre: "Reporting ejecutivo",
+      desc: "Informe mensual estructurado listo para compartir con socios, inversores o tu equipo directivo. Disponible en planes avanzados.",
+    },
+  ];
+
+  return (
+    <section id="entregables" className="bg-[#FAF8F4] py-20 lg:py-28">
+      <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-16">
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
+            Lo tangible
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Lo que recibes cada mes
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            No accedes a ningún sistema. Recibes directamente lo que necesitas para decidir.
+          </p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {entregables.map((e, i) => (
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              className="bg-white border border-gray-200 p-6 flex flex-col group hover:border-[#C9A84C] transition-colors"
+            >
+              <div className="w-10 h-10 bg-[#0A0A0A] flex items-center justify-center mb-4 group-hover:bg-[#C9A84C] transition-colors flex-shrink-0">
+                <e.icon className="w-5 h-5 text-[#C9A84C] group-hover:text-[#0A0A0A] transition-colors" />
+              </div>
+              <h3
+                className="font-bold text-[#0A0A0A] text-sm mb-2"
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+              >
+                {e.nombre}
+              </h3>
+              <p className="text-gray-600 text-sm flex-1">{e.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── PLANES ───
+type ModuloRow =
+  | { type: "header"; name: string }
+  | { type: "module"; name: string; ia?: boolean; control: boolean; direccion: boolean; estrategia: boolean; note?: boolean; sub?: boolean };
+
+const modulosPlanes: ModuloRow[] = [
+  { type: "module", name: "Tesorería + Clientes + Proveedores", ia: true, control: true, direccion: true, estrategia: true },
+  { type: "module", name: "Inventarios", control: true, direccion: true, estrategia: true },
+  { type: "module", name: "Financiación", ia: true, control: false, direccion: true, estrategia: true },
+  { type: "module", name: "Diagnóstico de Claridad Financiera® bonificado", ia: true, control: false, direccion: true, estrategia: true },
+  { type: "header", name: "Planificación Financiera" },
+  { type: "module", name: "Resultados Operativos", sub: true, control: true, direccion: true, estrategia: true },
+  { type: "module", name: "Presupuesto Estratégico Anual®", sub: true, note: true, control: false, direccion: true, estrategia: true },
+  { type: "module", name: "Previsión Financiera", ia: true, sub: true, control: false, direccion: false, estrategia: true },
+  { type: "module", name: "Reporting ejecutivo", control: false, direccion: false, estrategia: true },
+];
+
+const planes = [
+  {
+    nombre: "Control",
+    target: "1–15 empleados",
+    facturacion: "150K–800K €/año",
+    tagline: "Visibilidad y control total de tu operativa financiera mensual.",
+    highlight: false,
+  },
+  {
+    nombre: "Dirección",
+    target: "10–35 empleados",
+    facturacion: "800K–3M €/año",
+    tagline: "Dirección financiera activa con financiación, previsiones y Diagnóstico incluido.",
+    highlight: true,
+  },
+  {
+    nombre: "Estrategia",
+    target: "25–80 empleados",
+    facturacion: "3M–15M €/año",
+    tagline: "CFO Estratégico con planificación anual, presupuesto y reporting ejecutivo.",
+    highlight: false,
+  },
+];
+
+function Cell({ value, plan }: { value: boolean | "note"; plan: "control" | "direccion" | "estrategia" }) {
+  if (value === false)
+    return (
+      <td className={`text-center py-3 px-4 ${plan === "direccion" ? "bg-[#C9A84C]/5" : ""}`}>
+        <span className="text-white/20 text-lg">—</span>
+      </td>
+    );
+  return (
+    <td className={`text-center py-3 px-4 ${plan === "direccion" ? "bg-[#C9A84C]/5" : ""}`}>
+      <CheckCircle2 className="w-4 h-4 text-[#C9A84C] mx-auto" />
+      {value === "note" && <span className="text-[#C9A84C] text-xs ml-0.5">*</span>}
+    </td>
+  );
+}
+
+function PlanesSection() {
+  return (
+    <section id="planes" className="bg-[#0A0A0A] py-20 lg:py-28">
+      <AnimatedSection className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-14">
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
+            Elige tu nivel
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-white mb-4"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Tres planes. Una sola dirección financiera.
+          </h2>
+          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+            El plan correcto depende del tamaño de tu empresa y del nivel de control que necesitas.
+            Todos incluyen sesión mensual con tu Director Financiero y ciclo completo de análisis.
+          </p>
+        </motion.div>
+
+        {/* Cabecera planes */}
+        <motion.div variants={fadeUp} className="grid grid-cols-4 gap-0 mb-0">
+          <div className="col-span-1" />
+          {planes.map((p, i) => (
+            <div
+              key={i}
+              className={`p-6 text-center ${
+                p.highlight
+                  ? "bg-[#C9A84C] text-[#0A0A0A]"
+                  : "bg-white/5 border border-white/10 text-white"
+              }`}
+            >
+              {p.highlight && (
+                <p className="text-[0.65rem] font-bold tracking-widest uppercase mb-2 text-[#0A0A0A]/60">
+                  Más popular
+                </p>
+              )}
+              <h3
+                className={`text-2xl font-bold mb-1 ${p.highlight ? "text-[#0A0A0A]" : "text-white"}`}
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+              >
+                {p.nombre}
+              </h3>
+              <p className={`text-xs mb-0.5 ${p.highlight ? "text-[#0A0A0A]/70" : "text-white/50"}`}>
+                {p.target}
+              </p>
+              <p className={`text-xs font-semibold ${p.highlight ? "text-[#0A0A0A]/80" : "text-[#C9A84C]"}`}>
+                {p.facturacion}
+              </p>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Tabla módulos */}
+        <motion.div variants={fadeUp} className="overflow-x-auto">
+          <table className="w-full border-collapse">
+            <tbody>
+              {modulosPlanes.map((row, i) => {
+                if (row.type === "header") {
+                  return (
+                    <tr key={i}>
+                      <td
+                        colSpan={4}
+                        className="py-3 px-4 text-xs font-bold tracking-widest uppercase text-[#C9A84C] bg-white/5 border-t border-b border-white/10"
+                      >
+                        {row.name}
+                      </td>
+                    </tr>
+                  );
+                }
+                return (
+                  <tr key={i} className="border-b border-white/5 hover:bg-white/2 transition-colors">
+                    <td className="py-3 px-4 text-sm text-white/70">
+                      <span className={row.sub ? "pl-3 text-white/50" : ""}>
+                        {row.name}
+                        {row.ia && <IaBadge />}
+                      </span>
+                    </td>
+                    <Cell value={row.control} plan="control" />
+                    <Cell value={row.direccion && row.note ? "note" : row.direccion} plan="direccion" />
+                    <Cell value={row.estrategia} plan="estrategia" />
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </motion.div>
+
+        <motion.div variants={fadeUp} className="mt-6 text-white/40 text-xs">
+          * El Presupuesto Estratégico Anual® requiere un setup inicial con coste único en el plan Dirección. Incluido en Plan Estrategia.
+        </motion.div>
+
+        {/* Funcionalidades sectoriales */}
+        <motion.div variants={fadeUp} className="mt-8 border border-white/10 p-5">
+          <p className="text-[#C9A84C] text-xs font-bold tracking-widest uppercase mb-4">
+            Funcionalidades sectoriales
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="flex items-start gap-3">
+              <span className="text-[#C9A84C] font-bold text-xs bg-[#C9A84C]/10 border border-[#C9A84C]/30 px-2 py-0.5 flex-shrink-0">
+                Hostelería
+              </span>
+              <p className="text-white/50 text-xs leading-relaxed">
+                Escandallos y análisis de food cost incluidos desde Plan Dirección — fichas de producto, coste por receta y análisis de rentabilidad por referencia.
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-white/20 font-bold text-xs bg-white/5 border border-white/10 px-2 py-0.5 flex-shrink-0">
+                Construcción
+              </span>
+              <p className="text-white/30 text-xs leading-relaxed italic">
+                Módulos específicos por obra en desarrollo. Disponibles cuando se incorpore el primer cliente del sector.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div variants={fadeUp} className="mt-10 text-center">
+          <p className="text-white/60 text-sm mb-6">
+            ¿No sabes qué plan encaja con tu empresa? Cuéntanos en qué punto estás y lo vemos juntos.
+          </p>
+          <a
+            href={WA_S2}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-10 py-4 text-lg transition-colors"
+          >
+            <img src={WHATSAPP_LOGO} alt="" className="w-5 h-5 object-contain" />
+            Contáctanos
+          </a>
+        </motion.div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── PARA QUIÉN ───
+function ParaQuienSection() {
+  const encaja = [
+    "Tu empresa factura entre 150.000€ y 15M€ y sigues tomando decisiones financieras sin un número claro que las respalde.",
+    "Tienes gestor o contable, pero nadie te dice qué va a pasar con tu caja el mes que viene.",
+    "Hay meses en los que no sabes si vas a llegar a nóminas sin revisar el saldo bancario con angustia.",
+    "Estás contratando, invirtiendo o pidiendo financiación y la decisión la tomas más con sensación que con datos.",
+    "Tu empresa crece — pero la caja no refleja ese crecimiento.",
+  ];
+
+  const noEncaja = [
+    { text: "Facturas menos de 150.000€.", sub: "El Diagnóstico de Claridad Financiera® es el primer paso correcto." },
+    { text: "Necesitas a alguien con presencia física diaria en tu empresa.", sub: "La Dirección Financiera Mensual® es un servicio remoto y mensual. No sustituye a un equipo interno a tiempo completo." },
+    { text: "Tu contabilidad lleva meses atrasada o desordenada.", sub: "Primero hay que sentar la base contable. Hablamos cuando esté ordenada." },
+  ];
+
+  return (
+    <section className="bg-white py-20 lg:py-28">
+      <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-14">
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
+            Cualificación
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            La Dirección Financiera Mensual® encaja si…
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <motion.div variants={fadeUp} className="space-y-4">
+            {encaja.map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-[#C9A84C] flex-shrink-0 mt-0.5" />
+                <p className="text-gray-700 text-sm leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            className="bg-[#FAF8F4] border border-gray-200 p-6 space-y-5"
+          >
+            <h3
+              className="font-bold text-[#0A0A0A] text-sm mb-4 uppercase tracking-widest"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+            >
+              Probablemente no encaja aún
+            </h3>
+            {noEncaja.map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <div className="w-5 h-5 flex-shrink-0 mt-0.5 flex items-center justify-center">
+                  <span className="text-gray-300 font-bold text-lg leading-none">×</span>
+                </div>
+                <div>
+                  <p className="text-gray-700 text-sm font-medium">{item.text}</p>
+                  <p className="text-gray-500 text-xs mt-0.5">{item.sub}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── VS CFO INTERNO ───
+function VsCFOSection() {
+  const filas = [
+    { concepto: "Disponible desde", interno: "3–6 meses (selección, preaviso, onboarding)", lc: "Semanas desde el primer contacto" },
+    { concepto: "Experiencia", interno: "Variable según el candidato", lc: "20+ años en finanzas · ex PwC · ESADE · 20+ países" },
+    { concepto: "Compromiso", interno: "Contrato laboral — meses o años para deshacer", lc: "Mes a mes. Sin permanencia." },
+    { concepto: "Visión", interno: "Solo tu empresa, solo tu sector", lc: "Perspectiva de múltiples sectores y mercados" },
+    { concepto: "Tecnología", interno: "La que él traiga", lc: "Plataforma L&C CFO® con IA integrada" },
+  ];
+
+  return (
+    <section className="bg-[#FAF8F4] py-20 lg:py-28">
+      <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="mb-12">
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
+            La alternativa
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Un CFO interno cuesta entre 5.000 y 8.000 €/mes.
+            <br />
+            Estos son los números.
+          </h2>
+          <p className="text-gray-600 max-w-2xl">
+            Si has llegado a la conclusión de que necesitas dirección financiera mensual,
+            la siguiente pregunta es cómo la tienes. Contratar a alguien en plantilla o tenerlo externo.
+          </p>
+        </motion.div>
+
+        <motion.div variants={fadeUp} className="overflow-x-auto">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr>
+                <th className="text-left py-3 px-5 bg-gray-100 text-xs font-semibold text-gray-500 uppercase tracking-wide w-1/4">
+                  Concepto
+                </th>
+                <th className="text-left py-3 px-5 bg-gray-100 text-xs font-semibold text-gray-500 uppercase tracking-wide w-3/8">
+                  CFO interno
+                </th>
+                <th className="text-left py-3 px-5 bg-[#0A0A0A] text-xs font-semibold text-[#C9A84C] uppercase tracking-wide w-3/8">
+                  L&C CFO® — Dirección Financiera Mensual®
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {filas.map((f, i) => (
+                <tr key={i} className="border-b border-gray-200">
+                  <td className="py-4 px-5 text-xs font-semibold text-gray-500 uppercase tracking-wide bg-gray-50">
+                    {f.concepto}
+                  </td>
+                  <td className="py-4 px-5 text-sm text-gray-600">{f.interno}</td>
+                  <td className="py-4 px-5 text-sm text-white font-medium bg-[#0A0A0A]">
+                    {f.lc}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </motion.div>
+
+        <motion.div variants={fadeUp} className="mt-8 border-l-4 border-[#C9A84C] pl-6">
+          <p className="text-gray-700 text-base leading-relaxed">
+            La mayoría de las empresas que necesitan dirección financiera mensual
+            no pueden esperar 6 meses ni comprometerse con una nómina fija de 8.000 €.
+            <span className="font-semibold text-[#0A0A0A]"> Hay otra forma.</span>
+          </p>
+        </motion.div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── PRIMER PASO ───
+function PrimerPasoSection() {
+  return (
+    <section className="bg-[#0A0A0A] py-20 lg:py-28">
+      <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-14">
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
+            El inicio
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-white mb-4"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            ¿Por dónde empezamos?
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Path A */}
+          <motion.div
+            variants={fadeUp}
+            className="bg-white/5 border border-[#C9A84C]/30 p-8 flex flex-col"
+          >
+            <p className="text-[#C9A84C] text-xs font-bold tracking-widest uppercase mb-4">
+              Ya hiciste el Diagnóstico
+            </p>
+            <h3
+              className="text-2xl font-bold text-white mb-4"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+            >
+              Ya tienes el mapa.
+            </h3>
+            <p className="text-white/60 text-sm leading-relaxed mb-8 flex-1">
+              El Diagnóstico te dijo dónde está tu empresa realmente.
+              El siguiente paso es que trabajemos con esos datos cada mes:
+              analizando lo que pasa, proyectando lo que viene y decidiendo contigo.
+            </p>
+            <a
+              href={WA_POST_DIAGNOSTICO}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-8 py-3 transition-colors"
+            >
+              <img src={WHATSAPP_LOGO} alt="" className="w-4 h-4 object-contain" />
+              Contáctanos
+            </a>
+          </motion.div>
+
+          {/* Path B */}
+          <motion.div
+            variants={fadeUp}
+            className="bg-white/5 border border-white/10 p-8 flex flex-col"
+          >
+            <p className="text-white/40 text-xs font-bold tracking-widest uppercase mb-4">
+              Aún no lo has hecho
+            </p>
+            <h3
+              className="text-2xl font-bold text-white mb-4"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+            >
+              Empieza por saber dónde estás.
+            </h3>
+            <p className="text-white/60 text-sm leading-relaxed mb-8 flex-1">
+              El Diagnóstico de Claridad Financiera® analiza más de 40 indicadores de tu empresa
+              y te los entrega en 48 horas con una sesión de 45 minutos con tu Director Financiero.
+              Es el punto de partida correcto — y después decides si la Dirección Financiera Mensual® tiene sentido para ti.
+            </p>
+            <a
+              href={DIAGNOSTICO_URL}
+              className="inline-flex items-center gap-2 border border-white/30 hover:border-[#C9A84C] text-white hover:text-[#C9A84C] font-semibold px-8 py-3 transition-colors"
+            >
+              Ver el Diagnóstico
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </motion.div>
+        </div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── FAQ ───
+const faqs = [
+  {
+    q: "¿Necesito haber hecho el Diagnóstico antes de contratar la Dirección Financiera Mensual®?",
+    a: "No es un requisito. Si ya conoces tu situación financiera con claridad, podemos empezar directamente. Si no, el Diagnóstico de Claridad Financiera® es el punto de partida recomendado: en 48 horas tienes la fotografía completa de tu empresa y sabes si es lo que necesitas.",
+  },
+  {
+    q: "¿Qué pasa si ya tengo gestor o gestoría?",
+    a: "Trabajan en paralelo, no en competencia. Tu gestor lleva la contabilidad fiscal y las declaraciones de impuestos. Nosotros llevamos la lectura financiera mensual, la proyección de caja y las decisiones que vienen de entender los números, no de registrarlos. Son funciones distintas. La mayoría de los clientes que trabajan con nosotros tienen gestoría activa.",
+  },
+  {
+    q: "¿Cuánto tiempo necesito dedicar al mes?",
+    a: "Entre 45 y 60 minutos para la sesión mensual. El resto — recoger los datos, analizarlos, preparar el dashboard, proyectar la caja — lo hacemos nosotros. No necesitas aprender ningún software, preparar informes ni interpretar nada.",
+  },
+  {
+    q: "¿Hay permanencia mínima?",
+    a: "No. El servicio es mes a mes desde el primer día. Si en algún momento no sientes que te aporta lo que debería, lo hablamos. No hay contrato que te ate.",
+  },
+  {
+    q: "¿Tengo acceso a la plataforma de gestión?",
+    a: "La plataforma L&C CFO® la operamos nosotros. Es lo que nos permite analizar con rapidez y entregar resultados precisos. Tú recibes los outputs directamente: dashboard mensual, P&G, proyección de caja, aging de cobros y la sesión mensual con tu Director Financiero. No necesitas entrar a ningún sistema.",
+  },
+  {
+    q: "¿Cómo son las primeras semanas?",
+    a: "Las primeras semanas las dedicamos a la configuración inicial: estructura financiera de tu empresa, conexión de fuentes de datos (bancos, facturación), histórico si lo necesitamos. A partir del segundo mes el ciclo mensual funciona a plena capacidad.",
+  },
+  {
+    q: "¿Para qué sectores trabajáis?",
+    a: "Hostelería (bares, restaurantes, grupos de restauración), Servicios Profesionales (despachos, consultoras, gestorías) y Construcción (constructoras, reformas, arquitectura llave en mano). Son los sectores donde la dirección financiera mensual tiene mayor impacto directo en los resultados reales del negocio.",
+  },
+  {
+    q: "¿Qué diferencia hay entre los planes Control, Dirección y Estrategia?",
+    a: "Control es para empresas de hasta 800K€ que necesitan dominar tesorería, cobros, pagos, inventarios y conocer su P&G mensual. Dirección añade financiación, previsiones y el Diagnóstico de Claridad Financiera® bonificado. Estrategia incluye además la planificación anual completa con presupuesto vs. real, previsión financiera con IA y reporting ejecutivo — con el setup del Presupuesto Estratégico Anual® incluido.",
+  },
+];
+
+function FAQSection() {
+  const [open, setOpen] = useState<number | null>(null);
+
+  return (
+    <section id="faq" className="bg-white py-20 lg:py-28">
+      <AnimatedSection className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-14">
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
+            Preguntas frecuentes
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Todo lo que necesitas saber
+          </h2>
+        </motion.div>
+
+        <motion.div variants={fadeUp} className="divide-y divide-gray-200">
+          {faqs.map((faq, i) => (
+            <div key={i}>
+              <button
+                onClick={() => setOpen(open === i ? null : i)}
+                className="w-full flex items-center justify-between py-5 text-left gap-4 group"
+              >
+                <span
+                  className="font-semibold text-[#0A0A0A] text-sm group-hover:text-[#C9A84C] transition-colors"
+                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  {faq.q}
+                </span>
+                <ChevronDown
+                  className={`w-4 h-4 text-[#C9A84C] flex-shrink-0 transition-transform duration-200 ${
+                    open === i ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {open === i && (
+                <div className="pb-5">
+                  <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </motion.div>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── CTA FINAL ───
+function CTAFinalSection() {
+  return (
+    <section className="bg-[#0A0A0A] py-20 lg:py-28 border-t border-white/10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-6">
+            El momento
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Cada mes que pasa sin dirección financiera
+            es un mes de decisiones que no puedes deshacer.
+          </h2>
+          <p className="text-lg text-white/70 mb-10 max-w-2xl mx-auto">
+            Contratar, invertir, comprometerte con un pago — sin el número que lo justificaba.
+            Eso ya pasó. La pregunta es si el mes que viene va a ser diferente.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={WA_S2}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-10 py-4 text-lg transition-colors"
+            >
+              <img src={WHATSAPP_LOGO} alt="" className="w-5 h-5 object-contain" />
+              Contáctanos
+            </a>
+            <a
+              href={DIAGNOSTICO_URL}
+              className="inline-flex items-center gap-2 border border-white/30 hover:border-white/60 text-white px-10 py-4 text-lg transition-colors"
+            >
+              Primero quiero hacer el Diagnóstico
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// ─── FOOTER ───
+function Footer() {
+  return (
+    <footer className="bg-[#0A0A0A] text-white/60 py-12 border-t border-white/10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <img
+              src="/logo-lc-negro.png"
+              alt="L&C CFO®"
+              className="h-20 w-auto object-contain mb-3 mix-blend-screen"
+            />
+            <p className="text-sm">Dirección Financiera Externa Lean & Connected</p>
+          </div>
+          <div>
+            <h4 className="text-white font-semibold mb-4">Servicios</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href={DIAGNOSTICO_URL} className="hover:text-white transition-colors">
+                  Diagnóstico de Claridad Financiera®
+                </a>
+              </li>
+              <li>
+                <a href="/direccion-financiera-mensual" className="hover:text-white transition-colors">
+                  Dirección Financiera Mensual®
+                </a>
+              </li>
+              <li>
+                <a href="/#servicios" className="hover:text-white transition-colors">
+                  Todos los servicios
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white font-semibold mb-4">Contacto</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href={WA_S2} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href="mailto:legal@lycconsulting.com" className="hover:text-white transition-colors">
+                  legal@lycconsulting.com
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="/aviso-legal" className="hover:text-white transition-colors">Aviso Legal</a></li>
+              <li><a href="/privacidad" className="hover:text-white transition-colors">Privacidad</a></li>
+              <li><a href="/cookies" className="hover:text-white transition-colors">Cookies</a></li>
+              <li><a href="/condiciones" className="hover:text-white transition-colors">Condiciones Generales</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="border-t border-white/10 pt-8">
+          <p className="text-center text-sm">
+            © {new Date().getFullYear()} L&amp;C Digital &amp; Consulting, S.L.
+            — NIF B22652069 — Todos los derechos reservados
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+// ─── MAIN PAGE ───
+export default function S2Home() {
+  return (
+    <div className="min-h-screen">
+      <Navbar />
+      <HeroSection />
+      <QueEsSection />
+      <CicloSection />
+      <EntregablesSection />
+      <PlanesSection />
+      <ParaQuienSection />
+      <VsCFOSection />
+      <PrimerPasoSection />
+      <FAQSection />
+      <CTAFinalSection />
+      <Footer />
+    </div>
+  );
+}
