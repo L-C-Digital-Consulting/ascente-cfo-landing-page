@@ -377,7 +377,7 @@ function CicloSection() {
     {
       num: "03",
       titulo: "Te damos la lectura para decidir",
-      desc: "No solo qué pasó: qué viene y qué hacer con ello. Anticipamos los meses en rojo y los picos de caja para que decidas financiación o inversión a tiempo. La tecnología hace el trabajo; el criterio lo ponemos nosotros.",
+      desc: "No solo qué pasó: proyectamos tu caja a 12 meses para anticipar los meses en rojo y los picos de liquidez, y que decidas financiación o inversión a tiempo. La tecnología hace el trabajo; el criterio lo ponemos nosotros.",
     },
   ];
 
@@ -437,7 +437,7 @@ function EntregablesSection() {
     {
       icon: Wallet,
       nombre: "Tu caja",
-      desc: "Sabes cuánto tienes, cuánto tendrás o cuánto te faltará. Todos tus bancos en un solo sitio, con saldo real y proyectado.",
+      desc: "Sabes cuánto tienes, cuánto tendrás o cuánto te faltará. Todos tus bancos en un solo sitio, con saldo real y proyectado a 12 meses.",
     },
     {
       icon: AlertCircle,
