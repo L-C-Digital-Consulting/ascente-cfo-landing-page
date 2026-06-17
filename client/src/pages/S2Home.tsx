@@ -518,7 +518,7 @@ const modulosPlanes: ModuloRow[] = [
   { type: "module", name: "Tesorería + Clientes + Proveedores", ia: true, control: true, direccion: true, estrategia: true },
   { type: "module", name: "Inventarios", control: true, direccion: true, estrategia: true },
   { type: "module", name: "Financiación", ia: true, control: false, direccion: true, estrategia: true },
-  { type: "module", name: "Diagnóstico de Claridad Financiera® bonificado", ia: true, control: false, direccion: true, estrategia: true },
+  { type: "module", name: "Diagnóstico de Claridad Financiera® bonificado", ia: true, control: true, direccion: true, estrategia: true },
   { type: "header", name: "Planificación Financiera" },
   { type: "module", name: "Resultados Operativos", sub: true, control: true, direccion: true, estrategia: true },
   { type: "module", name: "Presupuesto Estratégico Anual®", sub: true, note: true, control: false, direccion: true, estrategia: true },
@@ -959,7 +959,7 @@ const faqs = [
   },
   {
     q: "¿Qué diferencia hay entre los planes Control, Dirección y Estrategia?",
-    a: "Control cubre tesorería, cobros, pagos, inventarios y tu P&G mensual (Resultados Operativos). Dirección añade el módulo de Financiación, el Presupuesto Estratégico Anual® y el Diagnóstico de Claridad Financiera® bonificado. Estrategia incluye además la previsión financiera con IA y el reporting ejecutivo, con el setup del Presupuesto Estratégico Anual® ya incluido.",
+    a: "Control cubre tesorería, cobros, pagos, inventarios y tu P&G mensual (Resultados Operativos). Dirección añade el módulo de Financiación y el Presupuesto Estratégico Anual®. Estrategia incluye además la previsión financiera con IA y el reporting ejecutivo, con el setup del Presupuesto Estratégico Anual® ya incluido. El Diagnóstico de Claridad Financiera® se bonifica al contratar cualquiera de los tres planes.",
   },
 ];
 
