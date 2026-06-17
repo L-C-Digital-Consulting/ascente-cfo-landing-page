@@ -377,7 +377,7 @@ function CicloSection() {
     {
       num: "03",
       titulo: "Te damos la lectura para decidir",
-      desc: "No solo qué pasó: proyectamos tu caja a 12 meses para anticipar los meses en rojo y los picos de liquidez, y que decidas financiación o inversión a tiempo. La tecnología hace el trabajo; el criterio lo ponemos nosotros.",
+      desc: "No solo qué pasó: proyectamos tu caja desde tus contratos —visible hasta 12 meses— para anticipar los meses en rojo y los picos de liquidez, y que decidas financiación o inversión a tiempo. La tecnología hace el trabajo; el criterio lo ponemos nosotros.",
     },
   ];
 
@@ -437,7 +437,7 @@ function EntregablesSection() {
     {
       icon: Wallet,
       nombre: "Tu caja",
-      desc: "Sabes cuánto tienes, cuánto tendrás o cuánto te faltará. Todos tus bancos en un solo sitio, con saldo real y proyectado a 12 meses.",
+      desc: "Sabes cuánto tienes, cuánto tendrás o cuánto te faltará. Todos tus bancos en un solo sitio, con saldo real y proyección desde tus contratos, visible hasta 12 meses.",
     },
     {
       icon: AlertCircle,
@@ -538,7 +538,7 @@ const planes = [
     nombre: "Dirección",
     target: "10–35 empleados",
     facturacion: "800K–3M €/año",
-    tagline: "Dirección financiera activa con financiación, previsiones y Diagnóstico incluido.",
+    tagline: "Dirección financiera activa con financiación, presupuesto anual y Diagnóstico incluido.",
     highlight: true,
   },
   {
@@ -947,7 +947,7 @@ const faqs = [
   },
   {
     q: "¿Tengo acceso a la plataforma de gestión?",
-    a: "Hoy la plataforma L&C CFO® la operamos nosotros — es lo que nos permite analizar con rapidez y entregar resultados precisos. Tú recibes los outputs directamente: dashboard mensual, P&G, proyección de caja a 12 meses, aging de cobros y la lectura de tu Director Financiero. Recibes los resultados sin trabajo operativo de tu parte.",
+    a: "Hoy la plataforma L&C CFO® la operamos nosotros — es lo que nos permite analizar con rapidez y entregar resultados precisos. Tú recibes los outputs directamente: dashboard mensual, P&G, proyección de caja desde tus contratos (visible hasta 12 meses), aging de cobros y la lectura de tu Director Financiero. Recibes los resultados sin trabajo operativo de tu parte.",
   },
   {
     q: "¿Cómo son las primeras semanas?",
