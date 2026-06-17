@@ -964,7 +964,7 @@ function PricingSection() {
         </div>
         <motion.div variants={fadeUp} className="mt-12 bg-[#FBF5E6] border-l-4 border-[#C9A84C] p-8">
           <p className="text-gray-800">
-            Una auditoría financiera básica para pyme cuesta entre <strong>3.000 € y 6.000 €</strong>. Un CFO externo mensual, entre <strong>2.000 € y 4.000 € al mes</strong>. <br className="hidden sm:block" />
+            Una auditoría financiera básica para pyme cuesta entre <strong>3.000 € y 6.000 €</strong>. <br className="hidden sm:block" />
             El Diagnóstico cubre 43 ratios, análisis sectorial y sesión con Director Financiero Senior en <strong>48 horas — desde 447 €</strong>. La puerta correcta antes de cualquier compromiso mayor.
           </p>
         </motion.div>
