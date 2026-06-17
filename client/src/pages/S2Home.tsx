@@ -515,10 +515,10 @@ type ModuloRow =
   | { type: "module"; name: string; ia?: boolean; control: boolean; direccion: boolean; estrategia: boolean; note?: boolean; sub?: boolean };
 
 const modulosPlanes: ModuloRow[] = [
+  { type: "module", name: "Diagnóstico de Claridad Financiera® bonificado", ia: true, control: true, direccion: true, estrategia: true },
   { type: "module", name: "Tesorería + Clientes + Proveedores", ia: true, control: true, direccion: true, estrategia: true },
   { type: "module", name: "Inventarios", control: true, direccion: true, estrategia: true },
   { type: "module", name: "Financiación", ia: true, control: false, direccion: true, estrategia: true },
-  { type: "module", name: "Diagnóstico de Claridad Financiera® bonificado", ia: true, control: true, direccion: true, estrategia: true },
   { type: "header", name: "Planificación Financiera" },
   { type: "module", name: "Resultados Operativos", sub: true, control: true, direccion: true, estrategia: true },
   { type: "module", name: "Presupuesto Estratégico Anual®", sub: true, note: true, control: false, direccion: true, estrategia: true },
@@ -529,22 +529,16 @@ const modulosPlanes: ModuloRow[] = [
 const planes = [
   {
     nombre: "Control",
-    target: "1–15 empleados",
-    facturacion: "300K–800K €/año",
     tagline: "Visibilidad y control total de tu operativa financiera mensual.",
     highlight: false,
   },
   {
     nombre: "Dirección",
-    target: "10–35 empleados",
-    facturacion: "800K–3M €/año",
     tagline: "Dirección financiera activa con financiación, presupuesto anual y Diagnóstico incluido.",
     highlight: true,
   },
   {
     nombre: "Estrategia",
-    target: "25–80 empleados",
-    facturacion: "3M–15M €/año",
     tagline: "CFO Estratégico con planificación anual, presupuesto y reporting ejecutivo.",
     highlight: false,
   },
@@ -607,17 +601,11 @@ function PlanesSection() {
                       </p>
                     )}
                     <h3
-                      className={`text-2xl font-bold mb-1 ${p.highlight ? "text-[#0A0A0A]" : "text-white"}`}
+                      className={`text-2xl font-bold ${p.highlight ? "text-[#0A0A0A]" : "text-white"}`}
                       style={{ fontFamily: "'DM Sans', sans-serif" }}
                     >
                       {p.nombre}
                     </h3>
-                    <p className={`text-xs mb-0.5 ${p.highlight ? "text-[#0A0A0A]/70" : "text-white/50"}`}>
-                      {p.target}
-                    </p>
-                    <p className={`text-xs font-semibold ${p.highlight ? "text-[#0A0A0A]/80" : "text-[#C9A84C]"}`}>
-                      {p.facturacion}
-                    </p>
                   </th>
                 ))}
               </tr>
