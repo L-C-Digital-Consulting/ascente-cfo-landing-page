@@ -6,6 +6,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { setPageSEO } from "@/lib/utils";
 import {
   Zap,
   Globe,
@@ -853,7 +854,12 @@ function Footer() {
 // ─── MAIN PAGE ───
 export default function MainHome() {
   useEffect(() => {
-    document.title = "L&C CFO® — Dirección Financiera Externa";
+    setPageSEO({
+      title: "L&C CFO® — Dirección Financiera Externa",
+      description:
+        "Dirección financiera externa para PYMEs. Analizamos tu caja, tus cobros y tus márgenes cada mes para que decidas con datos, sin un director financiero interno.",
+      canonical: "https://lccfo.es/",
+    });
   }, []);
 
   return (

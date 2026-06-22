@@ -6,6 +6,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
+import { setPageSEO } from "@/lib/utils";
 import {
   ArrowRight,
   CheckCircle2,
@@ -1128,7 +1129,12 @@ function Footer() {
 // ─── MAIN PAGE ───
 export default function S2Home() {
   useEffect(() => {
-    document.title = "Dirección Financiera Mensual® | L&C CFO®";
+    setPageSEO({
+      title: "Dirección Financiera Mensual® | L&C CFO®",
+      description:
+        "Dirección Financiera Mensual® para PYMEs: analizamos tu empresa, proyectamos tu caja a 12 meses y decidimos contigo cada mes. Sin estructura interna, sin permanencia.",
+      canonical: "https://lccfo.es/direccion-financiera-mensual",
+    });
   }, []);
 
   return (

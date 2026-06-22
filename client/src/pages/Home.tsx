@@ -8,6 +8,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import { setPageSEO } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 import {
   FileText,
@@ -1240,7 +1241,12 @@ function Footer() {
 // ─── MAIN PAGE ───
 export default function Home() {
   useEffect(() => {
-    document.title = "Diagnóstico de Claridad Financiera® | L&C CFO®";
+    setPageSEO({
+      title: "Diagnóstico de Claridad Financiera® | L&C CFO®",
+      description:
+        "Diagnóstico de Claridad Financiera® para tu PYME: más de 40 indicadores y un informe en 48 horas, con una sesión de 45 minutos con un director financiero senior.",
+      canonical: "https://lccfo.es/diagnostico-financiero-pyme",
+    });
   }, []);
 
   return (
