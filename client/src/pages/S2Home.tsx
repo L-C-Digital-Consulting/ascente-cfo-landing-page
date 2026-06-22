@@ -755,6 +755,18 @@ function ParaQuienSection() {
             ))}
           </motion.div>
         </div>
+
+        <motion.div variants={fadeUp} className="mt-10 text-center">
+          <p className="text-gray-600 text-sm">
+            Trabajamos por sector.{" "}
+            <a
+              href="/direccion-financiera-hosteleria"
+              className="text-[#C9A84C] font-semibold hover:text-[#B8943B] transition-colors"
+            >
+              Dirección financiera para hostelería
+            </a>
+          </p>
+        </motion.div>
       </AnimatedSection>
     </section>
   );

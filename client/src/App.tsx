@@ -8,6 +8,7 @@ import CookieBanner from "./components/CookieBanner";
 import MainHome from "./pages/MainHome";
 import Home from "./pages/Home";
 import S2Home from "./pages/S2Home";
+import HosteleriaHome from "./pages/HosteleriaHome";
 import Privacidad from "./pages/Privacidad";
 import AvisoLegal from "./pages/AvisoLegal";
 import Cookies from "./pages/Cookies";
@@ -20,6 +21,7 @@ function Router() {
       <Route path={"/"} component={MainHome} />
       <Route path={"/diagnostico-financiero-pyme"} component={Home} />
       <Route path={"/direccion-financiera-mensual"} component={S2Home} />
+      <Route path={"/direccion-financiera-hosteleria"} component={HosteleriaHome} />
       <Route path={"/privacidad"} component={Privacidad} />
       <Route path={"/aviso-legal"} component={AvisoLegal} />
       <Route path={"/cookies"} component={Cookies} />
