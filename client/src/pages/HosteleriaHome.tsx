@@ -274,9 +274,9 @@ function LoQueNoVesSection() {
     },
     {
       icon: Calendar,
-      titulo: "El bache de enero y el agosto flojo",
+      titulo: "Los meses flojos entre temporadas",
       texto:
-        "La caja de un mes fuerte tapa la de un mes débil, hasta que deja de taparla. Lo ves venir con meses de antelación o lo sufres de golpe.",
+        "La caja de un mes fuerte tapa la de un mes débil, hasta que deja de taparla. Enero y los valles entre temporadas siempre llegan — la diferencia es verlos venir con meses de antelación o sufrirlos de golpe.",
     },
     {
       icon: Wallet,

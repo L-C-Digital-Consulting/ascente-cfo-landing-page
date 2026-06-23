@@ -272,7 +272,7 @@ function LoQueNoVesSection() {
       icon: Calendar,
       titulo: "Cómo queda la caja entre campaña y campaña",
       texto:
-        "Enero-febrero, abril-mayo, julio y diciembre son picos de trabajo e ingresos. Entre medias, los ingresos bajan y los costes fijos siguen. La proyección de caja a 12 meses te dice con antelación si el verano va a ser estrecho — y cuánto necesitas reservar.",
+        "Enero-febrero, abril-mayo, julio y diciembre son picos de trabajo e ingresos. Agosto y los meses entre campañas son los opuestos: los ingresos caen y los costes fijos no. La proyección de caja a 12 meses te dice con antelación cuánto necesitas reservar para llegar sin tensión.",
     },
     {
       icon: Clock,
