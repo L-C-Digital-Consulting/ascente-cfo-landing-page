@@ -191,10 +191,13 @@ function Navbar() {
                 >
                   Construcción
                 </a>
-                <div className="px-4 py-2.5 text-sm text-white/30 flex items-center justify-between">
-                  <span>Servicios profesionales</span>
-                  <span className="text-[0.6rem] text-white/25 uppercase tracking-wide">próximamente</span>
-                </div>
+                <a
+                  href="/direccion-financiera-servicios-profesionales"
+                  onClick={() => setSectoresOpen(false)}
+                  className="flex items-center px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                >
+                  Servicios profesionales
+                </a>
               </div>
             )}
           </div>
