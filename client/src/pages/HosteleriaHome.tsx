@@ -19,6 +19,12 @@ import {
   ChefHat,
   BarChart3,
   Boxes,
+  UserCheck,
+  Lightbulb,
+  Target,
+  Landmark,
+  LineChart,
+  Store,
 } from "lucide-react";
 import {
   SectorNavbar,
@@ -30,7 +36,42 @@ import {
   S2_URL,
   DFEExplicacionSection,
   ExcelCajaSection,
+  AdemasSection,
+  type AdemasItem,
 } from "@/components/SectorLayout";
+
+const ADEMAS_ITEMS: AdemasItem[] = [
+  {
+    Icon: UserCheck,
+    titulo: "Coste real del personal",
+    texto: "Cocineros, camareros, encargados. Lo desglosamos mes a mes para saber cuánto te cuesta cada euro de venta en personal y si la plantilla está bien dimensionada para cada temporada.",
+  },
+  {
+    Icon: Store,
+    titulo: "¿Me sale a cuenta abrir otro local?",
+    texto: "Antes de firmar el contrato de arrendamiento, calculamos si el nuevo local puede ser rentable con tu estructura de costes, qué ventas necesitas y cuánto tarda en cubrir la inversión.",
+  },
+  {
+    Icon: Lightbulb,
+    titulo: "Decisiones críticas antes de tomarlas",
+    texto: "¿Subo los precios o bajo el food cost? ¿Contrato un cocinero fijo o trabajo con extras? ¿El delivery me está comiendo el margen? Analizamos cada decisión con datos.",
+  },
+  {
+    Icon: Landmark,
+    titulo: "Financiación y negociación bancaria",
+    texto: "Si tienes un préstamo, una póliza o un leasing, controlamos cuánto te cuesta realmente y cuándo amortizar. Si necesitas financiación para una reforma o apertura, te acompañamos con el banco.",
+  },
+  {
+    Icon: LineChart,
+    titulo: "Resultados reales mes a mes",
+    texto: "Cada mes cierras con el P&G real de tu negocio: cuánto ha generado cada local o canal, cuánto queda después de género y personal, y cómo evoluciona el margen.",
+  },
+  {
+    Icon: Target,
+    titulo: "Presupuesto por temporada",
+    texto: "Qué ventas esperas en cada mes del año, qué costes tienes comprometidos y cuánto necesitas facturar para no depender de que el verano salga bien. El plan que la gestoría no te hace.",
+  },
+];
 
 const HERO_BG =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/hero_bg-hCmBTqbzuN6tTGJpJsBUWU.webp";
@@ -499,6 +540,7 @@ export default function HosteleriaHome() {
       <LoQueNoVesSection />
       <DFEExplicacionSection sectorParrafo="controla que tu coste de materia prima está donde debe estar, que cada canal de venta te deja margen real, y que la caja aguanta los meses de menos venta." />
       <EscandalloSection />
+      <AdemasSection items={ADEMAS_ITEMS} />
       <ComoSection />
       <CTAFinalSection />
       <SectorFooter waLink={WA_HOSTELERIA} currentSector="hosteleria" />

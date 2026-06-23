@@ -20,6 +20,12 @@ import {
   TrendingUp,
   FileText,
   CheckSquare,
+  UserCheck,
+  Lightbulb,
+  Target,
+  Landmark,
+  LineChart,
+  PieChart,
 } from "lucide-react";
 import {
   SectorNavbar,
@@ -31,7 +37,42 @@ import {
   S2_URL,
   DFEExplicacionSection,
   ExcelCajaSection,
+  AdemasSection,
+  type AdemasItem,
 } from "@/components/SectorLayout";
+
+const ADEMAS_ITEMS: AdemasItem[] = [
+  {
+    Icon: UserCheck,
+    titulo: "Coste real de cada empleado",
+    texto: "Cada técnico o administrativo desglosado: nómina, Seguridad Social e IRPF, cruzado con los servicios que lleva. Sabes si cada incorporación ha mejorado el margen del despacho.",
+  },
+  {
+    Icon: Lightbulb,
+    titulo: "¿Contrato, subo cuotas o amplío servicios?",
+    texto: "¿Tengo capacidad para otro técnico o primero tengo que subir precios? ¿La nueva línea que valoro cubre sus propios costes? Analizamos cada decisión con datos antes de tomarla.",
+  },
+  {
+    Icon: Landmark,
+    titulo: "Financiación y negociación bancaria",
+    texto: "Si el despacho tiene un préstamo o una línea de crédito para crecer, controlamos el coste real y cuándo amortizar. Si necesitas financiación para una nueva sede, te acompañamos con el banco.",
+  },
+  {
+    Icon: PieChart,
+    titulo: "Rentabilidad real por cliente y servicio",
+    texto: "Qué clientes te generan margen y cuáles llevas al coste o por debajo. Para tomar decisiones de precio, de selección de clientes y de estructura del despacho con datos reales.",
+  },
+  {
+    Icon: LineChart,
+    titulo: "Resultados reales mes a mes",
+    texto: "Cada mes cierras con el P&G real del despacho: qué ha generado cada línea de servicio, cuánto queda después del personal y los costes fijos, y cómo evoluciona el margen.",
+  },
+  {
+    Icon: Target,
+    titulo: "Presupuesto anual y planificación entre campañas",
+    texto: "Qué ingresos esperas por tipo de servicio, qué costes tienes comprometidos y cuánto necesitas facturar para no depender de que la campaña de renta salga bien.",
+  },
+];
 
 const WA_SERVICIOS =
   "https://wa.me/34635580883?text=Hola%2C%20tengo%20un%20despacho%20profesional%20y%20me%20interesa%20la%20direcci%C3%B3n%20financiera%20de%20L%26C%20CFO%C2%AE.";
@@ -498,6 +539,7 @@ export default function ServiciosProfesionalesHome() {
       <LoQueNoVesSection />
       <DFEExplicacionSection sectorParrafo="controla que cada línea de servicio tiene margen, que los cobros pendientes no se alargan más de lo necesario, y que la caja aguanta entre campañas." />
       <ControlNegocioSection />
+      <AdemasSection items={ADEMAS_ITEMS} />
       <ComoSection />
       <CTAFinalSection />
       <SectorFooter waLink={WA_SERVICIOS} currentSector="servicios-profesionales" />

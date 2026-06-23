@@ -21,6 +21,12 @@ import {
   TrendingUp,
   CheckSquare,
   Wrench,
+  UserCheck,
+  Calculator,
+  Lightbulb,
+  Target,
+  Landmark,
+  LineChart,
 } from "lucide-react";
 import {
   SectorNavbar,
@@ -32,7 +38,42 @@ import {
   S2_URL,
   DFEExplicacionSection,
   ExcelCajaSection,
+  AdemasSection,
+  type AdemasItem,
 } from "@/components/SectorLayout";
+
+const ADEMAS_ITEMS: AdemasItem[] = [
+  {
+    Icon: UserCheck,
+    titulo: "Coste real del personal de obra",
+    texto: "Técnicos y operarios propios desglosados mes a mes: nómina, Seguridad Social e IRPF. Sabes cuánto te cuesta cada empleado y si el ratio personal/facturación es sostenible.",
+  },
+  {
+    Icon: Calculator,
+    titulo: "¿Compro la maquinaria o sigo alquilándola?",
+    texto: "Calculamos el punto de equilibrio entre activar un activo fijo y seguir pagando alquiler, con el impacto real en caja, en amortización y en la fiscalidad del año.",
+  },
+  {
+    Icon: Lightbulb,
+    titulo: "Decisiones críticas antes de comprometerte",
+    texto: "¿Puedo acometer esta obra con la liquidez que tengo? ¿Me sale mejor contratar o subcontratar? Analizamos cada decisión con datos antes de que la tomes.",
+  },
+  {
+    Icon: Landmark,
+    titulo: "Deuda, créditos y negociación bancaria",
+    texto: "Pólizas de circulante, leasing de maquinaria y avales para obra pública. Calculamos el coste real de cada crédito y cuándo refinanciar. Si hay que negociar con el banco, vamos contigo.",
+  },
+  {
+    Icon: LineChart,
+    titulo: "Resultados reales mes a mes",
+    texto: "Cada mes cierras con el P&G real de tu empresa: qué ha generado cada línea de negocio, cuánto queda después de todos los costes y cómo evoluciona el margen.",
+  },
+  {
+    Icon: Target,
+    titulo: "Presupuesto anual y planificación",
+    texto: "Qué obras esperas acometer, qué costes tienes comprometidos y cuánto necesitas facturar por línea para llegar al margen que quieres. El presupuesto que la gestoría no te hace.",
+  },
+];
 
 const WA_CONSTRUCCION =
   "https://wa.me/34635580883?text=Hola%2C%20tengo%20una%20empresa%20de%20construcci%C3%B3n%20y%20me%20interesa%20la%20direcci%C3%B3n%20financiera%20de%20L%26C%20CFO%C2%AE.";
@@ -495,6 +536,7 @@ export default function ConstruccionHome() {
       <LoQueNoVesSection />
       <DFEExplicacionSection sectorParrafo="controla que cada obra genera el margen esperado, que los pagos a subcontratas y proveedores están autorizados antes de salir del banco, y que la caja aguanta hasta la siguiente certificación." />
       <ControlProyectoSection />
+      <AdemasSection items={ADEMAS_ITEMS} />
       <ComoSection />
       <CTAFinalSection />
       <SectorFooter waLink={WA_CONSTRUCCION} currentSector="construccion" />

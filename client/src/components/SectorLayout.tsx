@@ -6,7 +6,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { type LucideIcon, ArrowRight, ChevronDown } from "lucide-react";
 
 // ─── SHARED CONSTANTS ───
 export const WHATSAPP_LOGO =
@@ -230,6 +230,69 @@ export function SectorNavbar({ waLink }: SectorNavbarProps) {
         </div>
       </div>
     </nav>
+  );
+}
+
+// ─── ADEMÁS DE TODO LO ANTERIOR ───
+export interface AdemasItem {
+  Icon: LucideIcon;
+  titulo: string;
+  texto: string;
+}
+
+export function AdemasSection({ items }: { items: AdemasItem[] }) {
+  return (
+    <section className="bg-white py-20 lg:py-28">
+      <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-12">
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
+            El servicio completo
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4 text-balance"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            La dirección financiera es más que
+            <br className="hidden sm:block" />
+            controlar la caja y los pagos.
+          </h2>
+          <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed text-pretty">
+            Tesorería y pagos son el día a día. Pero una empresa bien dirigida
+            también controla lo que le cuesta su deuda, planifica el año con
+            datos reales, analiza cada decisión antes de tomarla y conoce el
+            coste real de su equipo.
+          </p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 gap-4">
+          {items.map((item, i) => {
+            const Icon = item.Icon;
+            return (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                className="bg-[#FAF8F4] border border-gray-200 p-6 flex gap-4"
+              >
+                <div className="w-10 h-10 flex-shrink-0 bg-[#0A0A0A] flex items-center justify-center">
+                  <Icon className="w-4 h-4 text-[#C9A84C]" />
+                </div>
+                <div>
+                  <h3
+                    className="font-bold text-[#0A0A0A] mb-1"
+                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  >
+                    {item.titulo}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {item.texto}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </AnimatedSection>
+    </section>
   );
 }
 
