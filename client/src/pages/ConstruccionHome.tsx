@@ -1,6 +1,7 @@
 /*
- * L&C CFO® — Dirección financiera para hostelería
- * Landing sectorial (SEO): /direccion-financiera-hosteleria
+ * L&C CFO® — Dirección financiera para construcción
+ * Landing sectorial (SEO): /direccion-financiera-construccion
+ * Dark: #0A0A0A · Accent: #C9A84C · Light: #FAF8F4
  */
 
 import { useEffect } from "react";
@@ -8,17 +9,18 @@ import { motion } from "framer-motion";
 import { setPageSEO } from "@/lib/utils";
 import {
   ArrowRight,
-  Utensils,
-  Truck,
-  Zap,
+  Package,
   Users,
-  Home,
-  Eye,
+  Truck,
+  HardHat,
+  FileText,
+  BarChart3,
   Calendar,
   Wallet,
-  ChefHat,
-  BarChart3,
-  Boxes,
+  ClipboardList,
+  TrendingUp,
+  CheckSquare,
+  Wrench,
 } from "lucide-react";
 import {
   SectorNavbar,
@@ -30,23 +32,14 @@ import {
   S2_URL,
 } from "@/components/SectorLayout";
 
-const HERO_BG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/hero_bg-hCmBTqbzuN6tTGJpJsBUWU.webp";
-const WA_HOSTELERIA =
-  "https://wa.me/34635580883?text=Hola%2C%20tengo%20un%20negocio%20de%20hosteler%C3%ADa%20y%20me%20interesa%20la%20direcci%C3%B3n%20financiera%20de%20L%26C%20CFO%C2%AE.";
+const WA_CONSTRUCCION =
+  "https://wa.me/34635580883?text=Hola%2C%20tengo%20una%20empresa%20de%20construcci%C3%B3n%20y%20me%20interesa%20la%20direcci%C3%B3n%20financiera%20de%20L%26C%20CFO%C2%AE.";
 
 // ─── HERO ───
 function HeroSection() {
   return (
-    <section
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{
-        backgroundImage: `url(${HERO_BG})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/97 to-[#0A0A0A]/80" />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0A0A0A]">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#141414] via-[#0A0A0A] to-[#0A0A0A]" />
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#C9A84C]" />
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <motion.div
@@ -55,26 +48,29 @@ function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <p className="text-[#C9A84C] font-bold text-base tracking-widest uppercase mb-6 border-l-4 border-[#C9A84C] pl-4">
-            L&C CFO® · Dirección financiera para hostelería
+            L&C CFO® · Dirección financiera para construcción
           </p>
           <h1
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            Tu restaurante factura,
+            Ejecutas la obra desde el primer día.
             <br />
-            pero a fin de mes no queda nada.
+            Cobras al final. Entre medias,
+            <br className="hidden sm:block" />
+            la caja decide todo.
           </h1>
           <p className="text-lg text-white/70 mb-8 max-w-2xl">
-            Llenas mesas, el ticket sale, y aun así vas justo de caja. No es mala
-            suerte. En hostelería, de cada 100 euros que vendes te quedan muy
-            pocos: el margen real se evapora entre el género, los suministros, las
-            comisiones de las plataformas y el personal. Te ayudamos a verlo cada
-            mes y a decidir antes de que el saldo del banco te lo diga.
+            En una empresa de construcción los costes llegan antes que los ingresos.
+            Materiales al inicio, subcontratas durante la obra, nóminas cada mes.
+            Las certificaciones y los cobros finales tardan entre 30 y 90 días, y la
+            retención de garantía puede quedar pendiente años. Si no controlas la
+            caja de cada proyecto mes a mes, no sabes cuánto ganas por obra hasta
+            que ya es tarde para actuar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href={WA_HOSTELERIA}
+              href={WA_CONSTRUCCION}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-10 py-4 text-lg transition-colors"
@@ -109,22 +105,22 @@ function ProblemaSection() {
             className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-6 text-balance"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            Tener lleno el local no es ganar dinero.
+            Tienes proyectos llenos de trabajo y la caja siempre justa.
           </h2>
           <div className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed space-y-5 text-pretty">
             <p>
-              Puedes tener el local a tope un viernes y cerrar el mes sin caja. El
-              problema no es la venta. Es lo que se queda por el camino antes de
-              llegar a tu bolsillo.
+              Una constructora puede facturar bien y tener la tesorería en tensión
+              permanente. No es una contradicción: es la estructura del sector. Gastas
+              desde el primer día de obra, certificas cada mes o al finalizar, cobras
+              después de 30, 60 o hasta 90 días, y la retención de garantía puede
+              quedarse en manos del cliente durante meses o años después de entregar
+              la obra.
             </p>
             <p>
-              El género se lleva entre el 25% y el 35% de lo que vendes: en un
-              local de 100.000 euros al mes, son entre 25.000 y 35.000 euros solo
-              en compras. Las plataformas de delivery se quedan hasta el 35% de cada
-              pedido que entra por ellas, según la plataforma y la hora. La luz,
-              el gas y el agua, otro 5% a 10%. Y encima, el personal y el alquiler,
-              que pagas llene o no llene. Cuando sumas, el margen real cabe en muy
-              pocos puntos. Si no lo miras cada mes, no sabes cuántos te quedan.
+              En ese intervalo, tus costes siguen. Las nóminas, la Seguridad Social,
+              los materiales del siguiente proyecto, el leasing de la maquinaria. Sin
+              un control mensual por proyecto, acumulas movimientos sin saber qué
+              obra tiene margen y cuál está drenando caja.
             </p>
           </div>
         </motion.div>
@@ -133,38 +129,38 @@ function ProblemaSection() {
   );
 }
 
-// ─── DÓNDE SE TE ESCAPA EL DINERO ───
+// ─── DÓNDE SE VA EL DINERO ───
 function DondeSeEscapaSection() {
   const partidas = [
     {
-      icon: Utensils,
-      partida: "Género y materia prima",
-      cuanto: "25% a 35% de las ventas",
-      nota: "La partida más grande. Un punto de más aquí se come tu beneficio del mes.",
-    },
-    {
-      icon: Truck,
-      partida: "Comisiones de plataformas",
-      cuanto: "Hasta el 35% por pedido",
-      nota: "Glovo, Uber Eats, Just Eat. Según la plataforma, hasta un tercio de cada pedido se queda por el camino.",
-    },
-    {
-      icon: Zap,
-      partida: "Suministros",
-      cuanto: "5% a 10% de las ventas",
-      nota: "Luz, gas y agua. En hostelería pesan mucho más que en cualquier oficina.",
+      icon: Package,
+      partida: "Materiales de construcción",
+      cuanto: "La partida de coste directo más grande",
+      nota: "Cemento, hierro, carpintería, instalaciones. Cada obra tiene su estructura de materiales, y un mal control de compras se convierte directamente en pérdida.",
     },
     {
       icon: Users,
-      partida: "Personal",
-      cuanto: "Nóminas y Seguridad Social",
-      nota: "La otra gran partida. Fija, todos los meses, suba o baje la venta.",
+      partida: "Subcontratistas",
+      cuanto: "Electricistas, fontaneros, pintores, yeseros",
+      nota: "Los pagas cuando terminan su trabajo, independientemente de si has cobrado ya la certificación al cliente.",
     },
     {
-      icon: Home,
-      partida: "Alquiler del local",
-      cuanto: "Fijo cada mes",
-      nota: "Llene o no llene. En agosto flojo o en enero, el recibo es el mismo.",
+      icon: Truck,
+      partida: "Alquiler de maquinaria",
+      cuanto: "Andamios, grúas, retroexcavadoras",
+      nota: "Cada semana de retraso en la obra es una semana más de alquiler. El coste sigue aunque la obra esté parada.",
+    },
+    {
+      icon: HardHat,
+      partida: "Personal propio",
+      cuanto: "Nóminas y Seguridad Social",
+      nota: "Técnicos y operarios en plantilla. El coste es fijo todos los meses, aunque las certificaciones lleguen tarde.",
+    },
+    {
+      icon: FileText,
+      partida: "Visados y licencias",
+      cuanto: "Antes de que entre el primer euro",
+      nota: "Licencias municipales, visados colegiales, seguros de obra obligatorios. Costes fijos que hay que pagar antes de ejecutar.",
     },
   ];
 
@@ -173,13 +169,13 @@ function DondeSeEscapaSection() {
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-12">
           <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
-            Dónde se te escapa el dinero
+            Dónde se va el dinero
           </p>
           <h2
             className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            Las partidas que se comen tu margen
+            Las partidas que se comen el margen antes de que cobres
           </h2>
         </motion.div>
 
@@ -211,9 +207,9 @@ function DondeSeEscapaSection() {
           variants={fadeUp}
           className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto"
         >
-          Estos porcentajes son el patrón del sector. Sobre tus ventas reales se
-          traducen en miles de euros cada mes. Tu negocio tiene los suyos, y justo
-          eso es lo que medimos contigo cada mes.
+          Cada proyecto tiene su estructura de costes. El margen real de tu empresa
+          es la diferencia entre lo que cobras por cada obra y lo que te ha costado
+          ejecutarla. Eso es lo que medimos contigo cada mes.
         </motion.p>
       </AnimatedSection>
     </section>
@@ -224,28 +220,28 @@ function DondeSeEscapaSection() {
 function LoQueNoVesSection() {
   const puntos = [
     {
-      icon: Eye,
-      titulo: "Qué canal te deja margen y cuál no",
+      icon: BarChart3,
+      titulo: "Qué proyecto tiene margen y cuál no",
       texto:
-        "La sala puede dejarte el doble que el delivery. Si no los separas, los tratas igual y pierdes en el que menos te conviene.",
+        "Si llevas varias obras activas, el saldo del banco consolida todo. Sin separar los costes por proyecto, una obra rentable puede estar tapando otra que está drenando caja.",
     },
     {
       icon: Calendar,
-      titulo: "El bache de enero y el agosto flojo",
+      titulo: "Cuándo aprieta la caja antes de la siguiente certificación",
       texto:
-        "La caja de un mes fuerte tapa la de un mes débil, hasta que deja de taparla. Lo ves venir con meses de antelación o lo sufres de golpe.",
+        "El intervalo entre lo que has pagado y lo que aún no has cobrado puede volverse muy estrecho. Lo ves venir con semanas de antelación o te alcanza de golpe.",
     },
     {
       icon: Wallet,
-      titulo: "Si llegas a las nóminas del mes que viene",
+      titulo: "Si llegas a las nóminas en un mes sin cobros de obra",
       texto:
-        "Antes de que toque pagarlas, no después de revisar el saldo con angustia. Proyectamos tu caja para que lo sepas con tiempo.",
+        "Los meses en que no llega ninguna certificación siguen teniendo costes fijos. La proyección de caja te dice si llegas o si necesitas mover algo antes.",
     },
     {
-      icon: Truck,
-      titulo: "El efectivo que no controlas",
+      icon: ClipboardList,
+      titulo: "Subcontratas y proveedores acumulados sin autorizar",
       texto:
-        "Lo que entra en caja y no llega al banco no aparece en ningún sitio. Lo ordenamos para que tu dinero deje de ser invisible.",
+        "Facturas de materiales, pagos a subcontratistas que acaban de terminar su parte, alquileres de maquinaria. Sin control de órdenes de pago, el acumulado aparece de golpe.",
     },
   ];
 
@@ -260,7 +256,7 @@ function LoQueNoVesSection() {
             className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4 text-balance"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            Lo que tu cuenta del banco no te cuenta a tiempo
+            Lo que tu extracto bancario no te dice hasta que ya es tarde
           </h2>
         </motion.div>
 
@@ -292,31 +288,31 @@ function LoQueNoVesSection() {
   );
 }
 
-// ─── ESCANDALLO E INVENTARIO ───
-function EscandalloSection() {
+// ─── CONTROL POR PROYECTO ───
+function ControlProyectoSection() {
   const bloques = [
     {
-      icon: ChefHat,
-      titulo: "El coste real de cada plato",
+      icon: TrendingUp,
+      titulo: "Rentabilidad por proyecto",
       texto:
-        "Calculamos el escandallo de tu carta: cuánto te cuesta la materia prima de cada plato sobre lo que cobras por él, con sub-recetas y mermas incluidas. Te decimos qué platos están en verde, cuáles en ámbar y cuáles en rojo, y a qué precio deberías venderlos para llegar a tu margen.",
+        "Cada obra como un Centro de Beneficio independiente: sus ingresos y sus costes separados del resto. Al cierre de cada mes sabes cuánto ha ganado cada proyecto, no solo cuánto ha facturado la empresa.",
     },
     {
-      icon: BarChart3,
-      titulo: "Qué platos te hacen ganar y cuáles no",
+      icon: CheckSquare,
+      titulo: "Control de pagos a subcontratas y proveedores",
       texto:
-        "Cruzamos lo que vendes con lo que te cuesta. La ingeniería de menú ordena tus platos según las unidades que vendes cada mes y el margen de cada uno: te dice cuáles son tus estrella, cuáles te llenan la mesa pero no la caja para subir de precio o reformular, y cuáles retirar de la carta.",
+        "Cada pago a un subcontratista o proveedor pasa por una orden de pago: la creamos, la autorizamos y la conciliamos cuando sale del banco. No se paga nada sin trazabilidad, y el histórico de cada proveedor queda registrado.",
     },
     {
-      icon: Boxes,
-      titulo: "Tu inventario bajo control",
+      icon: Wrench,
+      titulo: "Maquinaria propia y financiada",
       texto:
-        "Sabes qué tienes en almacén, cuánto vale y cuándo un producto baja de su stock mínimo, antes de quedarte sin género en pleno servicio. Cargas el inventario inicial y lo actualizas desde una hoja de Excel.",
+        "Si tienes maquinaria propia, la controlamos como activo fijo con amortización según el PGC. Si la tienes en leasing o renting, gestionamos las cuotas como crédito. Sabes cuánto te cuesta cada máquina al año.",
     },
   ];
 
   return (
-    <section id="escandallo" className="bg-[#FAF8F4] py-20 lg:py-28">
+    <section id="proyectos" className="bg-[#FAF8F4] py-20 lg:py-28">
       <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={fadeUp} className="text-center mb-12">
           <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
@@ -326,13 +322,14 @@ function EscandalloSection() {
             className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-6 text-balance"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            En hostelería se gana o se pierde plato a plato.
+            En construcción se gana o se pierde proyecto a proyecto.
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed text-pretty">
-            Controlar la caja es el primer paso. Pero en un restaurante el margen se
-            decide en la carta y en el almacén: un punto de food cost de más se come
-            tu beneficio del mes. Por eso, además de tu tesorería, llevamos el coste
-            de tus platos y tu inventario.
+            Controlar la caja de la empresa es el primer paso. Pero en una
+            constructora el margen se decide en cada obra: un mal control de
+            materiales o un subcontratista que se sale del presupuesto se convierte
+            en pérdida por proyecto. Por eso, además de la tesorería, llevamos la
+            rentabilidad y los pagos proyecto a proyecto.
           </p>
         </motion.div>
 
@@ -364,15 +361,15 @@ function EscandalloSection() {
           variants={fadeUp}
           className="text-center text-gray-500 text-sm mt-8 max-w-2xl mx-auto"
         >
-          Un food cost por debajo del 30% suele ser sano; por encima del 35%, una
-          señal de alerta. Te decimos en cuál estás, plato a plato.
+          Las obras de larga duración, las certificaciones y las retenciones de
+          garantía tienen sus propios patrones de caja. Te ayudamos a leerlos mes a mes.
         </motion.p>
       </AnimatedSection>
     </section>
   );
 }
 
-// ─── CÓMO LO LLEVAMOS NOSOTROS ───
+// ─── CÓMO LO LLEVAMOS ───
 function ComoSection() {
   return (
     <section id="como" className="bg-[#0A0A0A] py-20 lg:py-28">
@@ -385,21 +382,21 @@ function ComoSection() {
             className="text-3xl sm:text-4xl font-bold text-white mb-6 text-balance"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            La dirección financiera de tu negocio, llevada por nosotros.
+            La dirección financiera de tu empresa constructora, llevada por nosotros.
           </h2>
           <div className="text-white/70 text-lg leading-relaxed space-y-5 text-pretty max-w-3xl mx-auto">
             <p>
-              Cada mes recogemos tus ventas (TPV, plataformas de delivery y caja),
-              tus pagos a proveedores y tus gastos. Los analizamos y, en tu sesión
-              mensual, te decimos qué canal te está dejando margen, cómo va tu caja
-              para los meses flojos y qué decisión tienes encima. Sin que toques una
-              hoja de cálculo y sin aprender ningún programa.
+              Cada mes recogemos los extractos bancarios de todas tus cuentas, los
+              movimientos de obras y los pagos a subcontratas y proveedores. Los
+              analizamos por proyecto y, en tu sesión mensual, te decimos qué obra
+              tiene margen, cómo está la caja para los próximos meses y qué decisión
+              tienes encima. Sin que pases horas revisando hojas de cálculo.
             </p>
             <p className="text-white">
               Es la Dirección Financiera Mensual® de L&C CFO® aplicada a la
-              hostelería: bares, restaurantes, cafeterías, grupos de restauración y
-              empresas de catering, tengan uno o varios locales. Sin contratar a
-              nadie en la empresa y sin permanencia.
+              construcción: empresas de reformas, constructoras con varias obras
+              activas y arquitectura llave en mano. Sin contratar a nadie en la
+              empresa y sin permanencia.
             </p>
           </div>
         </motion.div>
@@ -437,12 +434,12 @@ function CTAFinalSection() {
           className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4 text-balance"
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
-          Sabes lo que vendes.
+          En construcción, la caja manda.
           <br />
-          La pregunta es cuánto te queda.
+          La pregunta es si la tienes bajo control.
         </motion.h2>
         <motion.p variants={fadeUp} className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-          En 48 horas puedes tener una radiografía financiera de tu negocio, con una
+          En 48 horas puedes tener una radiografía financiera de tu empresa, con una
           sesión de 45 minutos para entenderla. A partir de ahí decides si quieres
           que la llevemos contigo cada mes.
         </motion.p>
@@ -458,7 +455,7 @@ function CTAFinalSection() {
             <ArrowRight className="w-5 h-5" />
           </a>
           <a
-            href={WA_HOSTELERIA}
+            href={WA_CONSTRUCCION}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 border border-[#0A0A0A]/20 hover:border-[#0A0A0A]/50 text-[#0A0A0A] px-10 py-4 text-lg transition-colors"
@@ -473,28 +470,28 @@ function CTAFinalSection() {
 }
 
 // ─── MAIN PAGE ───
-export default function HosteleriaHome() {
+export default function ConstruccionHome() {
   useEffect(() => {
     setPageSEO({
       title:
-        "Dirección financiera para hostelería: por qué tu restaurante factura y no gana | L&C CFO®",
+        "Dirección financiera para constructoras y empresas de reformas | L&C CFO®",
       description:
-        "Tu restaurante factura pero a fin de mes no queda nada. Te ayudamos a controlar el género, las comisiones de delivery y la caja, mes a mes. Dirección financiera para hostelería.",
-      canonical: "https://lccfo.es/direccion-financiera-hosteleria",
+        "Ejecutas la obra desde el primer día pero cobras al final. Te ayudamos a controlar la caja por proyecto, las subcontratas y los materiales, mes a mes.",
+      canonical: "https://lccfo.es/direccion-financiera-construccion",
     });
   }, []);
 
   return (
     <div className="min-h-screen">
-      <SectorNavbar waLink={WA_HOSTELERIA} />
+      <SectorNavbar waLink={WA_CONSTRUCCION} />
       <HeroSection />
       <ProblemaSection />
       <DondeSeEscapaSection />
       <LoQueNoVesSection />
-      <EscandalloSection />
+      <ControlProyectoSection />
       <ComoSection />
       <CTAFinalSection />
-      <SectorFooter waLink={WA_HOSTELERIA} currentSector="hosteleria" />
+      <SectorFooter waLink={WA_CONSTRUCCION} currentSector="construccion" />
     </div>
   );
 }
