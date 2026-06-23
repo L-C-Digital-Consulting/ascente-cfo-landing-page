@@ -83,7 +83,9 @@ interface SectorNavbarProps {
 export function SectorNavbar({ waLink }: SectorNavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [sectoresOpen, setSectoresOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const sectoresRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -95,6 +97,9 @@ export function SectorNavbar({ waLink }: SectorNavbarProps) {
     const handleClick = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setMenuOpen(false);
+      }
+      if (sectoresRef.current && !sectoresRef.current.contains(e.target as Node)) {
+        setSectoresOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClick);
@@ -125,6 +130,41 @@ export function SectorNavbar({ waLink }: SectorNavbarProps) {
           <a href="#como" className="hover:text-white transition-colors">
             Cómo te ayudamos
           </a>
+          <div ref={sectoresRef} className="relative">
+            <button
+              onClick={() => setSectoresOpen((v) => !v)}
+              className="flex items-center gap-1 hover:text-white transition-colors focus:outline-none"
+            >
+              Sectores
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                  sectoresOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {sectoresOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-[#0A0A0A] border border-white/10 shadow-2xl py-2">
+                <a
+                  href="/direccion-financiera-hosteleria"
+                  onClick={() => setSectoresOpen(false)}
+                  className="flex items-center px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                >
+                  Hostelería
+                </a>
+                <a
+                  href="/direccion-financiera-construccion"
+                  onClick={() => setSectoresOpen(false)}
+                  className="flex items-center px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                >
+                  Construcción
+                </a>
+                <div className="px-4 py-2.5 text-sm text-white/30 flex items-center justify-between">
+                  <span>Servicios profesionales</span>
+                  <span className="text-[0.6rem] text-white/25 uppercase tracking-wide">próximamente</span>
+                </div>
+              </div>
+            )}
+          </div>
           <div ref={menuRef} className="relative">
             <button
               onClick={() => setMenuOpen((v) => !v)}
