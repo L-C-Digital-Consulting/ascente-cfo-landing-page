@@ -282,7 +282,7 @@ function LoQueNoVesSection() {
       icon: Wallet,
       titulo: "Si llegas a las nóminas del mes que viene",
       texto:
-        "Antes de que toque pagarlas, no después de revisar el saldo con angustia. Proyectamos tu caja para que lo sepas con tiempo.",
+        "Antes de que toque pagarlas, no después de revisar el saldo con angustia. La proyección de caja a 12 meses te dice cuándo va a apretar, con tiempo suficiente para actuar.",
     },
     {
       icon: Truck,
@@ -434,8 +434,8 @@ function ComoSection() {
             <p>
               Cada mes recogemos tus ventas (TPV, plataformas de delivery y caja),
               tus pagos a proveedores y tus gastos. Los analizamos y, en tu sesión
-              mensual, te decimos qué canal te está dejando margen, cómo va tu caja
-              para los meses flojos y qué decisión tienes encima. Sin que toques una
+              mensual, te decimos qué canal te está dejando margen, cómo va la
+              proyección de caja a 12 meses y qué decisión tienes encima. Sin que toques una
               hoja de cálculo y sin aprender ningún programa.
             </p>
             <p className="text-white">

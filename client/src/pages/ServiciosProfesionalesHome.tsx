@@ -272,7 +272,7 @@ function LoQueNoVesSection() {
       icon: Calendar,
       titulo: "Cómo queda la caja entre campaña y campaña",
       texto:
-        "Enero-febrero, abril-mayo, julio y diciembre son picos de trabajo e ingresos. Entre medias, los ingresos bajan y los costes fijos siguen. La proyección de caja te dice con antelación si el verano va a ser estrecho.",
+        "Enero-febrero, abril-mayo, julio y diciembre son picos de trabajo e ingresos. Entre medias, los ingresos bajan y los costes fijos siguen. La proyección de caja a 12 meses te dice con antelación si el verano va a ser estrecho — y cuánto necesitas reservar.",
     },
     {
       icon: Clock,
@@ -434,7 +434,7 @@ function ComoSection() {
               las facturas emitidas y los pagos a proveedores. Los analizamos
               por tipo de servicio y, en tu sesión mensual, te decimos qué
               línea tiene margen, qué cobros están pendientes y cómo queda la
-              caja para los próximos meses. Sin que pases horas mirando hojas
+              proyección de caja a 12 meses. Sin que pases horas mirando hojas
               de cálculo.
             </p>
             <p className="text-white">

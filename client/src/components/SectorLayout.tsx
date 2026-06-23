@@ -311,9 +311,9 @@ export function ExcelCajaSection({
         "Cada movimiento que no introduces es un dato que falta. Si no lo actualizas a diario, la foto ya no es real.",
     },
     {
-      titulo: "No separa ni proyecta",
+      titulo: "No proyecta los próximos 12 meses",
       texto:
-        "Mezcla todo en el mismo saldo sin distinguir de dónde viene cada euro. Y solo muestra el pasado, no el mes que viene.",
+        "Mezcla todo en el mismo saldo. Solo registra lo que ya ocurrió — no te dice lo que va a entrar y salir en los próximos doce meses.",
     },
     {
       titulo: "Te avisa cuando ya es tarde",
@@ -368,8 +368,9 @@ export function ExcelCajaSection({
           variants={fadeUp}
           className="text-center text-white/50 text-sm max-w-2xl mx-auto"
         >
-          Lo que necesitas es un sistema que proyecta desde tus contratos y
-          compromisos reales, y alguien que te lo lea contigo cada mes.
+          Lo que necesitas es una proyección de caja a 12 meses construida
+          desde tus contratos y compromisos reales — y alguien que te la revise
+          contigo cada mes.
         </motion.p>
       </AnimatedSection>
     </section>

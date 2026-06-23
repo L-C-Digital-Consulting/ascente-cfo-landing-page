@@ -277,7 +277,7 @@ function LoQueNoVesSection() {
       icon: Wallet,
       titulo: "Si llegas a las nóminas en un mes sin cobros de obra",
       texto:
-        "Los meses en que no llega ninguna certificación siguen teniendo costes fijos. La proyección de caja te dice si llegas o si necesitas mover algo antes.",
+        "Los meses en que no llega ninguna certificación siguen teniendo costes fijos. Con la proyección de caja a 12 meses ves con semanas de antelación si llegas o si necesitas mover algo antes de que apriete.",
     },
     {
       icon: ClipboardList,
@@ -431,7 +431,7 @@ function ComoSection() {
               Cada mes recogemos los extractos bancarios de todas tus cuentas, los
               movimientos de obras y los pagos a subcontratas y proveedores. Los
               analizamos por proyecto y, en tu sesión mensual, te decimos qué obra
-              tiene margen, cómo está la caja para los próximos meses y qué decisión
+              tiene margen, cómo está la proyección de caja a 12 meses y qué decisión
               tienes encima. Sin que pases horas revisando hojas de cálculo.
             </p>
             <p className="text-white">
