@@ -29,6 +29,8 @@ import {
   WHATSAPP_LOGO,
   DIAGNOSTICO_URL,
   S2_URL,
+  DFEExplicacionSection,
+  ExcelCajaSection,
 } from "@/components/SectorLayout";
 
 const WA_SERVICIOS =
@@ -488,8 +490,13 @@ export default function ServiciosProfesionalesHome() {
       <SectorNavbar waLink={WA_SERVICIOS} />
       <HeroSection />
       <ProblemaSection />
+      <ExcelCajaSection
+        tipoNegocio="despacho"
+        ejemploEspecifico="No sabe cuándo cobrarás las facturas pendientes ni si el verano va a comprometer los costes fijos."
+      />
       <DondeSeEscapaSection />
       <LoQueNoVesSection />
+      <DFEExplicacionSection sectorParrafo="controla que cada línea de servicio tiene margen, que los cobros pendientes no se alargan más de lo necesario, y que la caja aguanta entre campañas." />
       <ControlNegocioSection />
       <ComoSection />
       <CTAFinalSection />

@@ -28,6 +28,8 @@ import {
   WHATSAPP_LOGO,
   DIAGNOSTICO_URL,
   S2_URL,
+  DFEExplicacionSection,
+  ExcelCajaSection,
 } from "@/components/SectorLayout";
 
 const HERO_BG =
@@ -489,8 +491,13 @@ export default function HosteleriaHome() {
       <SectorNavbar waLink={WA_HOSTELERIA} />
       <HeroSection />
       <ProblemaSection />
+      <ExcelCajaSection
+        tipoNegocio="negocio de hostelería"
+        ejemploEspecifico="No sabe cuánto vas a vender la semana que viene ni si el agosto flojo va a comprometer la caja."
+      />
       <DondeSeEscapaSection />
       <LoQueNoVesSection />
+      <DFEExplicacionSection sectorParrafo="controla que tu coste de materia prima está donde debe estar, que cada canal de venta te deja margen real, y que la caja aguanta los meses de menos venta." />
       <EscandalloSection />
       <ComoSection />
       <CTAFinalSection />

@@ -233,6 +233,168 @@ export function SectorNavbar({ waLink }: SectorNavbarProps) {
   );
 }
 
+// ─── EXCEL DE CAJA ───
+export function ExcelCajaSection({
+  tipoNegocio,
+  ejemploEspecifico,
+}: {
+  tipoNegocio: string;
+  ejemploEspecifico: string;
+}) {
+  const cards = [
+    {
+      titulo: "Se desactualiza en horas",
+      texto:
+        "Cada movimiento que no introduces es un dato que falta. Si no lo actualizas a diario, la foto ya no es real.",
+    },
+    {
+      titulo: "No separa ni proyecta",
+      texto:
+        "Mezcla todo en el mismo saldo sin distinguir de dónde viene cada euro. Y solo muestra el pasado, no el mes que viene.",
+    },
+    {
+      titulo: "Te avisa cuando ya es tarde",
+      texto:
+        "Cuando el Excel te muestra un problema de caja, el problema ya ocurrió. No tienes margen para actuar.",
+    },
+  ];
+
+  return (
+    <section className="bg-[#0A0A0A] py-20 lg:py-28">
+      <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-12">
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
+            El problema de fondo
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-white mb-6 text-balance"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            ¿Tu previsión de caja es un Excel
+            <br className="hidden sm:block" />
+            que actualizas mirando el banco?
+          </h2>
+          <p className="text-white/70 max-w-3xl mx-auto text-lg leading-relaxed text-pretty">
+            La mayoría de {tipoNegocio}s que facturan bien siguen gestionando
+            su tesorería así: una hoja que alguien actualiza con los movimientos
+            del banco. No es una previsión — es un registro del pasado.{" "}
+            {ejemploEspecifico} Te muestra lo que ya ocurrió, no lo que va a
+            ocurrir.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-4 mb-8">
+          {cards.map((c, i) => (
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              className="border border-white/10 p-6"
+            >
+              <h3
+                className="font-bold text-white mb-2"
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+              >
+                {c.titulo}
+              </h3>
+              <p className="text-white/60 text-sm leading-relaxed">{c.texto}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.p
+          variants={fadeUp}
+          className="text-center text-white/50 text-sm max-w-2xl mx-auto"
+        >
+          Lo que necesitas es un sistema que proyecta desde tus contratos y
+          compromisos reales, y alguien que te lo lea contigo cada mes.
+        </motion.p>
+      </AnimatedSection>
+    </section>
+  );
+}
+
+// ─── DFE EXPLICACIÓN ───
+export function DFEExplicacionSection({ sectorParrafo }: { sectorParrafo: string }) {
+  const filas = [
+    {
+      gestoria: "Registra lo que ya ocurrió",
+      lccfo: "Analiza lo que está ocurriendo ahora mismo",
+    },
+    {
+      gestoria: "Cierra el año y presenta las declaraciones",
+      lccfo: "Te entrega un informe mensual mientras el mes aún importa",
+    },
+    {
+      gestoria: "Cumple con Hacienda y la Seguridad Social",
+      lccfo: "Controla que tu negocio gana dinero de verdad",
+    },
+    {
+      gestoria: "Responde cuando le preguntas",
+      lccfo: "Propone qué hacer antes de que tengas que preguntar",
+    },
+  ];
+
+  return (
+    <section className="bg-white py-20 lg:py-28">
+      <AnimatedSection className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div variants={fadeUp} className="text-center mb-12">
+          <p className="text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
+            Dirección Financiera Externa
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-6 text-balance"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            No es tu gestoría. No es software.
+            <br className="hidden sm:block" />
+            Es tu director financiero.
+          </h2>
+          <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed text-pretty">
+            La mayoría de PYMEs tienen gestoría: cuadra las cuentas, presenta las
+            declaraciones y tramita las nóminas. Imprescindible, pero no es dirección
+            financiera. Un director financiero externo hace algo distinto:{" "}
+            {sectorParrafo}
+          </p>
+        </motion.div>
+
+        <motion.div variants={fadeUp} className="border border-gray-200 overflow-hidden mb-8">
+          <div className="grid grid-cols-2">
+            <div className="bg-gray-100 px-6 py-4 border-r border-gray-200">
+              <p className="font-bold text-gray-500 text-xs uppercase tracking-widest">
+                Tu gestoría
+              </p>
+            </div>
+            <div className="bg-[#0A0A0A] px-6 py-4">
+              <p className="font-bold text-[#C9A84C] text-xs uppercase tracking-widest">
+                L&C CFO®
+              </p>
+            </div>
+          </div>
+          {filas.map((f, i) => (
+            <div key={i} className="grid grid-cols-2 border-t border-gray-200">
+              <div className="bg-white px-6 py-4 border-r border-gray-200">
+                <p className="text-gray-400 text-sm">{f.gestoria}</p>
+              </div>
+              <div className="bg-[#FAF8F4] px-6 py-4">
+                <p className="text-[#0A0A0A] font-medium text-sm">{f.lccfo}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+
+        <motion.p
+          variants={fadeUp}
+          className="text-center text-gray-500 text-sm max-w-2xl mx-auto"
+        >
+          Tu gestoría sigue siendo imprescindible. Nosotros hacemos lo que la
+          gestoría no puede: leer tu negocio cada mes y decirte qué hacer con
+          lo que tienes.
+        </motion.p>
+      </AnimatedSection>
+    </section>
+  );
+}
+
 // ─── FOOTER ───
 interface SectorFooterProps {
   waLink: string;

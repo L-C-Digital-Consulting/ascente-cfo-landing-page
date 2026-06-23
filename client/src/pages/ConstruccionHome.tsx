@@ -30,6 +30,8 @@ import {
   WHATSAPP_LOGO,
   DIAGNOSTICO_URL,
   S2_URL,
+  DFEExplicacionSection,
+  ExcelCajaSection,
 } from "@/components/SectorLayout";
 
 const WA_CONSTRUCCION =
@@ -64,9 +66,9 @@ function HeroSection() {
             En una empresa de construcción los costes llegan antes que los ingresos.
             Materiales al inicio, subcontratas durante la obra, nóminas cada mes.
             Las certificaciones y los cobros finales tardan entre 30 y 90 días, y la
-            retención de garantía puede quedar pendiente años. Si no controlas la
-            caja de cada proyecto mes a mes, no sabes cuánto ganas por obra hasta
-            que ya es tarde para actuar.
+            retención de garantía puede quedarse pendiente hasta un año después de
+            entregar la obra. Si no controlas la caja de cada proyecto mes a mes,
+            no sabes cuánto ganas por obra hasta que ya es tarde para actuar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -113,8 +115,7 @@ function ProblemaSection() {
               permanente. No es una contradicción: es la estructura del sector. Gastas
               desde el primer día de obra, certificas cada mes o al finalizar, cobras
               después de 30, 60 o hasta 90 días, y la retención de garantía puede
-              quedarse en manos del cliente durante meses o años después de entregar
-              la obra.
+              quedarse en manos del cliente hasta un año después de entregar la obra.
             </p>
             <p>
               En ese intervalo, tus costes siguen. Las nóminas, la Seguridad Social,
@@ -486,8 +487,13 @@ export default function ConstruccionHome() {
       <SectorNavbar waLink={WA_CONSTRUCCION} />
       <HeroSection />
       <ProblemaSection />
+      <ExcelCajaSection
+        tipoNegocio="constructora"
+        ejemploEspecifico="No sabe cuándo vence el pago a la subcontrata ni cuándo llega la siguiente certificación."
+      />
       <DondeSeEscapaSection />
       <LoQueNoVesSection />
+      <DFEExplicacionSection sectorParrafo="controla que cada obra genera el margen esperado, que los pagos a subcontratas y proveedores están autorizados antes de salir del banco, y que la caja aguanta hasta la siguiente certificación." />
       <ControlProyectoSection />
       <ComoSection />
       <CTAFinalSection />
