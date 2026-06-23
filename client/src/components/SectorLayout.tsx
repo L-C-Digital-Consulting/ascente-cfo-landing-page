@@ -67,12 +67,12 @@ const servicios = [
 ];
 
 // ─── SECTORES ───
-export type SectorId = "hosteleria" | "construccion";
+export type SectorId = "hosteleria" | "construccion" | "servicios-profesionales";
 
 const SECTORES: Array<{ id: SectorId | null; label: string; href: string | null }> = [
   { id: "hosteleria", label: "Hostelería", href: "/direccion-financiera-hosteleria" },
   { id: "construccion", label: "Construcción", href: "/direccion-financiera-construccion" },
-  { id: null, label: "Servicios profesionales (próximamente)", href: null },
+  { id: "servicios-profesionales", label: "Servicios profesionales", href: "/direccion-financiera-servicios-profesionales" },
 ];
 
 // ─── NAVBAR ───
@@ -158,10 +158,13 @@ export function SectorNavbar({ waLink }: SectorNavbarProps) {
                 >
                   Construcción
                 </a>
-                <div className="px-4 py-2.5 text-sm text-white/30 flex items-center justify-between">
-                  <span>Servicios profesionales</span>
-                  <span className="text-[0.6rem] text-white/25 uppercase tracking-wide">próximamente</span>
-                </div>
+                <a
+                  href="/direccion-financiera-servicios-profesionales"
+                  onClick={() => setSectoresOpen(false)}
+                  className="flex items-center px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                >
+                  Servicios profesionales
+                </a>
               </div>
             )}
           </div>
