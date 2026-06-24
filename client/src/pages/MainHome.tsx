@@ -29,6 +29,8 @@ import {
   ArrowRight,
   CheckCircle2,
   ChevronDown,
+  Menu,
+  X,
 } from "lucide-react";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/hero_bg-hCmBTqbzuN6tTGJpJsBUWU.webp";
@@ -84,6 +86,7 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [sectoresOpen, setSectoresOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const sectoresRef = useRef<HTMLDivElement>(null);
 
@@ -109,7 +112,7 @@ function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || mobileOpen
           ? "bg-[#0A0A0A]/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
@@ -209,6 +212,13 @@ function Navbar() {
           </a>
         </div>
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => setMobileOpen(v => !v)}
+            className="md:hidden p-2 text-white"
+            aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
           <a
             href={WHATSAPP_LINK}
             target="_blank"
@@ -229,12 +239,43 @@ function Navbar() {
           </a>
           <a
             href={DIAGNOSTICO_URL}
-            className="bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-6 py-2 text-sm transition-colors"
+            className="hidden md:inline-flex bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-6 py-2 text-sm transition-colors"
           >
             Diagnóstico Financiero
           </a>
         </div>
       </div>
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="md:hidden border-t border-white/10 px-4 py-6">
+          <div className="flex flex-col">
+            <a href="/" onClick={() => setMobileOpen(false)} className="text-white/80 hover:text-white py-3 text-sm border-b border-white/5">Inicio</a>
+            <a href="#filosofia" onClick={() => setMobileOpen(false)} className="text-white/80 hover:text-white py-3 text-sm border-b border-white/5">Filosofía</a>
+            <a href="#valores" onClick={() => setMobileOpen(false)} className="text-white/80 hover:text-white py-3 text-sm border-b border-white/5">Valores</a>
+            <a href="#respaldo" onClick={() => setMobileOpen(false)} className="text-white/80 hover:text-white py-3 text-sm border-b border-white/5">Ecosistema</a>
+          </div>
+          <div className="mt-4">
+            <p className="text-white/40 text-xs uppercase tracking-widest mb-2">Sectores</p>
+            <a href="/direccion-financiera-hosteleria" onClick={() => setMobileOpen(false)} className="block text-white/70 hover:text-white py-2.5 text-sm pl-2">Hostelería</a>
+            <a href="/direccion-financiera-construccion" onClick={() => setMobileOpen(false)} className="block text-white/70 hover:text-white py-2.5 text-sm pl-2">Construcción</a>
+            <a href="/direccion-financiera-servicios-profesionales" onClick={() => setMobileOpen(false)} className="block text-white/70 hover:text-white py-2.5 text-sm pl-2">Servicios profesionales</a>
+          </div>
+          <div className="mt-4">
+            <p className="text-white/40 text-xs uppercase tracking-widest mb-2">Servicios</p>
+            <a href={DIAGNOSTICO_URL} onClick={() => setMobileOpen(false)} className="block text-white/70 hover:text-white py-2.5 text-sm pl-2">Diagnóstico de Claridad Financiera®</a>
+            <a href={S2_URL} onClick={() => setMobileOpen(false)} className="block text-white/70 hover:text-white py-2.5 text-sm pl-2">Dirección Financiera Mensual®</a>
+            <a href="#servicios" onClick={() => setMobileOpen(false)} className="block text-[#C9A84C] py-2.5 text-xs pl-2">Ver todos los servicios →</a>
+          </div>
+          <div className="mt-6 flex flex-col gap-3">
+            <a href={S2_URL} onClick={() => setMobileOpen(false)} className="block w-full text-center border border-[#C9A84C] text-[#C9A84C] font-semibold py-3 text-sm transition-colors">
+              Dirección Financiera
+            </a>
+            <a href={DIAGNOSTICO_URL} onClick={() => setMobileOpen(false)} className="block w-full text-center bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold py-3 text-sm transition-colors">
+              Diagnóstico Financiero
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

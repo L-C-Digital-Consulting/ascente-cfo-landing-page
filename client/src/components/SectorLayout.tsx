@@ -6,7 +6,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import { type LucideIcon, ArrowRight, ChevronDown } from "lucide-react";
+import { type LucideIcon, ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 
 // ─── SHARED CONSTANTS ───
 export const WHATSAPP_LOGO =
@@ -84,6 +84,7 @@ export function SectorNavbar({ waLink }: SectorNavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [sectoresOpen, setSectoresOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const sectoresRef = useRef<HTMLDivElement>(null);
 
@@ -109,7 +110,7 @@ export function SectorNavbar({ waLink }: SectorNavbarProps) {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#0A0A0A]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        scrolled || mobileOpen ? "bg-[#0A0A0A]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
@@ -211,6 +212,13 @@ export function SectorNavbar({ waLink }: SectorNavbarProps) {
           </div>
         </div>
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => setMobileOpen(v => !v)}
+            className="md:hidden p-2 text-white"
+            aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
           <a
             href={waLink}
             target="_blank"
@@ -223,12 +231,44 @@ export function SectorNavbar({ waLink }: SectorNavbarProps) {
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-6 py-2 text-sm transition-colors"
+            className="hidden md:inline-flex bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold px-6 py-2 text-sm transition-colors"
           >
             Hablar con nosotros
           </a>
         </div>
       </div>
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="md:hidden border-t border-white/10 px-4 py-6">
+          <div className="flex flex-col">
+            <a href="/" onClick={() => setMobileOpen(false)} className="text-white/80 hover:text-white py-3 text-sm border-b border-white/5">Inicio</a>
+            <a href="#problema" onClick={() => setMobileOpen(false)} className="text-white/80 hover:text-white py-3 text-sm border-b border-white/5">El problema</a>
+            <a href="#como" onClick={() => setMobileOpen(false)} className="text-white/80 hover:text-white py-3 text-sm border-b border-white/5">Cómo te ayudamos</a>
+          </div>
+          <div className="mt-4">
+            <p className="text-white/40 text-xs uppercase tracking-widest mb-2">Sectores</p>
+            <a href="/direccion-financiera-hosteleria" onClick={() => setMobileOpen(false)} className="block text-white/70 hover:text-white py-2.5 text-sm pl-2">Hostelería</a>
+            <a href="/direccion-financiera-construccion" onClick={() => setMobileOpen(false)} className="block text-white/70 hover:text-white py-2.5 text-sm pl-2">Construcción</a>
+            <a href="/direccion-financiera-servicios-profesionales" onClick={() => setMobileOpen(false)} className="block text-white/70 hover:text-white py-2.5 text-sm pl-2">Servicios profesionales</a>
+          </div>
+          <div className="mt-4">
+            <p className="text-white/40 text-xs uppercase tracking-widest mb-2">Servicios</p>
+            {servicios.map((s, i) => (
+              <a key={i} href={s.link ?? "/#servicios"} onClick={() => setMobileOpen(false)} className="block text-white/70 hover:text-white py-2.5 text-sm pl-2">{s.name}</a>
+            ))}
+          </div>
+          <div className="mt-6">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center bg-[#C9A84C] hover:bg-[#B8943B] text-[#0A0A0A] font-semibold py-3 text-sm transition-colors"
+            >
+              Hablar con nosotros
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
@@ -421,29 +461,34 @@ export function DFEExplicacionSection({ sectorParrafo }: { sectorParrafo: string
           </p>
         </motion.div>
 
-        <motion.div variants={fadeUp} className="border border-gray-200 overflow-hidden mb-8">
-          <div className="grid grid-cols-2">
-            <div className="bg-gray-100 px-6 py-4 border-r border-gray-200">
-              <p className="font-bold text-gray-500 text-xs uppercase tracking-widest">
-                Tu gestoría
-              </p>
-            </div>
-            <div className="bg-[#0A0A0A] px-6 py-4">
-              <p className="font-bold text-[#C9A84C] text-xs uppercase tracking-widest">
-                L&C CFO®
-              </p>
+        <motion.div variants={fadeUp} className="mb-8">
+          <p className="sm:hidden text-center text-gray-400 text-xs mb-2 italic">← Desliza para comparar →</p>
+          <div className="overflow-x-auto">
+            <div className="border border-gray-200 overflow-hidden min-w-[480px]">
+              <div className="grid grid-cols-2">
+                <div className="bg-gray-100 px-6 py-4 border-r border-gray-200">
+                  <p className="font-bold text-gray-500 text-xs uppercase tracking-widest">
+                    Tu gestoría
+                  </p>
+                </div>
+                <div className="bg-[#0A0A0A] px-6 py-4">
+                  <p className="font-bold text-[#C9A84C] text-xs uppercase tracking-widest">
+                    L&C CFO®
+                  </p>
+                </div>
+              </div>
+              {filas.map((f, i) => (
+                <div key={i} className="grid grid-cols-2 border-t border-gray-200">
+                  <div className="bg-white px-6 py-4 border-r border-gray-200">
+                    <p className="text-gray-400 text-sm">{f.gestoria}</p>
+                  </div>
+                  <div className="bg-[#FAF8F4] px-6 py-4">
+                    <p className="text-[#0A0A0A] font-medium text-sm">{f.lccfo}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          {filas.map((f, i) => (
-            <div key={i} className="grid grid-cols-2 border-t border-gray-200">
-              <div className="bg-white px-6 py-4 border-r border-gray-200">
-                <p className="text-gray-400 text-sm">{f.gestoria}</p>
-              </div>
-              <div className="bg-[#FAF8F4] px-6 py-4">
-                <p className="text-[#0A0A0A] font-medium text-sm">{f.lccfo}</p>
-              </div>
-            </div>
-          ))}
         </motion.div>
 
         <motion.p
