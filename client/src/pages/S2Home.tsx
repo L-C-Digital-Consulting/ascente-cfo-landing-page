@@ -20,9 +20,9 @@ import {
 } from "lucide-react";
 
 const HERO_BG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/hero_bg-hCmBTqbzuN6tTGJpJsBUWU.webp";
+  "/img/hero-bg.webp";
 const WHATSAPP_LOGO =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/whatsapp_logo_09eed037.png";
+  "/img/whatsapp.png";
 const LINKEDIN_URL =
   "https://www.linkedin.com/in/miguel-ángel-lópez-sainz-0bb25341";
 const DIAGNOSTICO_URL = "/diagnostico-financiero-pyme";

@@ -33,18 +33,16 @@ import {
 } from "lucide-react";
 
 // CDN URLs
-const LOGO_WHITE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/ascente_logo_white_bcd9e595.png";
-const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/hero_bg-hCmBTqbzuN6tTGJpJsBUWU.webp";
-const ANALYSIS_VISUAL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/analysis_visual-j2t5e5SjLANxscfmmRgggu.webp";
+const HERO_BG = "/img/hero-bg.webp";
+const ANALYSIS_VISUAL = "/img/analysis-visual.webp";
 const PROCESS_VISUAL = "/proceso-visual.png";
-const CTA_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/cta_bg-dTM6XQZtDsLVuXizNMU6cV.webp";
-const VINTAGE_ACCOUNTING = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/vintage-accounting_579c0da4.jpg";
-const MODERN_CFO_PRESENTATION = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/cfo-hispanic-white-40s_5440af83.jpg";
-const CFO_DASHBOARD_PRESENTATION = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/cfo-dashboard-presentation_c33aa15a.png";
+const CTA_BG = "/img/cta-bg.webp";
+const VINTAGE_ACCOUNTING = "/img/vintage-accounting.jpg";
+const CFO_DASHBOARD_PRESENTATION = "/img/cfo-dashboard.webp";
 
 const TALLY_LINK = "https://tally.so/r/ZjGg0z";
 const WHATSAPP_LINK = "https://wa.me/34635580883?text=Hola%2C%20me%20interesa%20el%20Diagn%C3%B3stico%20de%20Claridad%20Financiera%C2%AE%20y%20tengo%20una%20pregunta.";
-const WHATSAPP_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/whatsapp_logo_09eed037.png";
+const WHATSAPP_LOGO = "/img/whatsapp.png";
 const LINKEDIN_URL = "https://www.linkedin.com/in/miguel-ángel-lópez-sainz-0bb25341";
 const PRIVACY_POLICY_URL = "/privacidad";
 

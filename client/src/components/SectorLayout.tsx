@@ -10,7 +10,7 @@ import { type LucideIcon, ArrowRight, ChevronDown, Menu, X } from "lucide-react"
 
 // ─── SHARED CONSTANTS ───
 export const WHATSAPP_LOGO =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/whatsapp_logo_09eed037.png";
+  "/img/whatsapp.png";
 export const DIAGNOSTICO_URL = "/diagnostico-financiero-pyme";
 export const S2_URL = "/direccion-financiera-mensual";
 

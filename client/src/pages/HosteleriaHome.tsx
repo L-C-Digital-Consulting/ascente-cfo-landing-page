@@ -74,7 +74,7 @@ const ADEMAS_ITEMS: AdemasItem[] = [
 ];
 
 const HERO_BG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663493406861/AbQacd8d6pBJJuTzbrztLz/hero_bg-hCmBTqbzuN6tTGJpJsBUWU.webp";
+  "/img/hero-bg.webp";
 const WA_HOSTELERIA =
   "https://wa.me/34635580883?text=Hola%2C%20tengo%20un%20negocio%20de%20hosteler%C3%ADa%20y%20me%20interesa%20la%20direcci%C3%B3n%20financiera%20de%20L%26C%20CFO%C2%AE.";
 
