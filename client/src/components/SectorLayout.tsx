@@ -292,7 +292,7 @@ export function AdemasSection({ items }: { items: AdemasItem[] }) {
             className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-4 text-balance"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            La dirección financiera es más que
+            La dirección financiera es más que{" "}
             <br className="hidden sm:block" />
             controlar la caja y los pagos.
           </h2>
@@ -373,7 +373,7 @@ export function ExcelCajaSection({
             className="text-3xl sm:text-4xl font-bold text-white mb-6 text-balance"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            ¿Tu previsión de caja es un Excel
+            ¿Tu previsión de caja es un Excel{" "}
             <br className="hidden sm:block" />
             que actualizas mirando el banco?
           </h2>
@@ -449,7 +449,7 @@ export function DFEExplicacionSection({ sectorParrafo }: { sectorParrafo: string
             className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-6 text-balance"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            No es tu gestoría. No es software.
+            No es tu gestoría. No es software.{" "}
             <br className="hidden sm:block" />
             Es tu director financiero.
           </h2>
